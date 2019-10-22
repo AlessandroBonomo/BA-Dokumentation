@@ -1,0 +1,86 @@
+%
+% HSR LaTex Template
+% Copyright 2012, Florian Bentele
+%
+% Complete LaTex template for thesis at HSR, customized
+% for Prof. Dr. Peter Heinzmann
+%
+%
+% This document is free software: you can redistribute
+% it and/or modify it under the terms of the GNU
+% General Public License as published by the Free
+% Software Foundation, either version 3 of the License,
+% or (at your option) any later version.
+%
+% This document is distributed in the hope that it will
+% be useful, but WITHOUT ANY WARRANTY; without even the
+% implied warranty of MERCHANTABILITY or FITNESS FOR A
+% PARTICULAR PURPOSE. See the GNU General Public
+% License for more details.
+%
+% You should have received a copy of the GNU General
+% Public License along with this document. If not, see
+% <http://www.gnu.org/licenses/>.
+%
+
+\documentclass[11pt,twoside,titlepage]{hsrthesis}
+
+%\makeindex
+
+
+% do this here, so you can \gls{...} to it
+\makenoidxglossaries
+\input{index/glossar}
+
+\begin{document}
+
+% PYTHON
+\lstset{language=Python}
+\lstset{frame=lines}
+\lstset{caption={Insert code directly in your document}}
+\lstset{basicstyle=\footnotesize}
+% END PYTHON
+
+\input{chapter/01_title}
+
+\tableofcontents
+
+%
+%%%%%%%%%%%%%%%%%%%%
+% The main content %
+%%%%%%%%%%%%%%%%%%%%
+\input{chapter/02_abstract}
+\input{chapter/03_aufgabenstellung}
+\input{chapter/04_management_summary}
+\input{chapter/05_einleitung}
+\input{chapter/07_anforderungen}
+\input{chapter/08_evaluation}
+\input{chapter/08_UI_Design}
+\input{chapter/08_technologien}
+\input{chapter/08_software_architektur}
+\input{chapter/09_00_implementation}
+\input{chapter/10_ergebnisse}
+\input{chapter/11_ausblick}
+\input{chapter/00_Examples}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% List of figures & glossary %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\listoffigures
+\printnoidxglossaries
+
+%%%%%%%%%%%%%%%%
+% Bibliography %
+%%%%%%%%%%%%%%%%
+\bibliographystyle{abbrv}
+\bibliography{index/bibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Attached sources %
+%%%%%%%%%%%%%%%%%%%%
+\input{attachments/attachments}
+
+
+\end{document}

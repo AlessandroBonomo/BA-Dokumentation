@@ -1,0 +1,151 @@
+
+\section{Beispiele}
+
+\subsection{Bild}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/UseCaseDiagramm.png}
+	\caption{Use Case Diagramm}
+\end{figure}
+
+
+
+\subsection{Tabelle}
+
+\begin{tabular}{| p{1cm} | p{1.3cm}|}
+	\hline
+	\textbf{Farbe} & \textbf{Priorität} \\
+	\hline	
+	rot & hoch \\
+	\hline
+	orange & mittel \\
+	\hline
+	grün & tief \\
+	\hline
+\end{tabular}
+
+
+\begin{tabularx}{\textwidth}{| X | X |}
+	\hline
+	\textbf{Aktor} & \textbf{Beschreibung} \\
+	\hline
+	Benutzer & Student, der seine gelösten Aufgaben überprüfen will \\
+	\hline
+	Administrator & Dozent, der Lösungen für die Übungen bereitstellen, oder diese bearbeiten will \\
+	\hline
+	E-Mail-Server & Unterstützender Aktor, welcher die Ergebnisse der geprüften Aufgaben per Mail an die Benutzer versendet \\
+	\hline
+\end{tabularx}
+
+
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline
+\textbf{Variable} & \textbf{Beschreibung} \\
+\hline
+DEBUG &  Wenn Debug enabled ist, wird der Server im Debug Modus gestartet. Es wird ein Debugger für unbehandelte Exceptions gezeigt und der Server wird automatisch neu geladen, falls etwas am Code geändert wird. 
+\newline
+Default mässig ist diese Variable auf True gesetzt,  wenn ENV ''development'' ist, sonst ist diese Variable False \cite{flask:config}. \\
+\hline
+TESTING &  Ist Testing enabled, dann werden die Exceptions propagiert und nicht von den Error Handler gehandelt \cite{flask:config}. \\
+\hline
+REGISTER\_SECRET & Möchte sich ein neuer Benutzer registrieren, muss ein Secret Key angegeben werden. Dieser Secret Key muss mit REGISTER\_SECRET übereinstimmen, damit er sich registrieren kann. \\
+\hline
+SECRET\_KEY &  Der Secret Key wird zur Signierung des Session Cookies gebraucht. Der Wert sollte ein langer zufälliger String sein \cite{flask:config}.\\
+\hline
+\end{tabularx}
+
+
+
+\subsection{Verweis}
+
+\cite{django:nachteile}
+
+
+\subsection{Code}
+
+\begin{lstlisting}[caption={Example Runner}, language=Python]
+def run_test(self, test_case):
+    result = self.nr.run(
+        task=netmiko_send_command,
+        enable=True,
+        command_string=test_case.get_command(),
+        on_failed=True
+    )
+    return result
+\end{lstlisting}
+
+
+\subsection{Text mit Underline}
+
+netmiko\_send\_command
+
+
+\subsection{Auflistung}
+
+\begin{enumerate}
+	\item Pfad zur Host.yaml Datei
+	\item Pfad zur Exercise.yaml Datei
+	\item Cookie
+	\item Mail Adresse
+\end{enumerate}
+
+\begin{itemize}
+	\item \textbf{Name} \\
+		Der Name muss innerhalb desse
+
+	\begin{itemize}
+	\item \textbf{Hostname} \\
+		Der Hostname e
+	\item \textbf{Port} \\
+		Hier wird der 
+	\item \textbf{Password} \\
+		Das Passwort, der
+	\end{itemize}
+\end{itemize}
+
+
+\subsection{Einrückung verhindern}
+\begin{lstlisting}[language=yaml, caption={config.yaml}]
+inventory:
+\end{lstlisting}
+
+\noindent Die ''config.yaml'' Datei muss vorhanden sein damit der Runner richtig funktioniert,
+
+
+\subsection{Text fett}
+\textbf{View}
+
+
+\subsection{Text kursiv}
+agegeben, dass insegesamt auf zwei Devices $\left(z.B. 'R1' und 'R2'\right)$ Befehle
+
+
+\subsection{Zeilenumbruch}
+Die Grafik unten stellt den Ablauf abstrakt dar, da nur auf die wichtigsten Dinge eingegangen wird. 
+\\
+Der gesamte unten dargestellte Ablauf läuft asynchron. Das heisst, für jeden Benutzer, der sein Netzwerk testen will, 
+
+
+\subsection{Connection String}
+\begin{lstlisting}[caption={Database Connection String}]
+# MySQL Connection String
+SQLALCHEMY_DATABASE_URI = 'mysql://root:start123@localhost/nvs'
+
+# Postgres Connection String
+SQLALCHEMY_DATABASE_URI = 'postgresql://root:start123@localhost:5432/nvs'
+\end{lstlisting}
+
+
+
+\subsection{Seite Vertikal einfügen}
+
+\begin{landscape}
+\subsection{API Endpoints}
+Nachfolgend wird mit einer Grafik die API Endpoints beschrieben.
+\begin{center}
+\begin{figure}[H]
+	\includegraphics[width=1.5\textwidth]{images/RestAPI.png}
+	\caption{Beschreibung der API Endpoints}
+\end{figure}
+\end{center}
+\end{landscape}
