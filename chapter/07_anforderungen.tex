@@ -280,7 +280,7 @@ Beschreibung der einzelnen Aktoren.
 \end{tabularx}
 
 
-\textbf{UC04: Create weekly schedule} Der Lehrer kann erstellte Fragen und Quizzes einer Klasse als Auftrag geben. 
+\textbf{UC05: Create weekly schedule} Der Lehrer kann erstellte Fragen und Quizzes einer Klasse als Auftrag geben. 
 
 \begin{tabularx}{\textwidth}{| X | X |}
 	\hline
@@ -309,31 +309,27 @@ Beschreibung der einzelnen Aktoren.
 
 
 \subsection{Nicht Funktionale Anforderungen}
-
+Im nachfolgenden Kapitel werden die nichtfunktionalen Anforderungen der Aufgaben-Coaching Applikation angesprochen.
 
 \subsubsection{Qualität}
-
+Um die Qualität des Codes möglichst hoch zu halten und sicherzustellen, dass alle Teammitglieder immer auf dem aktuellsten Stand sind, werden auf Git Pull-Requests verwendet. Dadurch kann sichergestellt werden, dass ein anderes Teammitglied den geschriebenen Code ebenfalls angesehen und durchdacht hat.
 
 \subsubsection*{Maintainability}
-
-
-\subsubsection*{Efficiency}
-
-
-\subsubsection*{Portability}
-
+Die Software könnte unter Umständen in einem Start-Up verwendet werden. Da in Zukunft noch beinahe beliebig viele neue Anforderungen hinzustossen können, soll die Applikation so gebaut werden, dass sie einfach modifiziert werden kann. 
 
 \subsubsection*{Reliability}
+Die Applikation soll robust und reibungslos laufen, auch wenn mehere Schüler zeitgleich mit der Plattform verbunden sind.
 
-
-\subsubsection*{Functionality}
-
+\subsubsection*{Scalability}
+Das System soll problemlos von bis zu 300 Benutzern gleichzeitig verwendet werden können. 
 
 \subsubsection*{Usability}
-
+Bei der Applikation soll es sich um eine Mobile First Applikation handeln. Die Plattform soll sowohl auf Desktop PCs, Tablets und Smartphones bedienbar sein. Der Lehrer- und Administator-spezifische Teil der Applikation ist davon erstmals ausgenommen, da davon ausgegangen wird, dass diese beiden Aktoren hauptsächlich auf Desktop PCs arbeiten. 
+Die Applikation soll ein intuitives User Interface besitzen, damit sich die Benutzer auf Anhieb zurechtfinden. 
 
 \subsubsection*{Security}
-
+Der Zugriff auf das System ist passwortgeschützt. Benutzer können sich nicht selbstständig registrieren. Nur Administratoren können neue Benutzer erfassen.
+Jede Person sieht nur die Informationen, die für sie selbst von Bedeutung sind. Ein Schüler kann zum Beispiel nicht einsehen, wie gut und schlecht ein anderer in einem Quiz abgeschlossen hat.
 
 \newpage
 
