@@ -5,8 +5,6 @@
 
 \subsection{Backend}
 \subsubsection{Django}
-
-
 \subsubsection{ASP.NET}
 \subsubsection{Flask}
 
@@ -19,5 +17,21 @@
 \subsection{Docker}
 Für die Entwicklung und das Deployment wird Docker verwendet. Docker bietet den Vorteil, dass jeder Entwickler auf der selben Umgebung, mit den gleichen Libraries und Versionen arbeitet, unabhängig davon, welches Host OS man hat. Zudem ist die Entwicklungsumgebung genau gleich wie die Produktionsumgebung aufgebaut, weshalb die Applikation praktisch ohne Änderungen deployed werden kann. Wenn die Applikation in einem Docker Container läuft, wird sie genau gleich auf dem Server laufen.
 
+\subsection{Continuous Integration}
+Bei der Entwicklung wir nach der Continuous Integration Praxis vorgegangen. Dabei wird der Code der Entwickler regelmässig in den Master integriert. Das Ziel ist es, eine ''Integration Hell'' zu vermeiden. Weicht ein Branch stark vom Master Branch ab, müssen teils grobe Änderungen am Code vorgenommen werden, um den Branch integrieren zu können.
+\\
+Es gibt mehrere Tools, welche Continuous Integration untertützen. Während dieser Bachelorarbeit hat man sich genauer mit den beiden Tools ''Travis'' und ''Jenkins'' auseinander gesetzt.
+
+\subsubsection{Jenkins}
+Jenkins ist ein Open Source Projekt und bietet sehr viel Flexibilität an. Es kann sehr genau beschrieben werden, wie ein Build Vorgang genau ablaufen soll. Zudem gibt es ein grosses Plugin Archiv. So gibt es zum Beispiel ein spezifische Plugins für Docker.
+\\
+Da Jenkins aber gut und detailliert angepasst werden kann, dauert es aber auch dementsprechend länger, bis Jenkins eingerichtet ist. Des Weiteren braucht es einen dedizierten Server, auf welchem Jenkins laufen kann.
+
+\subsubsection{Travis}
+Im Gegensatz zu Jenkins wird Travis extern gehostet. Man muss sich also nicht selber um einen Server kümmern. Bei Travis gibt es zwei Varianten. OpenSource Projekte können gratis gehostet werden. Für private Projekte muss jedoch eine Enterprise Lizenz erworben werden. Im Gegensatz zu Jenkins bietet Travis nicht so viel Funktionalität und ist nicht gleich gut erweiterbar. Dafür ist Travis viel leichter einzurichten.
+
+\subsubsection*{Entscheidung}
+Bei der Bachelorarbeit hat man sich für Travis entschieden. Jenkins bietet zwar mehr Funktionalität als Travis, aber bei Travis wird das Hosting übernommen. Zudem kann man Travis sehr schnell aufsetzen.
+Des Weiteren kam man zum Schluss, dass man auf keine spezifischen Funktionalitäten von Jenkins angewiesen ist. Aus diesen Gründen viel die Entscheidung auf Travis.
 
 \newpage
