@@ -1,1 +1,10 @@
 \section{Implementation}
+
+\subsection{Apps}
+Bei Django ist es üblich, die Funktionalitäten in verschiedene Apps aufzuteilen. Eine App in Django ist vergleichbar mit einem Package in Java. Das Ziel ist es also, den Code so auf die verschiedenen Apps aufzuteilen, dass diese unabhängig voneinander wiederverwendet werden können. Aus diesem Grund wurde entschieden folgende Apps zu erstellen:
+
+
+%TODO ale insert table -> not working
+
+
+Die Logik kann ohne Probleme in die verschiedenen Apps aufgeteilt werden. Das Problem dabei ist jedoch die Datenbank. In Django ist es best-practise, die benötigten Models (Datenbanktabellen) jeweils in der entsprechenden App zu implementieren. Da die einzelnen Tabellen aus der Datenbank eine starke Bindung zu den anderen Tabellen haben, geht diese Bindung somit auch auf die Apps über. Durch das schwindet der Sinn, die Logik in verschiedene Apps aufzuteilen. Es gibt zwei Möglichkeiten, mit diesem Problem umzugehen. Die erste wäre es, alle App zu einer grossen zusammenzulegen und die zweite wäre es bei der zu Beginn gewählten Aufteilung zu bleiben und die starke Koppelung hinzunehmen. 
