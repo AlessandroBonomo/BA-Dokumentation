@@ -1,10 +1,41 @@
 \section{Implementation}
 
 \subsection{Apps}
-Bei Django ist es üblich, die Funktionalitäten in verschiedene Apps aufzuteilen. Eine App in Django ist vergleichbar mit einem Package in Java. Das Ziel ist es also, den Code so auf die verschiedenen Apps aufzuteilen, dass diese unabhängig voneinander wiederverwendet werden können. Aus diesem Grund wurde entschieden folgende Apps zu erstellen:
+Bei Django ist es üblich, die Funktionalitäten in verschiedene Apps aufzuteilen. Eine App in Django ist vergleichbar mit einem Package in Java. Das Ziel ist es also, den Code so auf die verschiedenen Apps aufzuteilen, dass diese unabhängig voneinander wiederverwendet werden können. Aus diesem Grund wurde entschieden folgende Apps zu erstellen: \\
+\newline
+\begin{tabularx}{\textwidth}{| X | X |}
+	\hline
+		\textbf{Apps} & \textbf{Beschreibung} \\
+	\hline
+		Users & Die Users App soll alles was mit den Users zu tun hat verwalten. Also das erstellen und bearbeiten von Usern wie auch dem einloggen und ausloggen. \\
+	\hline
+		School admins & Die School admins App ist für die Zuweisung der Schüler und Lehrer an Klassen zuständig, sowie das erstellen von Klassen. \\
+	\hline
+		Exercises & Die Exercises App bietet die Logik an um Aufgaben zu definieren. \\
+	\hline 
+		Quizzes & Die Quizzes App ermöglicht es Quizzes zu erstellen und diese zu verwalten. \\
+	\hline
+		Dashboards & Die Dashboards App ist dazu da, den Benutzern eine Übersicht zu bieten. \\
+	\hline
+		Forums & In der Forum App wird die komplette Logik für das Forum implementiert. \\
+	\hline
+		Study contents & Die Study contents App beinhaltet alles was mit dem bereitgestellten Inhalt zu tun hat. \\
+	\hline
+\end{tabularx} \\
 
 
-%TODO ale insert table -> not working
+\noindent Die Logik kann ohne Probleme in die verschiedenen Apps aufgeteilt werden. Das Problem dabei ist jedoch die Datenbank. In Django ist es best-practise, die benötigten Models (Datenbanktabellen) jeweils in der entsprechenden App zu implementieren. Da die einzelnen Tabellen aus der Datenbank eine starke Bindung zu den anderen Tabellen haben, geht diese Bindung somit auch auf die Apps über. Dadurch schwindet der Sinn, die Logik in verschiedene Apps aufzuteilen. Es gibt zwei Möglichkeiten, mit diesem Problem umzugehen. Die erste wäre es, alle Apps zu einer grossen zusammenzulegen und die zweite wäre es bei der zu Beginn gewählten Aufteilung zu bleiben und die starke Koppelung hinzunehmen. 
+
+%TODO Weiterschreiben
 
 
-Die Logik kann ohne Probleme in die verschiedenen Apps aufgeteilt werden. Das Problem dabei ist jedoch die Datenbank. In Django ist es best-practise, die benötigten Models (Datenbanktabellen) jeweils in der entsprechenden App zu implementieren. Da die einzelnen Tabellen aus der Datenbank eine starke Bindung zu den anderen Tabellen haben, geht diese Bindung somit auch auf die Apps über. Durch das schwindet der Sinn, die Logik in verschiedene Apps aufzuteilen. Es gibt zwei Möglichkeiten, mit diesem Problem umzugehen. Die erste wäre es, alle App zu einer grossen zusammenzulegen und die zweite wäre es bei der zu Beginn gewählten Aufteilung zu bleiben und die starke Koppelung hinzunehmen. 
+\section{Testing}
+
+\subsection{Allgemein}
+Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
+
+\subsection{Datenbank}
+Damit die Tests nicht von bereits vorhanden Daten in der Datenbank beeinflusst werden, wird für jeden Testdurchlauf eine eigene temporäre Datenbank erstellt, die exakt wie die in der Produktion verwendete Datenbank konfiguriert ist. Diese temporäre Datenbank wird nach der Testdurchführung wieder vom System entfernt.
+
+\subsection{Test Client}
+Der Test-Client ist eine Pythonklasse, welche als einfacher Webbrowser dient. Mit ihm kann man auf Applikationsebene mit den erstellten Django-Apps agieren. Das heisst, man kann gut und einfach GET und POST Requests simulieren und kann den Inhalt der Webseite überprüfen. 
