@@ -4,18 +4,32 @@
 
 
 \subsection{Backend}
-\subsubsection{Django}
-\subsubsection{ASP.NET}
-\subsubsection{Flask}
+Es gibt eine grosse Auswahl verschiedener Web Frameworks, welche für die Entwicklung der Bachelorarbeit hätten verwendet werden können. Wir mussten uns für eines der folgenden entscheiden:
+\begin{enumerate}
+	\item ASP.NET
+	\item Flask
+	\item Django
+	\item Node.js
+\end{enumerate}
+
+\noindent Da keiner von uns das Modul ''Web Engineering + Design 2'' besucht hat, in welchem unter anderem die Anwendung von Node.js unterrichtet wird, fällt dieses Webframework aus Mangel an Erfahrung bereits weg. Auch mit ASP.NET kennen wir beide uns nicht aus, weshalb wir eher zu einem Python Framework tendierten. Zusammen haben wir bereits die Studienarbeit mit dem Framework Flask geschrieben und kennen uns damit aus. Während der Studienarbeit haben wir nebenbei viel von Django mitbekommen und wurden neugierig. Nun bei der Bachelorarbeit wollten wir ein neues Framework kennenlernen, jedoch nicht komplett auf alles bekannte verzichten. Aus diesem Grund bietet sich Django optimal an. Da Django wie auch Flask mit Abstand die am meist verbreitetsten Pyhton Web Frameworks sind, findet man auch genügend Hilfestellung im Internet.
 
 
 \subsection{Datenbank}
-\subsubsection{PostgeSQL}
-\subsubsection{MySQL}
-\subsubsection{GraphQL}
+Da das gewählte Datenbanksystem keine besonderen Ansprüche erfüllen muss, haben wir uns dazu entschieden eines der grossen und weitverbreiteten zu verwenden. Dies hat den Vorteil, dass die Unterstützung von Frameworks eher gewährleistet ist, wie auch dass bei Problemen einfacher eine Hilfestellung gefunden werden kann. 
+Zur Auswahl stehen also folgende Datenbanksysteme:
+\begin{enumerate}
+	\item MySQL
+	\item PostgreSQL
+	\item Oracle Database
+\end{enumerate}
+
+\noindent Jedes dieser Systeme hat gewisse Vor- und Nachteile gegenüber den anderen. Zum Beispiel ist MySQL bei vielen einfachen Schreiboperationen schneller als PostgreSQL. Viele Framework haben jedoch einen integrierten OR-Mapper, genau wie auch Django, welcher oft die Vorteile der unterschiedlichen Datenbanksysteme versteckt und alle etwa gleich "langsam" macht. Aus diesem Grund, wie auch aus dem Grund, dass wir PostgreSQL bereits von der Studienarbeit kennen, haben wir uns dazu entschieden PostgreSQL zu verwenden. 
+
 
 \subsection{Docker}
 Für die Entwicklung und das Deployment wird Docker verwendet. Docker bietet den Vorteil, dass jeder Entwickler auf der selben Umgebung, mit den gleichen Libraries und Versionen arbeitet, unabhängig davon, welches Host OS man hat. Zudem ist die Entwicklungsumgebung genau gleich wie die Produktionsumgebung aufgebaut, weshalb die Applikation praktisch ohne Änderungen deployed werden kann. Wenn die Applikation in einem Docker Container läuft, wird sie genau gleich auf dem Server laufen.
+
 
 \subsection{Continuous Integration}
 Bei der Entwicklung wir nach der Continuous Integration Praxis vorgegangen. Dabei wird der Code der Entwickler regelmässig in den Master integriert. Das Ziel ist es, eine ''Integration Hell'' zu vermeiden. Weicht ein Branch stark vom Master Branch ab, müssen teils grobe Änderungen am Code vorgenommen werden, um den Branch integrieren zu können.
@@ -33,5 +47,6 @@ Im Gegensatz zu Jenkins wird Travis extern gehostet. Man muss sich also nicht se
 \subsubsection*{Entscheidung}
 Bei der Bachelorarbeit hat man sich für Travis entschieden. Jenkins bietet zwar mehr Funktionalität als Travis, aber bei Travis wird das Hosting übernommen. Zudem kann man Travis sehr schnell aufsetzen.
 Des Weiteren kam man zum Schluss, dass man auf keine spezifischen Funktionalitäten von Jenkins angewiesen ist. Aus diesen Gründen viel die Entscheidung auf Travis.
+
 
 \newpage
