@@ -56,256 +56,103 @@ Beschreibung der einzelnen Aktoren.
 
 
 \subsubsection{Beschreibung der Use Cases}
+\textbf{UC01: CRUD person}
 
-\textbf{UC01: CRUD class} Der Administrator kann Klassen erstellen, diese bearbeiten und den Klassen Lehrpersonen und Schüler zuweisen.
+\noindent Hauptszenario: \\
+Ein Administrator kann einen neuen Benutzer erstellen. Dabei kann er zwischen Lehrern und Schülern unterscheiden. Es müssen Angaben wie Vorname, Nachname, Benutzername, E-Mail Adresse und Passwort gemacht werden. Das System erstellt den gewünschten Benutzer, sodass dieser die Applikation ab sofort benutzen kann. \\
 
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Primärer Aktor} & Administrator \\
-	\hline
-		\textbf{Vorbedingung} & - \\
-	\hline
-		\textbf{Nachbedingung} & Die zu erstellende Klasse wurde erstellt und die zugewiesenen Personen sind ihr zugewiesen. Die zu löschende Klasse wurde entfernt. \\
-	\hline
-		\multicolumn{2}{|c|}{\textbf{Hauptszenario}} \\
-	\hline
-		\textbf{Aktor} & \textbf{System Verantwortlichkeiten} \\
-	\hline
-		\textbf{Klasse erstellen}
-		\begin{enumerate}
-			\item Der Administrator klickt auf der Adminseite auf den Button ''Neue Klasse''.
-			\item Das Eintrittsjahr und der Klassenname werden gewählt und die Eingaben gespeichert.
-		\end{enumerate}
-		
-		\textbf{Klasse bearbeiten}
-		\begin{enumerate}
-			\item Der Administrator klickt auf der Adminseite auf die zu bearbeitende Klasse.
-			\item Auf der erschienenen Seite, können der Klasse nun Lehrpersonen und Schüler zugewiesen werden.
-		\end{enumerate} 
-		
-		\textbf{Klasse löschen}
-		\begin{enumerate}
-			\item Der Administrator klickt auf der Adminseite auf das ''X'' rechts neben der zu löschenden Klasse.
-		\end{enumerate} 
-			& 
-		\textbf{Klasse erstellen}
-		\begin{enumerate}
-			\item Das System erstellt die Klasse mit den angegebenen Daten.
-		\end{enumerate} 
-		
-		\textbf{Klasse bearbeiten}
-		\begin{enumerate}
-			\item Das System hat die gewählten Personen der Klasse zugewiesen, oder diese entfernt.
-		\end{enumerate}		
-		
-		\textbf{Klasse löschen}
-		\begin{enumerate}
-			\item Das System entfernt die Klasse aus dem System.
-		\end{enumerate}	
-		\\
-	\hline
-		\textbf{Auftrittswahrscheinlichkeit} & mittel \\
-	\hline
-\end{tabularx}
+\noindent Alternatives Szenario: \\
+Ein Administrator löscht eine nicht mehr berechtigte Person aus dem System. \\
 
 
-\textbf{UC02: CRUD person} Der Administrator kann Personen registrieren, löschen und diese Klassen zuweisen.
+\noindent \textbf{UC02: CRUD class}
 
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Primärer Aktor} & Administrator \\
-	\hline
-		\textbf{Vorbedingung} & - \\
-	\hline
-		\textbf{Nachbedingung} & Die zu erstellende Person wurde erstellt, gelöscht oder einer Klasse zugewiesen. \\
-	\hline
-		\multicolumn{2}{|c|}{\textbf{Hauptszenario}} \\
-	\hline
-		\textbf{Aktor} & \textbf{System Verantwortlichkeiten} \\
-	\hline
-		\textbf{Person erstellen}
-		\begin{enumerate}
-			\item Der Administrator klickt auf der Adminseite auf den Button ''Neuer Schüler'' oder ''neuer Lehrer''.
-			\item Die nötigen Angaben werden gemacht. Ausserdem wird ausgewählt, ob es sich bei der neuen Person um einen Schüler oder einen Lehrer handelt.
-		\end{enumerate}
-		
-		\textbf{Person bearbeiten}
-		\begin{enumerate}
-			\item Der Administrator klickt auf der Adminseite auf die zu bearbeitende Person.
-			\item Auf der erschienenen Seite, können die Informationen zu einer Person bearbeitet werden.
-		\end{enumerate} 
-		
-		\textbf{Person löschen}
-		\begin{enumerate}
-			\item Der Administrator klickt auf der Adminseite auf das ''X'' rechts neben der zu löschenden Person.
-		\end{enumerate} 
-			& 
-		\textbf{Person erstellen}
-		\begin{enumerate}
-			\item Das System erstellt die Person mit den angegebenen Daten.
-		\end{enumerate} 
-		
-		\textbf{Person bearbeiten}
-		\begin{enumerate}
-			\item Das System hat die gemachten Änderungen übernommen.
-		\end{enumerate}		
-		
-		\textbf{Person löschen}
-		\begin{enumerate}
-			\item Das System entfernt die Person aus dem System.
-		\end{enumerate}	
-		\\
-	\hline
-		\textbf{Auftrittswahrscheinlichkeit} & mittel \\
-	\hline
-\end{tabularx}
+\noindent Hauptszenario: \\
+Ein Administrator erstellt eine neue Klasse. Dabei muss er den Namen der Klasse, wie auch das Eintrittsdatum angeben. Mit Hilfe des Eintrittsdatums kann im späteren Verlauf der Arbeit eine Statistik über mehrere ''Generationen'' von Klassen gemacht werden. \\
+
+\noindent Alternatives Szenario: \\
+Ein Administrator löscht eine nicht mehr benötigte Klasse aus dem System. \\
 
 
-\textbf{UC03: CRUD exercise} Der Lehrer kann Aufgaben für die verschiedensten Fächer erstellen, diese bearbeiten und wieder löschen.
+\noindent \textbf{UC03: assigne persons}
 
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Primärer Aktor} & Lehrer \\
-	\hline
-		\textbf{Vorbedingung} & - \\
-	\hline
-		\textbf{Nachbedingung} & Die erstellten Aufgaben sind für die Lehrperson und die gewählten Fächer sichtbar. \\
-	\hline
-		\multicolumn{2}{|c|}{\textbf{Hauptszenario}} \\
-	\hline
-		\textbf{Aktor} & \textbf{System Verantwortlichkeiten} \\
-	\hline
-		\textbf{Aufgabe erstellen}
-		\begin{enumerate}
-			\item Der Lehrer wählt in den Drop-Down-Menüs auf der Klassenverwaltungs-Seite das gewünschte Fach und Thema.
-			\item Der Button ''Aufgabe erfassen'' wird geklickt.
-			\item Auf der erschienenen Seite kann die Aufgabe erfasst und Hilfestellungen hinzugefügt werden.
-		\end{enumerate}
-		
-		\textbf{Aufgabe bearbeiten}
-		\begin{enumerate}
-			\item Der Lehrer wählt in den Drop-Down-Menüs auf der Klassenverwaltungs-Seite das gewünschte Fach und Thema.
-			\item Der Lehrer klickt auf der Klassenverwaltungs-Seite auf den Bearbeitungs-Button neben der zu bearbeitenden Aufgabe.
-			\item Auf der erschienenen Seite können die Änderungen vorgenommen werden. 
-		\end{enumerate} 
-		
-		\textbf{Aufgabe löschen}
-		\begin{enumerate}
-			\item Der Lehrer wählt in den Drop-Down-Menüs auf der Klassenverwaltungs-Seite das gewünschte Fach und Thema.
-			\item Der Lehrer klickt auf der Klassenverwaltungs-Seite auf das ''X'' rechts neben der zu löschenden Aufgabe.
-		\end{enumerate} 
-			& 
-		\textbf{Aufgabe erstellen}
-		\begin{enumerate}
-			\item Sobald das Fach und Thema ausgewählt wurden, aktiviert das System den Button ''Aufgabe erfassen''
-			\item Das System erstellt die zu erstellende Aufgabe.
-		\end{enumerate} 
-		
-		\textbf{Aufgabe bearbeiten}
-		\begin{enumerate}
-			\item Das System hat die gemachten Änderungen übernommen.
-		\end{enumerate}
-		
-		\textbf{Person löschen}
-		\begin{enumerate}
-			\item Das System entfernt die Aufgabe aus dem System.
-		\end{enumerate}	
-		\\
-	\hline
-		\textbf{Auftrittswahrscheinlichkeit} & hoch \\
-	\hline
-\end{tabularx}
+\noindent Hauptszenario: \\
+Ein Administrator wählt eine bereits erstellte Klasse und weisst dieser eine unbestimmte Anzahl Lehrpersonen zu, sowie auch Schüler, welche noch keiner anderen Klasse zugewiesen wurden. \\
+
+\noindent Alternatives Szenario: \\
+Ein Administrator wählt eine bereits erstellte Klasse und entfernt Schüler und/oder Lehrer von dieser. \\
 
 
-\textbf{UC04: CRUD Quiz} Der Lehrer kann Quizzes für die verschiedensten Fächer erstellen, diese bearbeiten und wieder löschen.
+\noindent \textbf{UC04: CRUD exercise}
 
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Primärer Aktor} & Lehrer \\
-	\hline
-		\textbf{Vorbedingung} & - \\
-	\hline
-		\textbf{Nachbedingung} & Das erstellte Quiz ist für die Lehrperson und die gewählten Fächer sichtbar. \\
-	\hline
-		\multicolumn{2}{|c|}{\textbf{Hauptszenario}} \\
-	\hline
-		\textbf{Aktor} & \textbf{System Verantwortlichkeiten} \\
-	\hline
-		\textbf{Quiz erstellen}
-		\begin{enumerate}
-			\item Der Lehrer wählt in den Drop-Down-Menüs auf der Klassenverwaltungs-Seite das gewünschte Fach und Thema.
-			\item Der Button ''Quizzes verwalten'' wird geklickt.
-			\item Auf der erschienenen Seite wird der Button ''Quiz erfassen'' geklickt.
-			\item Auf dieser Seite wird dem Quiz ein Titel zugewiesen. Bereits erstellte Fragen können per DragAndDrop dem Quiz zugewiesen werden. 
-			\item Der Lehrer klickt auf den Button ''Quizfrage erfassen''.
-			\item Auf der erschienenen Seite kann eine Frage definiert werden. 
-		\end{enumerate}
-		
-		\textbf{Quiz bearbeiten}
-		\begin{enumerate}
-			\item Der Lehrer wählt in den Drop-Down-Menüs auf der Klassenverwaltungs-Seite das gewünschte Fach und Thema.
-			\item Der Button ''Quizzes verwalten'' wird geklickt.
-			\item Das zu bearbeitende Quiz wird geklickt.
-			\item Die zu machenden Änderungen können vorgenommen werden.
-		\end{enumerate} 
-		
-		\textbf{Quiz löschen}
-		\begin{enumerate}
-			\item Der Lehrer wählt in den Drop-Down-Menüs auf der Klassenverwaltungs-Seite das gewünschte Fach und Thema.
-			\item Der Button ''Quizzes verwalten'' wird geklickt.
-			\item Der Lehrer klickt auf der Quizverwaltungs-Seite auf das ''X'' rechts neben dem zu löschenden Quiz.
-		\end{enumerate} 
-			& 
-		\textbf{Quiz erstellen}
-		\begin{enumerate}
-			\item Sobald das Fach und Thema ausgewählt wurden, enabled das System den Button ''Quizzes verwalten''.
-			\item Das System erstellt die zu erstellenden Quizfragen und das Quiz.
-		\end{enumerate} 
-		
-		\textbf{Quiz bearbeiten}
-		\begin{enumerate}
-			\item Sobald das Fach und Thema ausgewählt wurden, enabled das System den Button ''Quizzes verwalten''.
-			\item Das System hat die gemachten Änderungen übernommen.
-		\end{enumerate}		
-		
-		\textbf{Quiz löschen}
-		\begin{enumerate}
-			\item Sobald das Fach und Thema ausgewählt wurden, enabled das System den Button ''Quizzes verwalten''.
-			\item Das System entfernt das Quiz aus dem System.
-		\end{enumerate}	
-		\\
-	\hline
-		\textbf{Auftrittswahrscheinlichkeit} & hoch \\
-	\hline
-\end{tabularx}
+\noindent Hauptszenario: \\
+Ein Lehrer definiert eine neue Aufgabe. Zur Aufgabe erstellt er mehrere Fragen. Zu jeder Frage kann er Hilfestellungen definieren, sowie angeben was die maximale Punktezahl ist. \\
+
+\noindent Alternatives Szenario: \\
+Ein Lehrer wählt eine erstellte Aufgabe aus und bearbeitet die Fragen dazu. Das heisst, es können weitere Fragen erstellt, bereits erstellte entfernt, oder aber auch neue Hilfestellungen hinzugefügt werden. \\
 
 
-\textbf{UC05: Create weekly schedule} Der Lehrer kann erstellte Fragen und Quizzes einer Klasse als Auftrag geben. 
+\noindent \textbf{UC05: CRUD weekly schedule}
 
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Primärer Aktor} & Lehrer \\
-	\hline
-		\textbf{Vorbedingung} & Aufgaben und Quizzes wurden bereits erstellt. \\
-	\hline
-		\textbf{Nachbedingung} & Die gewählten Aufgaben und Quizzes sind einer Klasse als Hausaufgaben zugewiesen. Die Schüler der Klasse sehen die Aufgaben und Quizzes auf ihrem Dashboard. \\
-	\hline
-		\multicolumn{2}{|c|}{\textbf{Hauptszenario}} \\
-	\hline
-		\textbf{Aktor} & \textbf{System Verantwortlichkeiten} \\
-	\hline
-		\begin{enumerate}
-			\item Der Lehrer zieht auf der Klassenverwaltungs-Seite die gewünschten Aufgaben und Quizzes per DragAndDrop an den entsprechenden Tag im Wochenplan. 
-		\end{enumerate}
-			& 
-		\begin{enumerate}
-			\item Das System übernimmt die Änderungen.
-		\end{enumerate} 
-		\\
-	\hline
-		\textbf{Auftrittswahrscheinlichkeit} & hoch \\
-	\hline
-\end{tabularx}
+\noindent Hauptszenario: \\
+Ein Lehrer erstellt einen Wochenplan. Er erweitert Aufgaben und Quizzes mit einer Deadline und weisst diese einer seiner Klassen zu. \\
+
+\noindent Alternatives Szenario: \\
+Ein Lehrer bearbeitet einen bereits erstellten Wochenplan. Die Deadline einer Aufgabe wird um einen oder zwei Tage verschoben. \\
+
+
+\noindent \textbf{UC06: CRUD quiz}
+
+\noindent Hauptszenario: \\
+Ein Lehrer definiert ein Quiz. Dazu erfasst er einige Fragen, die entsprechenden Antwortmöglichkeiten und die Lösungen. \\
+
+
+\noindent \textbf{UC07: publish study content}
+
+\noindent Hauptszenario: \\
+Ein Lehrer schaltet ein neues Fach oder ein neues Thema für eine Klasse frei. \\
+
+\noindent Alternatives Szenario: \\
+Ein Lehrer entzieht einer Klasse das Recht ein Fach oder ein Thema zu sehen. \\
+
+
+\noindent \textbf{UC08: view statistics}
+
+\noindent Hauptszenario: \\
+Ein Lehrer wählt eine Klasse und ein ihr zugewiesenes Fach aus. Das System berechnet anhand der von dieser Klasse gelösten Aufgaben eine Statistik und stellt diese dar. Wenn der Lehrer genauere Details sehen will, erstellt das System eine detailiertere Statistik. \\
+
+
+\noindent \textbf{UC09: use forum}
+
+\noindent Hauptszenario: \\
+Ein Schüler sieht das aufgabenspezifische Forum. Findet er nicht die gewünschte Antwort, stellt er selber eine Frage. \\
+
+\noindent Alternatives Szenario: \\
+Ein Lehrer sieht, dass ein Schüler eine unbeantwortete Frage hat und beantwortet diese. \\
+
+
+\noindent \textbf{UC10: send mail}
+
+\noindent Hauptszenario: \\
+Das System bemerkt, dass eine von einem Schüler gestellte Frage im Forum über längere Zeit nicht beantwortet wurde und informiert den Lehrer darüber per Mail. \\
+
+
+\noindent \textbf{UC011: solve exercise}
+
+\noindent Hauptszenario: \\
+Ein Schüler löst eine Aufgabe. \\
+
+\noindent Alternatives Szenario: \\
+Ein Schüler überarbeitet eine bereits gelöste Aufgabe. \\
+
+
+\noindent \textbf{UC012: solve quiz}
+
+\noindent Hauptszenario: \\
+Ein Schüler löst ein Quiz. \\
+
+\noindent Alternatives Szenario: \\
+Ein Schüler überarbeitet ein bereits gelöstes Quiz. \\
 
 
 \subsection{Nicht Funktionale Anforderungen}
