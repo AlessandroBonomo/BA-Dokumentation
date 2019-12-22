@@ -109,26 +109,26 @@ Der Meilenstein ''Feature Freeze'' musste um 2 Wochen nach hinten geschoben werd
 \subsubsection*{Termine}
 Folgende Termine sind von der HSR oder dem Betreuer vorgegeben und müssen eingehalten werden.
 
-\begin{table}[h]
-	\centering
-	\begin{tabu} to 0.9\textwidth {l l X}
-	\toprule
-	Datum & Beschreibung \\ 
-	\midrule
-	6.1.1010 & Erfassung des Abstracts im Online-Tool https://abstract.hsr.ch/ Die
-Studierenden geben den Abstract für die Diplomarbeitsbroschüre zur
-Kontrolle an ihren Betreuer/Examinator frei.
-Vorlagen sowie eine ausführliche Anleitung betreffend Dokumentation
-stehen auf dem Skripteserver zur Verfügung.
-Der Betreuer/Examinator gibt das Dokument mit dem korrekten und
-vollständigen Abstract der Broschüre zur Weiterverarbeitung an das
-Studiengangsekretariat frei. \\
-	10.1.2020 & Abgabe des Berichts an den Betreuer und Hochladen aller Dokumente auf archiv-i.hsr bis 17 Uhr \\
-	10.2.2020 & Präsentation der Bachelorarbeit und mündliche Prüfung.
-	\bottomrule
-	\end{tabu}
-	\captionof{table}{Übersicht Termine}
-\end{table}
+%\begin{table}[h]
+%	\centering
+%	\begin{tabu} to 0.9\textwidth {l l X}
+%	\toprule
+%	Datum & Beschreibung \\ 
+%	\midrule
+%	6.1.1010 & Erfassung des Abstracts im Online-Tool https://abstract.hsr.ch/ Die
+%Studierenden geben den Abstract für die Diplomarbeitsbroschüre zur
+%Kontrolle an ihren Betreuer/Examinator frei.
+%Vorlagen sowie eine ausführliche Anleitung betreffend Dokumentation
+%stehen auf dem Skripteserver zur Verfügung.
+%Der Betreuer/Examinator gibt das Dokument mit dem korrekten und
+%vollständigen Abstract der Broschüre zur Weiterverarbeitung an das
+%Studiengangsekretariat frei. \\
+%	10.1.2020 & Abgabe des Berichts an den Betreuer und Hochladen aller Dokumente auf archiv-i.hsr bis 17 Uhr \\
+%	10.2.2020 & Präsentation der Bachelorarbeit und mündliche Prüfung.
+%	\bottomrule
+%	\end{tabu}
+%	\captionof{table}{Übersicht Termine}
+%\end{table}
 
 \subsection*{Projektverwaltung}
 %TODO JIRA workflow beschreiben
@@ -141,25 +141,87 @@ Wie im Bild ersichtlich ist, muss jedes Arbeitspaket folgende Status durchlaufen
 Die Zeiterfassung wird mit Jira verwaltet. Beim Einfügen von Arbeitspaketen in den Sprint wird die Zeit geschätzt, welche für das Arbeitspaket aufgewendet werden muss. Jede Person, welche an diesem Arbeitspaket gearbeitet hat, kann Zeit auf dieses Arbeitspaket buchen. Am Schluss kann so eine Zeitauswertung über die einzelnen Sprints oder das gesamte Projekt gemacht werden.
 
 \subsubsection*{Meetings}
+Die Teammitglieder arbeiten an mindestens zwei Tagen pro Woche zusammen im Bachelorarbeitszimmer. So können Fragen schnell geklärt werden und es kann sich gegenseitig geholfen werden. Im Normalfall findet jeden Donnerstag ein Meeting mit dem Betreuer Frank Koch statt, in dem der aktuelle Stand vorgestellt, Probleme besprochen und das weitere Vorgehen besprochen wird. Da der Betreuer jedoch oft unterwegs war, wurde oft eine Telefonkonferenz gemacht.
 
 \subsubsection{Risikomanagement}
-
 \subsubsection*{Risiken}
+Folgende Risiken sind beim Beginn der Bachelorarbeit erkannt worden:
+
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h]
+	\centering
+	\begin{tabu} to 0.9\textwidth {l p{0.35\textwidth} X X p{0.15\textwidth}}
+	\toprule
+	Nr & Beschreibung & Schaden total [h] & Eintritts-wahrsch. & Gwichteter Schaden [h]\\ 
+	\midrule
+	R1 & Unterschätzen des Aufwandes & 60 & 20 \% & 12 \\
+	R2 & Fehldendes KnowHow von \newline Python oder Frameworks & 60 & 20 \% & 12 \\
+	R3 & Konflikte im Team & 8 & 5 \% & 0.4 \\
+%TODO Grafik anpassen / überprüfen	
+	R4 & Schlechtes UI Design & 32 & 25 \% & 8 \\
+	R5 & Technische \newline Fehlkonfigurationen & 60 & 20 \% & 12 \\
+	R6 & Probleme bei der Integration & 24 & 25 \% & 6 \\ 
+	\bottomrule
+	\end{tabu}
+	\captionof{table}{Risikoübersicht}
+\end{table}
+
+\medskip \noindent
+Daraus resultiert folgender Risikograph: 
+\begin{figure}[H]
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/risikoanalyse.png}
+	\caption{Risikograph}
+\end{figure}
+
+\noindent In der Inception Phase wurde ein total gewichteter Schaden von 70.7 Arbeitsstunden geschätzt. Durch gezielte Massnahmen konnte dieser Schaden auf 56.2 Arbeitsstunden vermindert werden. \\
+Aufgrund dieser Annahme und weil der Zeitraum durch die Verzögerungen zu Beginn der Arbeit recht knapp bemessen ist, wurde zum Schluss der Bachelorarbeit eine Woche Bufferzeit einberechnet. 
 
 \subsubsection*{Massnahmen}
+Risiken lassen sich in einem grösseren Projekt leider nicht ganz vermeiden. Für die erfassten Risiken wurden Massnahmen definiert, um das Risiko weitgehen zu minimieren. In der nachfolgenden Tabelle sind diese Massnahmen aufgelistet.
+
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[H]
+	\centering
+	\begin{tabu} to 0.9\textwidth {l X X}
+	\toprule
+	Nr & Vorbeugung & Verhalten beim Eintreten \\ 
+	\midrule
+	R1 & Reserven einplanen und Abgrenzung des Scopes & Reserven nutzen und notfalls den Scope anpassen \\
+	R2 & In der Elaboration Phase Zeit einplanen, um sich in die einzelnen Phasen einarbeiten zu können & Fehlendes KnowHow aufbauen, gegebenenfalls mit Unterstützung des anderen Teammitgliedes \\
+	R3 & Zusammenarbeit im Team und gegenseitige Absprache & Notfalls Gespräch mit dem Betreuer \\
+	R4 & Mockups erstellen und Usability Tests mit externen Personen durchführen & User Interface anpassen \\
+	R5 & KnowHow in der Elaboration Phase aufbauen und für den Notfall Backups erstellen & Restore der Backups und redeployment des Systems \\
+	R6 & Vorläufig testen, wie eine Applikation deployed wird & Genauere Recherche, wie das Deployment funktioniert \\
+	R7 & Architektur so planen, dass sie einfach erweitert und angepasst werden kann & Architektur anpassen \\
+	\bottomrule
+	\end{tabu}
+	\captionof{table}{Massnahmen}
+\end{table}
 
 \subsubsection*{Auswertung}
+Während der gesamten Projektdauer sind eigentlich nur zwei der oben genannten Risiken aufgetreten. Ein grosses Problem war das fehlende KnowHow des Django Frameworks. Besonders zu Beginn der Projektarbeit gab es oft Fragen und Unklarheiten, welche zuerst geklärt werden mussten. \\
+Dies führte unweigerlich zum zweiten Risiko, nämlich der sehr knapp bemessene Zeitraum. Durch den Wechsel beim Bachelorarbeits Thema standen 4 Wochen weniger Zeit zur Verfügung. Gegen Ende der Arbeit wurde immer deutlicher, dass nicht der gesamte Scope abgedeckt werden kann. Dies wurde jedoch mit dem Betreuer abgesprochen und der Scope wurde dementsprechend angepasst. Auf Features wie das aufgaben-spezifische Forum wird somit verzichtet.
 
 \subsubsection{Qualitätsmanagement}
 
 \subsubsection*{Dokumentation}
+Die Dokumentation der Bachelorarbeit wird mit \LaTeX und in einem eigens dafür eingerichteten Git Repository gemacht. Somit ist es möglich, jede Änderung an der Dokumentation zu verfolgen. Wird ein Kapitel geschrieben, wird es vom anderen Teammitglied gegen gelesen und falls nötig angepasst. Somit stammt die Dokumentation von beiden Teammitgliedern und repräsentiert nicht die Meinung einer einzelnen Person. 
 
 \subsubsection*{Projektmanagement}
+Als Projektmanagement Tool wird Jira verwendet. Dieses Tool bietet zwar sehr viele Features, die für die Bachelorarbeit gar nicht benötigt werden. Man hat sich aber auf Jira festgelegt, weil bereits Erfahrungen, unter anderem während der Studienarbeit, gesammelt wurden. \\
+Alle Arbeitspakete werden in Jira aufgenommen und mit einer geschätzten Arbeiszeit versehen. Zudem muss jedes Arbeispaket einen zuvor bestimmten Workflow durchlaufen. Wird ein Arbeispaket dem Sprint zugewiesen, hat es zuerst den Status ''Open''. Wird das Arbeispaket bearbeitet, bekommt es den Status ''In progress''. Je nach Typ von Arbeitspaket kommt es anschliessend zu ''Review'' oder ''Finished''. Arbeispakete können nicht direkt von ''Open'' zu ''Finished'' gehen. Der Schritt ''Review'' ist jedoch optional und wird nur falls nötig durchlaufen.
 
 \subsubsection*{Entwicklung}
+Der gesamte Source Code befindet sich auf Github. Der master Branch wird als protected Branch eingerichtet. Ein Branch kann also nicht direkt in den Master Branch gemerged werden, sonder muss mittels eines Pull Requests gemerged werden. Dies hat den Vorteil, dass sämtlicher Code das Vier-Augen Prinzip durchlaufen hat. \\ 
+Zudem wird Travis CI verwendet, welches nach jedem Push die Tests durchführt. Somit kann man sich auch sicher sein, dass sämtlicher Code auch wirklich alle Tests besteht.
 
 \subsubsection*{Code Reviews}
+Bei jedem Pull Request wird auch gleich ein Code Review durchgeführt. Dies hat den Vorteil, dass der Code, welcher in den Master Branch gemerged wird, auch den Anforderungen beider Teammitglieder entspricht.
 
-\subsubsection{Infrastruktur}
+\subsubsection{Tools und Infrastruktur}
+Für die Infrastruktur werden lediglich 2 Notebooks und ein Server benötigt. Die Notebooks stammen von den Diplomanden und der Server wird durch die HSR zur Verfügung gestellt. \\
+Als IDE wurde sich auf PyCharm von JetBrains. Dies hat den Vorteil, dass man sich beim Pair Programming schnell zurecht finded. \\
+Als Projektmanagement Tool wird Jira eingesetzt. \\
+Die Dokumentation und der Projektplan werden mit \LaTeX erstellt. Kleinere Dokumente oder das Sitzungsprotokoll werden mit Word gemacht. 
 
 \newpage
