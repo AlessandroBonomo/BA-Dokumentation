@@ -157,10 +157,10 @@ Folgende Risiken sind beim Beginn der Bachelorarbeit erkannt worden:
 	R1 & Unterschätzen des Aufwandes & 60 & 20 \% & 12 \\
 	R2 & Fehldendes KnowHow von \newline Python oder Frameworks & 60 & 20 \% & 12 \\
 	R3 & Konflikte im Team & 8 & 5 \% & 0.4 \\
-%TODO Grafik anpassen / überprüfen	
 	R4 & Schlechtes UI Design & 32 & 25 \% & 8 \\
 	R5 & Technische \newline Fehlkonfigurationen & 60 & 20 \% & 12 \\
-	R6 & Probleme bei der Integration & 24 & 25 \% & 6 \\ 
+	R6 & Probleme beim Deployment & 24 & 25 \% & 6 \\ 
+	R7 & Probleme mit der Architektur & 32 & 25 \% & 8 \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Risikoübersicht}
@@ -207,9 +207,9 @@ Dies führte unweigerlich zum zweiten Risiko, nämlich der sehr knapp bemessene 
 \subsubsection*{Dokumentation}
 Die Dokumentation der Bachelorarbeit wird mit \LaTeX und in einem eigens dafür eingerichteten Git Repository gemacht. Somit ist es möglich, jede Änderung an der Dokumentation zu verfolgen. Wird ein Kapitel geschrieben, wird es vom anderen Teammitglied gegen gelesen und falls nötig angepasst. Somit stammt die Dokumentation von beiden Teammitgliedern und repräsentiert nicht die Meinung einer einzelnen Person. 
 
-\subsubsection*{Projektmanagement}
-Als Projektmanagement Tool wird Jira verwendet. Dieses Tool bietet zwar sehr viele Features, die für die Bachelorarbeit gar nicht benötigt werden. Man hat sich aber auf Jira festgelegt, weil bereits Erfahrungen, unter anderem während der Studienarbeit, gesammelt wurden. \\
-Alle Arbeitspakete werden in Jira aufgenommen und mit einer geschätzten Arbeiszeit versehen. Zudem muss jedes Arbeispaket einen zuvor bestimmten Workflow durchlaufen. Wird ein Arbeispaket dem Sprint zugewiesen, hat es zuerst den Status ''Open''. Wird das Arbeispaket bearbeitet, bekommt es den Status ''In progress''. Je nach Typ von Arbeitspaket kommt es anschliessend zu ''Review'' oder ''Finished''. Arbeispakete können nicht direkt von ''Open'' zu ''Finished'' gehen. Der Schritt ''Review'' ist jedoch optional und wird nur falls nötig durchlaufen.
+%\subsubsection*{Projektmanagement}
+%Als Projektmanagement Tool wird Jira verwendet. Dieses Tool bietet zwar sehr viele Features, die für die Bachelorarbeit gar nicht benötigt werden. Man hat sich aber auf Jira festgelegt, weil bereits Erfahrungen, unter anderem während der Studienarbeit, gesammelt wurden. \\
+%Alle Arbeitspakete werden in Jira aufgenommen und mit einer geschätzten Arbeiszeit versehen. Zudem muss jedes Arbeispaket einen zuvor bestimmten Workflow durchlaufen. Wird ein Arbeispaket dem Sprint zugewiesen, hat es zuerst den Status ''Open''. Wird das Arbeispaket bearbeitet, bekommt es den Status ''In progress''. Je nach Typ von Arbeitspaket kommt es anschliessend zu ''Review'' oder ''Finished''. Arbeispakete können nicht direkt von ''Open'' zu ''Finished'' gehen. Der Schritt ''Review'' ist jedoch optional und wird nur falls nötig durchlaufen.
 
 \subsubsection*{Entwicklung}
 Der gesamte Source Code befindet sich auf Github. Der master Branch wird als protected Branch eingerichtet. Ein Branch kann also nicht direkt in den Master Branch gemerged werden, sonder muss mittels eines Pull Requests gemerged werden. Dies hat den Vorteil, dass sämtlicher Code das Vier-Augen Prinzip durchlaufen hat. \\ 
