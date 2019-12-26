@@ -93,8 +93,7 @@ Django bietet eine simple Möglichkeit an, um zu definieren, welche Seite mit we
 \end{itemize}
 
 
-\noindent Es können beliebig viele solcher URLs definiert werden. Das Framework schreibt keine klare Struktur vor. Aus diesem Grund haben wir uns dazu entschieden, die URL Definitionen auf mehere Dateien aufzuteilen und jeweils direkt in den einzlenen Apps abzulegen. Mit diesem Schritt erreicht man mehrere Vorteile. Zum einen wird das Definieren der URLs einiges übersichtlicher und einfacher anzupassen und zum anderen kann man das Risiko von Konflikten zwischen den URLs reduzieren. Schauen wir uns das ganze anhand eines Beispiels an. 
-
+\noindent Es können beliebig viele solcher URLs definiert werden. Das Framework schreibt keine klare Struktur vor. Aus diesem Grund haben wir uns dazu entschieden, die URL Definitionen auf mehere Dateien aufzuteilen und jeweils direkt in den einzlenen Apps abzulegen. Mit diesem Schritt erreicht man mehrere Vorteile. Zum einen wird das Definieren der URLs einiges übersichtlicher und einfacher anzupassen und zum anderen kann man das Risiko von Konflikten zwischen den URLs reduzieren. Schauen wir uns das ganze anhand eines Beispiels an. \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLschlecht.png}
@@ -126,7 +125,7 @@ Diese Datei wird in der App ''statistic'' abgelegt. Wie oben das führende ''use
 
 
 \noindent \textbf{urls.py} \\
-Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der Applikation. Der Inhalt der Datei unterscheidet sich auch gegenüber den andereren Dateien. Hier werden keine URLs definiert, sondern es wird angegeben, wo die definierten URLs abgelegt sind. Oben wurde erwähnt, dass die führenden Pfadelemente (''user/'' und ''statistic/'') weggelassen wurden. Effektiv wurden sie jedoch hierhin verschoben. Sollen nun die URLs der Benutzerverwaltung von ''user/...'' nach ''benutzer/...'' geändert werden, kann dies hier vorgenommen werden und wirkt sich auf alle URLs in der Datei ''user/urls.py'' aus. Nun ist es auch möglich in verschiedenen Apps die selben URLs zu definieren, da sie hier beim einbinden mit dem führenden Pfadelement voneinander unterschieden werden können. Dies kann hilfreich sein, wenn Apps von anderen Entwicklern eingebaut werden würden.
+Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der Applikation. Der Inhalt der Datei unterscheidet sich auch gegenüber den andereren Dateien. Hier werden keine URLs definiert, sondern es wird angegeben, wo die definierten URLs abgelegt sind. Oben wurde erwähnt, dass die führenden Pfadelemente (''user/'' und ''statistic/'') weggelassen wurden. Effektiv wurden sie jedoch hierhin verschoben. Sollen nun die URLs der Benutzerverwaltung von ''user/...'' nach ''benutzer/...'' geändert werden, kann dies hier vorgenommen werden und wirkt sich auf alle URLs in der Datei ''user/urls.py'' aus. Nun ist es auch möglich in verschiedenen Apps die selben URLs zu definieren, da sie hier beim einbinden mit dem führenden Pfadelement voneinander unterschieden werden können. Dies kann hilfreich sein, wenn Apps von anderen Entwicklern eingebaut werden würden. \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLglobal.png}
