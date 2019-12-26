@@ -1,5 +1,43 @@
 \subsection{Design}
 \subsubsection{Architektur und Abhängigkeiten}
+Bei der Wahl von Technologien, Tools und Frameworks achtete man besonders darauf, 
+%TODO
+\subsubsection*{Applikations Architektur}
+Für die Umsetzung der Anwendung hatte man zwei Optionen. Entweder man entwickelt eine Native App, also eine klassische Client-Server Anwendung, oder eine Web Anwendung. \\
+
+Native Apps haben zwar einige Vorteile. Die Integration mit anderen Anwendungen wäre so zum Beispiel einfacher. Zudem wäre die Monetarisierung 	auch um einiges einfacher, denn eine Native App könnte man sehr gut im App Store platzieren. So würde auch gleich die Bekanntheit der Applikation steigen. \\
+
+Die Entscheidung bei der Entwicklung von Aufgaben-Coaching viel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Devices arbeiten. Da die Anwendung aber über den Browser läuft, muss nur eine Anwendung entwickelt werden. Bei einer Native App müsste man für Apple und Android je eine Anwendung entwickeln. Für grosse Firmen ist dies kein Problem, aber möchte man die Idee als Startup weiter verfolgen, hätte man weder die Zeit noch das Kapital um gleich zwei Apps zu entwickeln. \\
+Zudem kann man mit Web Anwendungen die Supportkosten relativ tief halten, was auf Schulen vielleicht noch ein bisschen attraktiver wirkt. Die Anwendung kann direkt im Browser aufgerufen werden und es muss nichts im vorhinein auf dem Device installiert werden.
+
+% http://www.differencebetween.net/technology/software-technology/difference-between-client-server-application-and-web-application/	
+% https://www.adjust.com/blog/native-app-vs-progressive-web-app/
+
+\subsubsection*{Programmiersprache}
+Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl standen. Die Wohl bekanntesten darunter sind:
+
+%https://en.wikipedia.org/wiki/Web_framework
+
+\begin{itemize}
+	\item Python (Django / Flask)
+	\item C\# (ASP.NET Core)
+	\item Java (Spring)
+	\item JavaScript (Express.js / Node.js / Sails.js)
+	\item PHP (CakePHP / CodeIgniter / Laravel)
+	\item Perl (Catalyst / Mojolicious)
+	\item Ruby (Ruby on Rails)
+\end{itemize}
+
+%TODO Satzstellung anschauen
+
+Die Wahl fiel schnell auf Python, da wir beide am meisten Knowhow über Python verfügen. \\
+Gemäss Developer Survey Results von Stack Overflow ist Python (41.7 \%) etwas bekannter als Java (41.1 \%). Nur JavaScript (67.8 \%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python auch noch weiter gestiegen. Man geht also davon aus, dass man auch in Zukunft noch mit Python arbeiten kann.
+
+\subsubsection*{Web Framework}
+
+\subsubsection*{Datenbank}
+
+\subsubsection*{Python Libraries}
 
 \subsubsection{UI Design}
 Bevor man mit der Entwicklung des Frontends beginnen konnte, musste geplant werden, wie das User Interface genau aussehen soll. Mit Hilfe der Use Cases konnte ein erster Entwurf erstellt werden. 

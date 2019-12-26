@@ -2,7 +2,7 @@
 \subsubsection{Domain Model}
 In der nachfolgenden Abbildung ist das vollständige Domain Model Model abgebildet. Um dem Leser ein klares Bild zu verschaffen, wurde dieses in die einzelnen Teilbereiche aufgeteilt.
 
-\subsubsection*{Schule}
+\subsubsection*{School}
 Ein zentraler Punkt der Anwendung ist die Schule an sich und das User Management. Wenn dieses Projekt als Startup weiter verfolgt wird, dann würde pro Schule eine neue Instanz der Anwendung deployed. So entstehen auch keine Probleme wegen dem Multi Tenancy. Würde man in Zukunft jedoch doch lieber einen Multi Tenancy Ansatz verfolgen, müsste das Domain Model dementsprechend angepasst werden. Ein möglicher Lösungsansatz wäre, wenn man jeder Schule eine eigene Subdomain, wie zum Beispiel schule-gossau.aufgaben-coach.ch, vergeben würde. Anhand der Subdomain können dann die einzelnen User identifiziert werden.
 % https://books.agiliq.com/projects/django-multi-tenant/en/latest/shared-database-shared-schema.html
 Jeder User ist einer von drei Rollen Student, Teacher oder Admin zugeteilt. Da jede Rolle unterschiedliche Rechte hat, konnte nicht das Standard User Model von Django selber verwendet werden. Nach der Recherche standen drei Möglichkeiten zur Verfügung.
@@ -18,3 +18,10 @@ Um diesem Problem aus dem Weg zu gehen, entschied man sich für die dritte Varia
 Der Admin kann als einziger User Typ für sich alleine existieren. Schüler und Lehrer werden Klassen zugewiesen. Ein Lehrer kann gleichzeitig mehreren Klassen zugewiesen sein, ein Schüler kann sich jedoch nur in einer Klasse befinden. Für den aktuellen Stand reicht diese Funktionalität aus. Es gibt jedoch den Use Case, in welchem Schüler aus unterschiedlichen Klassen Fächer zusammen belegen. Dies ist zum Beispiel der Fall, wenn Migrationskinder aus unterschiedlichen Klassen zusammen kommen und gemeinsam ein Deutsch Nachhilfe Fach besuchen. Für diesen Fall kann man dem Student Profile ein Boolean Flag zuweisen. Falls dieses Flag gesetzt ist, hat der Schüler Zugriff auf Nachhilfe Fächer.
 
 % https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html
+
+\subsubsection*{Study Content}
+Ein zentraler Punkt dieser Anwendung sind die Schulfächer. Pro Subject gibt es mehrere Topics. Topics wiederum haben mehrere Lessons. Subjects können einer Klasse zugewiesen werden, welche erst dann Zugriff auf das Fach haben. Im Moment ist es nicht möglich, einzelne Topics oder Lessons freizuschalten. Möchte man diese Funktionalität in Zukunft haben, muss eine neue Tabelle, ähnlich wie SubjectEnrollment, erstellt werden.
+
+\subsubsection*{Exercise}
+Das Herzstück der Anwendung sind die Exercises. Lehrer können Übungen erstellen, welche aus mehreren Teilaufgaben bestehen, welche jeweils wieder mehrere Hilfestellungen haben. \\
+Die Tabelle Answer dient zur Speicherung der Antworten von Schülern. Die beiden Felder ''is\_submitted'' und ''is\_archived'' sind für den Status der Aufgaben. Ist eine Aufgabe submitted, also abgegeben, kann sie nicht weiter vom Schüler bearbeitet werden. Erst wenn Aufgaben abgegeben sind, können sie vom Lehrer angeschaut werden. Wurden die Aufgaben vom Lehrer korrigiert, bekommen sie den Status ''is\_archived''. Somit verschwinden sie aus der standard FIlteransicht. Im Kapitel Filter wird genauer auf die Filter Thematik eingegangen.
