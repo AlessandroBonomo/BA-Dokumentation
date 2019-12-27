@@ -31,6 +31,7 @@
 % do this here, so you can \gls{...} to it
 \makenoidxglossaries
 \input{index/glossar}
+\addbibresource{index/bibliography.bib}
 
 \begin{document}
 
@@ -71,9 +72,9 @@
 %%%%%%%%%%%%%%%%
 % Bibliography %
 %%%%%%%%%%%%%%%%
-\bibliographystyle{abbrv}
-\bibliography{index/bibliography}
-
+% \bibliographystyle{abbrv}
+% \bibliography{index/bibliography}
+\printbibliography
 
 %%%%%%%%%%%%%%%%%%%%
 % Attached sources %

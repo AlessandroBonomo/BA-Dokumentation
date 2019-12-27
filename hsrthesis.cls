@@ -26,7 +26,8 @@
 \usepackage{wrapfig}
 \usepackage{url}
 \usepackage{float}
-\usepackage{natbib}
+% \usepackage{natbib}
+\usepackage[style=verbose]{biblatex}
 \usepackage{tabu}
 \usepackage{caption}
 \usepackage{tabularx}
@@ -38,6 +39,7 @@
 %\usepackage{typearea}
 \usepackage[acronym]{glossaries}
 \definecolor{lightgrey}{rgb}{.9,.9,.9}
+
 
 % YAML
 \usepackage[dvipsnames]{xcolor}
