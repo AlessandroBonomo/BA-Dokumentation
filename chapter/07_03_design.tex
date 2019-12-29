@@ -1,17 +1,14 @@
 \subsection{Design}
 \subsubsection{Architektur und Abhängigkeiten}
-Bei der Wahl von Technologien, Tools und Frameworks achtete man besonders darauf, 
-%TODO
+Bei der Wahl von Technologien, Tools und Frameworks achtete man besonders darauf, dass die entsprechenden Tools auch in der Zukunft noch supported werden. Dazu wurde geschaut, ob und wie gross die Community hinter einzelnen Tools ist und wie gut die Tools dokumentiert sind.
+
 \subsubsection*{Applikations Architektur}
 Für die Umsetzung der Anwendung hatte man zwei Optionen. Entweder man entwickelt eine Native App, also eine klassische Client-Server Anwendung, oder eine Web Anwendung. \\
 
-Native Apps haben zwar einige Vorteile. Die Integration mit anderen Anwendungen wäre so zum Beispiel einfacher. Zudem wäre die Monetarisierung 	auch um einiges einfacher, denn eine Native App könnte man sehr gut im App Store platzieren. So würde auch gleich die Bekanntheit der Applikation steigen. \\
+Native Apps haben zwar einige Vorteile. Die Integration mit anderen Anwendungen ist so zum Beispiel einfacher. Zudem wäre die Monetarisierung auch um einiges einfacher, denn eine Native App kann sehr gut im App Store platziert werden. So steigt auch gleich die Bekanntheit der Applikation.\footcite{native_app} \\
 
-Die Entscheidung bei der Entwicklung von Aufgaben-Coaching viel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Devices arbeiten. Da die Anwendung aber über den Browser läuft, muss nur eine Anwendung entwickelt werden. Bei einer Native App müsste man für Apple und Android je eine Anwendung entwickeln. Für grosse Firmen ist dies kein Problem, aber möchte man die Idee als Startup weiter verfolgen, hätte man weder die Zeit noch das Kapital um gleich zwei Apps zu entwickeln. \\
-Zudem kann man mit Web Anwendungen die Supportkosten relativ tief halten, was auf Schulen vielleicht noch ein bisschen attraktiver wirkt. Die Anwendung kann direkt im Browser aufgerufen werden und es muss nichts im vorhinein auf dem Device installiert werden.
-
-% http://www.differencebetween.net/technology/software-technology/difference-between-client-server-application-and-web-application/	
-% https://www.adjust.com/blog/native-app-vs-progressive-web-app/
+Die Entscheidung bei der Entwicklung von Aufgaben-Coaching fiel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Tablets arbeiten. Da die Anwendung aber über den Browser läuft, muss nur eine Anwendung entwickelt werden. Bei einer Native App müsste man für Apple und Android je eine Anwendung entwickeln. Für grosse Firmen ist dies kein Problem, aber möchte man die Idee als Startup weiter verfolgen, hat man zu Beginn weder die Zeit noch das Kapital um gleich zwei Apps zu entwickeln. \\
+Zudem kann man mit Web Anwendungen die Supportkosten relativ tief halten, was auf Schulen vielleicht noch ein bisschen attraktiver wirkt. Die Anwendung kann direkt im Browser aufgerufen werden und es muss nichts im vorhinein auf jedem Device installiert werden.
 
 \subsubsection*{Programmiersprache}
 Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl standen. Die Wohl bekanntesten darunter sind:
@@ -31,15 +28,15 @@ Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl st
 %TODO Satzstellung anschauen
 
 Die Wahl fiel schnell auf Python, da wir beide am meisten Knowhow über Python verfügen. \\
-Gemäss Developer Survey Results von Stack Overflow ist Python (41.7\%) etwas bekannter als Java (41.1\%). Nur JavaScript (67.8\%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python auch noch weiter gestiegen. Man geht also davon aus, dass man auch in Zukunft noch mit Python arbeiten kann.
+Gemäss Developer Survey Results\footcite{developer_survey_results} von Stack Overflow ist Python (41.7\%) etwas bekannter als Java (41.1\%). Nur JavaScript (67.8\%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python auch noch weiter gestiegen. Man geht also davon aus, dass man auch in Zukunft noch mit Python arbeiten kann.
 
-% https://insights.stackoverflow.com/survey/2019#technology
 
 \subsubsection*{Web Framework}
 Bei Python selber steht man vor der Auswahl von verschiedenen Web Frameworks. Gemäss einer Umfrage von JetBrains über Python wird die Frage ''What web frameworks / libraries do you use in addition to Python?'' mit dem Kommentar ''Django and Flask continue to be by far the most popular Python web frameworks.'' zusammen gefasst. \\
 Laut der oben genannten Umfrage verwenden 43\% der Entwickler  Django als Web Framework. Flask folgt dicht darauf mit 41\%. Das nächst bekannteste Framework ist Tornado mit nur 6\%. \\
 Bei der Evaluation konzentrierte man sich deshalb hauptsächlich auf Django und Flask. Mit bekannteren Frameworks hat man den Vorteil, dass es einfacher ist, Hilfe und gute Dokumentationen zu finden. Mit weit verbreiteten Technologien kann man auch davon ausgehen, dass diese noch längere Zeit bestehen bleiben.  \\ 
 
+%TODO zitat einbauen
 Flask beschreibt sich selber mit den Worten:
 
 ''Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja and has become one of the most popular Python web application frameworks. \\
@@ -48,8 +45,8 @@ Flask offers suggestions, but doesn't enforce any dependencies or project layout
 Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Webanwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungen bereit stehen. \\
 % https://flask.palletsprojects.com/en/1.1.x/foreword/
 
-Django verfolgt dagegen eher den Ansatz, bereits unterschiedliche Funktionalitäten mitzuliefern, was den Entwicklern Arbeit abnehmen soll. So ist zum Beispiel bereits ein OR-Mapper oder ein Admin Interface integriert. 
-Django kommt aber auch mit einigen Nachteilen. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden.
+Django verfolgt dagegen eher den Ansatz, bereits unterschiedliche Funktionalitäten mitzuliefern, was den Entwicklern Arbeit abnehmen soll. So ist zum Beispiel bereits ein OR-Mapper oder ein Admin Interface integriert\footcite{django:overview}. 
+Django kommt aber auch mit einigen Nachteilen. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden\footcite{django:advantages_disadvantages}.
 
 % https://docs.djangoproject.com/en/3.0/intro/overview/
 % https://data-flair.training/blogs/django-advantages-and-disadvantages/
@@ -65,9 +62,6 @@ Um ein Datenbanksystem kommt diese Anwendung nicht herum. Folgende Überlegungen
 	\item Da ein Grossteil der Benutzer mit Mobile Devices auf die Anwendung zugreift, soll bei Anfragen möglichst wenig Overhead geliefert werden.
 	\item Die Schreib- und Lese-Operationen sind wichtig, jedoch nicht kritisch. 
 \end{itemize}
-
-% https://www.quora.com/How-can-we-evaluate-how-good-a-database-is-What-are-the-criteria-for-database-evaluation-Are-there-any-papers-on-the-subject
-Auf Grund der ohnehin schon verkürzten Projektzeit entschied man sich, sich bei der Evaluation auf Postgres und MySQL zu beschränken, da mit diesen beiden Datenbanken bereits Erfahrungen gesammelt werden konnten und so der Einstieg einfacher ist. 
 
 Aufgrund der ohnehin schon verkürzten Projektlaufzeit entschied man sich, auf die Evaluation eines Datenbanksystems zu verzichten. Während den Modulen Datenbanksysteme 1 \& 2 konnte bereits sehr viel Erfahrungen mit Postgres gesammelt werden. Laut Deployment Statistics\footcite{deploymentstatistics} von Django Sites verwenden 47.7\% aller deployten Sites MySQL als Datenbank. Postgres folgt mit 40.7\%. Das nächst grössere Datenbanksystem ist sqlite mit nur noch 7.6\%.
 MySQL wird zwar etwas öfters verwendet. Aus Erfahrung weiss man aber, dass die Funktionen von Postgres die Bedürfnisse dieser Anwendung voll und ganz abdecken, weshalb man Postgres als Datenbanksystem festlegte. \\
