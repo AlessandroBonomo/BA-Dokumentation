@@ -27,7 +27,7 @@
 \usepackage{url}
 \usepackage{float}
 % \usepackage{natbib}
-\usepackage[style=verbose]{biblatex}
+\usepackage[style=verbose, sorting=none]{biblatex}
 \usepackage{tabu}
 \usepackage{caption}
 \usepackage{tabularx}
