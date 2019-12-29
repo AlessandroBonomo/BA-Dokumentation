@@ -1,17 +1,44 @@
 \section{Anforderungen}
 
-\subsection{Allgemeine Beschreibung}
+\subsection{Personas}
+%TODO Persona für Lehrer
+\subsubsection{Persona 1}
+\subsubsection*{Persönliches Profil}
 
-\subsubsection{Produktperspektive}
+\subsubsection*{Situation}
+
+\subsubsection*{Szenario}
+
+%TODO Persona für Schüler
+\subsubsection{Persona 2}
+\subsubsection*{Persönliches Profil}
+
+\subsubsection*{Situation}
+
+\subsubsection*{Szenario}
+
+%TODO Persona für Admin
+\subsubsection{Persona 3}
+\subsubsection*{Persönliches Profil}
+
+\subsubsection*{Situation}
+
+\subsubsection*{Szenario}
 
 
-\subsubsection{Produktfunktionen}
-
-
-\subsubsection{Benutzer Charakteristik}
-
-
-\subsubsection{Einschränkungen}
+%
+%\subsection{Allgemeine Beschreibung}
+%
+%\subsubsection{Produktperspektive}
+%
+%
+%\subsubsection{Produktfunktionen}
+%
+%
+%\subsubsection{Benutzer Charakteristik}
+%
+%
+%\subsubsection{Einschränkungen}
 
 
 
@@ -156,27 +183,54 @@ Ein Schüler überarbeitet ein bereits gelöstes Quiz. \\
 
 
 \subsection{Nicht Funktionale Anforderungen}
-Im nachfolgenden Kapitel werden die nichtfunktionalen Anforderungen der Aufgaben-Coaching Applikation angesprochen.
+Bei der Erstellung der einzelnen \gls{nfr} wird auf FURPS zurückgegriffen. FURPS ist ein Akronym für Functionality, Usability, Reliability, Performance und Supportability. Dieses Modell wurde im Jahre 1992 von HP entwickelt und dient zur Priorisierung der Software Requirements.\footcite{furps_description}
 
-\subsubsection{Qualität}
-Um die Qualität des Codes möglichst hoch zu halten und sicherzustellen, dass alle Teammitglieder immer auf dem aktuellsten Stand sind, werden auf Git Pull-Requests verwendet. Dadurch kann sichergestellt werden, dass ein anderes Teammitglied den geschriebenen Code ebenfalls angesehen und durchdacht hat.
+\begin{table}[h]
+	\centering
+	\begin{tabu} to 0.9\textwidth {l l X}
+	\toprule
+	FURPS & Titel & Beschreibung \\ 
+	\midrule
+	Functionality & User Interface & Das User Interface der Applikation ist über den Webbrowser erreichbar. \\ 
+	& Security & Die einzelnen Benutzer können nur auf die für sie freigegebenen Inhalte zugreifen. \\
+	& HTTPS & Die Kommunikation zum Webserver soll über HTTS laufen. \\
+	\midrule
+	Usability & Responsiveness & Für Schüler soll die Applikation sowohl auf Desktop PCs wie auch auf Tablets oder Mobile Phones verfügbar sein. \\
+	\midrule
+	Reliability & Availability & Die Applikation soll 24/7 verfügbar sein. \\
+	 & Fault Tolerance & Die Applikation soll bei unerlaubten Anfragen weiterhin verfügbar sein. \\
+	\midrule
+	Performance & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen worden sein.\\
+	\midrule
+	Supportability & Maintainability & Die Applikation soll gebaut werden, dass sie auch in Zukunft gewartet und ausgebaut werden kann. \\
+	 & Scalability & Die Applikation soll von 300 Benutzern zeitgleich verwendet werden. \\
+	\bottomrule
+	\end{tabu}
+	\captionof{table}{Non Functional Requirements}
+\end{table}
 
-\subsubsection*{Maintainability}
-Die Software könnte unter Umständen in einem Start-Up verwendet werden. Da in Zukunft noch beinahe beliebig viele neue Anforderungen hinzustossen können, soll die Applikation so gebaut werden, dass sie einfach modifiziert werden kann. 
-
-\subsubsection*{Reliability}
-Die Applikation soll robust und reibungslos laufen, auch wenn mehere Schüler zeitgleich mit der Plattform verbunden sind.
-
-\subsubsection*{Scalability}
-Das System soll problemlos von bis zu 300 Benutzern gleichzeitig verwendet werden können. 
-
-\subsubsection*{Usability}
-Bei der Applikation soll es sich um eine Mobile First Applikation handeln. Die Plattform soll sowohl auf Desktop PCs, Tablets und Smartphones bedienbar sein. Der Lehrer- und Administator-spezifische Teil der Applikation ist davon erstmals ausgenommen, da davon ausgegangen wird, dass diese beiden Aktoren hauptsächlich auf Desktop PCs arbeiten. 
-Die Applikation soll ein intuitives User Interface besitzen, damit sich die Benutzer auf Anhieb zurechtfinden. 
-
-\subsubsection*{Security}
-Der Zugriff auf das System ist passwortgeschützt. Benutzer können sich nicht selbstständig registrieren. Nur Administratoren können neue Benutzer erfassen.
-Jede Person sieht nur die Informationen, die für sie selbst von Bedeutung sind. Ein Schüler hat zum Beispiel keinen Zugriff auf die Statistiken anderer Schüler.
+%\subsubsection{Functionality}
+%\subsubsection*{}
+%
+%\subsubsection{Qualität}
+%Um die Qualität des Codes möglichst hoch zu halten und sicherzustellen, dass alle Teammitglieder immer auf dem aktuellsten Stand sind, werden auf Git Pull-Requests verwendet. Dadurch kann sichergestellt werden, dass ein anderes Teammitglied den geschriebenen Code ebenfalls angesehen und durchdacht hat.
+%
+%\subsubsection*{Maintainability}
+%Die Software könnte unter Umständen in einem Start-Up verwendet werden. Da in Zukunft noch beinahe beliebig viele neue Anforderungen hinzustossen können, soll die Applikation so gebaut werden, dass sie einfach modifiziert werden kann. 
+%
+%\subsubsection*{Reliability}
+%Die Applikation soll robust und reibungslos laufen, auch wenn mehere Schüler zeitgleich mit der Plattform verbunden sind.
+%
+%\subsubsection*{Scalability}
+%Das System soll problemlos von bis zu 300 Benutzern gleichzeitig verwendet werden können. 
+%
+%\subsubsection*{Usability}
+%Bei der Applikation soll es sich um eine Mobile First Applikation handeln. Die Plattform soll sowohl auf Desktop PCs, Tablets und Smartphones bedienbar sein. Der Lehrer- und Administator-spezifische Teil der Applikation ist davon erstmals ausgenommen, da davon ausgegangen wird, dass diese beiden Aktoren hauptsächlich auf Desktop PCs arbeiten. 
+%Die Applikation soll ein intuitives User Interface besitzen, damit sich die Benutzer auf Anhieb zurechtfinden. 
+%
+%\subsubsection*{Security}
+%Der Zugriff auf das System ist passwortgeschützt. Benutzer können sich nicht selbstständig registrieren. Nur Administratoren können neue Benutzer erfassen.
+%Jede Person sieht nur die Informationen, die für sie selbst von Bedeutung sind. Ein Schüler hat zum Beispiel keinen Zugriff auf die Statistiken anderer Schüler.
 
 
 \newpage
