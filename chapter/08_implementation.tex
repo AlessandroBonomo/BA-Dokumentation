@@ -1,28 +1,37 @@
 \section{Implementation}
 
 \subsection{Apps}
-Bei Django ist es üblich, die Funktionalitäten in verschiedene Apps aufzuteilen. Eine App in Django ist vergleichbar mit einem Package in Java. Das Ziel ist es also, den Code so auf die verschiedenen Apps aufzuteilen, dass diese unabhängig voneinander wiederverwendet werden können. Aus diesem Grund wurde entschieden folgende Apps zu erstellen: \\
-\newline
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Apps} & \textbf{Beschreibung} \\
-	\hline
-		Users & Die Users App soll alles was mit den Users zu tun hat verwalten. Also das erstellen und bearbeiten von Usern wie auch dem einloggen und ausloggen. \\
-	\hline
-		School admins & Die School admins App ist für die Zuweisung der Schüler und Lehrer an Klassen zuständig, sowie das erstellen von Klassen. \\
-	\hline
-		Exercises & Die Exercises App bietet die Logik an um Aufgaben zu definieren. \\
-	\hline 
-		Dashboards & Die Dashboards App ist dazu da, den Benutzern eine Übersicht zu bieten. \\
-	\hline
-		Forums & In der Forum App wird die komplette Logik für das Forum implementiert. \\
-	\hline
-		Study contents & Die Study contents App beinhaltet alles was mit dem bereitgestellten Inhalt zu tun hat. \\
-	\hline
-\end{tabularx} \\
+Bei Django werden unabhängige Funktionalitäten in unterschiedliche Apps aufgeteilt. Eine App in Django ist eigentlich nichts anderes als ein Python Package, welches eine Reihe von Features zur Verfügung stellt\footcite{django:apps}. Das Ziel dabei ist es, den Code auf die verschiedenen Apps aufzuteilen, so dass diese unabhängig voneinander wiederverwendet werden können.  \\
+In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welche für Aufgaben-Coaching erstellt wurden.
 
+\begin{table}[h]
+	\centering
+	\begin{tabu} to 0.9\textwidth {l X}
+	\toprule
+	App & Beschreibung \\ 
+	\midrule	
+	user & In der Users App befindet sich die gesamte Logik zum erstellen und verwalten der User. \\
+	\midrule
+		school\_admin & Die school\_admin App ist für die Erstellung von Klassen sowie der Zuweisung von Schülern und Lehrern in Klassen zuständig. \\
+	\midrule
+	school\_teacher & In dieser App können Lehrer die Fächer für ihre Klasse freischalten und Aufgaben dem Wochenplan hinzufügen. \\
+	\midrule
+		exercise & Die exercise App stellt um Aufgaben zu erstellen zur Verfügung. Zudem können gelöste Aufgaben von einem Lehrer bewertet werden. \\
+	\midrule 
+	study\_content & Diese App beinhaltet die Logik zum bereitstellen von Lerninhalten \\
+	\midrule	
+	forum & In der forum App wird die komplette Logik für das Forum implementiert. \\
+	\bottomrule
+	\end{tabu}
+	\captionof{table}{Apps Beschreibung}
+	\label{table:django_apps}
+\end{table}
 
-\noindent Die Logik kann ohne Probleme in die verschiedenen Apps aufgeteilt werden. Das Problem dabei ist jedoch die Datenbank. In Django ist es best-practise, die benötigten Models (Datenbanktabellen) jeweils in der entsprechenden App zu implementieren. Da die einzelnen Tabellen aus der Datenbank eine starke Bindung zu den anderen Tabellen haben, geht diese Bindung somit auch auf die Apps über. Dadurch schwindet der Sinn, die Logik in verschiedene Apps aufzuteilen. Es gibt zwei Möglichkeiten, mit diesem Problem umzugehen. Die erste wäre es, alle Apps zu einer grossen zusammenzulegen und die zweite wäre es bei der zu Beginn gewählten Aufteilung zu bleiben und die starke Koppelung hinzunehmen. 
+%\subsubsection*{Datenbank}
+%
+%Werden mehrere Apps erstellt, muss darauf geachtet werden, wie das Domain Model aussieht. Bei Django werden die einzelnen Models direkt in der App hinterlegt. Somit gibt es kein zentrales 
+%
+%Die Logik kann ohne Probleme in die verschiedenen Apps aufgeteilt werden. Das Problem dabei ist jedoch die Datenbank. In Django ist es best-practise, die benötigten Models jeweils in der entsprechenden App zu implementieren. Da die einzelnen Tabellen aus der Datenbank eine starke Bindung zu den anderen Tabellen haben, geht diese Bindung somit auch auf die Apps über. Dadurch schwindet der Sinn, die Logik in verschiedene Apps aufzuteilen. Es gibt zwei Möglichkeiten, mit diesem Problem umzugehen. Die erste wäre es, alle Apps zu einer grossen zusammenzulegen und die zweite wäre es bei der zu Beginn gewählten Aufteilung zu bleiben und die starke Koppelung hinzunehmen. 
 
 %TODO Weiterschreiben
 

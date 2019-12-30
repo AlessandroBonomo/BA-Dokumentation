@@ -40,6 +40,8 @@
 \usepackage[acronym]{glossaries}
 \definecolor{lightgrey}{rgb}{.9,.9,.9}
 
+\usepackage{parskip}
+
 
 % YAML
 \usepackage[dvipsnames]{xcolor}

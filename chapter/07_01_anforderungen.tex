@@ -1,45 +1,45 @@
 \section{Anforderungen}
 
 \subsection{Personas}
-%TODO Persona für Lehrer
+Unter der Definition von Personas\footcite{persona_definition} versteht man: 
+\begin{displayquote}
+Personas (lat. Maske) sind Nutzermodelle, die Personen einer Zielgruppe in ihren Merkmalen charakterisieren. Sie können z. B. einem Entwicklerteam aufgrund ihrer umfangreichen Beschreibung helfen, sich in die Lage der potenziellen Nutzer zu versetzen und diese Perspektive während des gesamten Designprozesses leicht zu vertreten. Sie werden mit einem Namen, einem Gesicht, einer Funktion, einem Werdegang und einem Privatleben versehen. Personas verfügen über Ziele und Verhaltensweisen, haben Vorlieben und Erwartungen.
+\end{displayquote}
+
+\noindent
+Diese Personas wurden erstellt, um ein klareres Bild vermitteln zu können, wie die Anwendung schlussendlich genau funktioniert.
+
 \subsubsection{Persona 1}
 \subsubsection*{Persönliches Profil}
+Abirsana ist Lehrerin an der Oberstufe Gossau und Unterrichtet die Fächer Mathematik, Deutsch und English.
 
 \subsubsection*{Situation}
+Um den Unterricht interessanter zu gestalten, greift Abirsana oft auf digitale Medien, wie zum Beispiel YouTube Videos, zurück. Oftmals ist jedoch das Material nicht genau auf den Schulstoff angepasst oder die Qualität lässt zu wünschen übrig.
 
 \subsubsection*{Szenario}
+Im Rahmen des Unterrichts soll es Abirsana möglich sein, die Aufgaben-Coaching Webanwendung zu verwenden. Sie soll in der Lage sein, einzelne Fächer und Theorieinhalte ihrer Klasse zur Verfügung zu stellen. Zudem kann sie eigene Übungen erfassen, welche die Schüler auch gleich über die Webanwendung lösen. Sind die Aufgaben abgegeben, kann sie die einzelnen Aufgaben anschauen und bewerten. Falls ihr auffällt, dass ein gewisser Schüler oder die ganze Klasse etwas nicht versteht, kann sie so direkt die Wissenslücke schliessen.
 
-%TODO Persona für Schüler
 \subsubsection{Persona 2}
 \subsubsection*{Persönliches Profil}
+Salina ist Schülerin an einer Schule. Seit längerer Zeit hat sie aber Mühe mit dem Schulstoff und ihre Noten sind auch nicht mehr so gut.
 
 \subsubsection*{Situation}
+Salina versteht oft nichts, wenn ihr Lehrer ihr etwas erklärt. Zu Hause verbringt sie dann viel Zeit im Internet, um einzelne Themen zu lernen. Sie hat aber weder die Zeit oder die Lust dazu, zu Hause nochmals die gesamte Theorie anschauen zu müssen.
 
 \subsubsection*{Szenario}
+Nach kurzer Zeit hat Salina die Lehrer an ihrer Schule dazu überredet, die Aufgaben-Coaching Plattform einzusetzen. Somit ist Salina freier im lernen. In der Schule kann sie sich selbstständig ein Thema beibringen. Falls sie dennoch etwas nicht versteht, kann sie direkt auf eine Lehrperson zugehen, welche ihr dann das Kapitel vielleicht noch etwas genauer erklärt. \\
+Zudem wird sie nicht von anderen Schülern aufgehalten, weil diese länger brauchen, um ein Thema zu lernen.
 
-%TODO Persona für Admin
 \subsubsection{Persona 3}
 \subsubsection*{Persönliches Profil}
+Liam ist der Informatik Verantwortliche an einer Schule. Er ist sehr Technik affin und sucht immer nach neuen Tools oder Programmen, welche in der Schule eingesetzt werden können.
 
 \subsubsection*{Situation}
+Seit geraumer Zeit regt er sich über die Lehrer auf, welche Jahr für Jahr das selbe erzählen und viel Geld dabei verdienen. Aus diesem Grund sucht er nach einer Lösung, wie die Lehrer trotzdem unterrichten können, aber nicht immer das gleiche erzählen.
 
 \subsubsection*{Szenario}
-
-
-%
-%\subsection{Allgemeine Beschreibung}
-%
-%\subsubsection{Produktperspektive}
-%
-%
-%\subsubsection{Produktfunktionen}
-%
-%
-%\subsubsection{Benutzer Charakteristik}
-%
-%
-%\subsubsection{Einschränkungen}
-
+Mit der Aufgaben-Coaching Webanwendung ist er auf ein Tool gestossen, welche genau das verspricht. Die ganzen Theorieeinheiten wurden bereits erfasst und stehen allen Lehrern zur Verfügung. Somit sparen die Lehrer viel Zeit bei der Vorbereitung, da bereits ein roter Faden durch den gesamten Stoff besteht. \\
+Zudem kann Liam als Administrator die Statistiken einzelner Klassen anschauen. So kann er auch direkt sehen, wenn eine Klasse unter dem Durchschnitt der Schule ist und mehr Hilfe benötigt.
 
 
 \subsection{Use Cases}
@@ -67,19 +67,22 @@
 
 
 \subsubsection{Aktoren}
-Beschreibung der einzelnen Aktoren.
-\newline
-\begin{tabularx}{\textwidth}{| X | X |}
-	\hline
-		\textbf{Aktor} & \textbf{Beschreibung} \\
-	\hline
-		Administrator & Der Administrator ist für die Verwaltung der Klassen, Lehrer und Schüler zuständig. Er kann Klassen erstellen, Lehrpersonen und Schüler den Klassen zuweisen, etc. \\
-	\hline
-		Lehrer & Der Lehrer verwaltet die ihm zugewiesenen Klassen. Er kann Aufgaben erstellen und diese der Klasse zuweisen. Zusätzlich kann er Statistiken einsehen, die ihn über den aktuellen Wissensstand der Klasse informieren. \\
-	\hline
-		Schüler & Die Schüler haben Zugriff auf eine Wissensdatenbank und können Aufgaben und Quizzes, die ihnen zugewiesen wurden lösen. \\
-	\hline
-\end{tabularx}
+
+\begin{table}[h]
+	\centering
+	\begin{tabu} to 0.9\textwidth {l X}
+	\toprule
+	Aktor & Beschreibung \\ 
+	\midrule
+	Administrator & Der Administrator ist für die Verwaltung der Klassen, Lehrer und Schüler zuständig. Er kann Klassen erstellen sowie Lehrpersonen und Schüler diesen Klassen zuweisen \\
+	\midrule
+		Lehrer & Der Lehrer verwaltet die ihm zugewiesenen Klassen. Er kann Fächer für seine Klassen freischalten sowie Aufgaben erstellen und diese der Klasse zuweisen. Zusätzlich kann er Statistiken einsehen, die ihn über den aktuellen Wissensstand seiner Klasse informieren. \\
+	\midrule
+		Schüler & Die Schüler haben Zugriff auf freigeschaltete Lerninhalte und können diese anschauen. Falls Fragen auftreten, können diese im aufgaben-spezifischen Forum gestellt werden. Zusätzlich können Aufgaben gelöst werden. \\
+	\bottomrule
+	\end{tabu}
+	\captionof{table}{Aktoren}
+\end{table}
 
 
 \subsubsection{Beschreibung der Use Cases}
