@@ -31,41 +31,59 @@ Bei Django ist es üblich, die Funktionalitäten in verschiedene Apps aufzuteile
 
 \begin{table}[h]
 	\centering
-	\begin{tabu} to 0.9\textwidth {X X X}
+	\begin{tabu} to 0.9\textwidth {l X}
 	\toprule
-		\textbf{URL} & \textbf{View} & \textbf{Template} \\
+		\textbf{URL} & \textbf{Template} \\
 	\bottomrule
-		/ & SubjectListView & subject\_list.html \\
+		/ & subject\_list.html \\
 	\bottomrule
 		\textbf{user/} \\
-		login/ & LoginView & registration/login.html \\
-		logout/ & LogoutView & registration/logged\_out.html \\ 
-		profile/ & ProfileUpdateView & user/profile.html \\
-		<type>/create/ & UserCreateView & user/user\_form.html \\ 
-		<pk>/update/ & UserUpdateView & user/user\_form.html \\
-		<pk>/delete/ & UserDeleteView & user/user\_confirm\_delete.html \\
-		
+		login/ & registration/login.html \\
+		logout/ & registration/logged\_out.html \\ 
+		profile/ & user/profile.html \\
+		<type>/create/ & user/user\_form.html \\ 
+		<pk>/update/ & user/user\_form.html \\
+		<pk>/delete/ & user/user\_confirm\_delete.html \\
+	\midrule
 		\textbf{subject/} \\
-		<subject>/ & TopicListView & study\_content/topic\_list.html \\
-		<subject>/<topic>/ & LessonListView & study\_content/lesson\_list.html \\
-		<subject>/<topic>/<pk>/ & LessonDetailView & study\_content/lesson\_detail.html \\
-		
+		<subject>/ & study\_content/topic\_list.html \\
+		<subject>/<topic>/ & study\_content/lesson\_list.html \\
+		<subject>/<topic>/<pk>/ & study\_content/lesson\_detail.html \\
+	\midrule
 		\textbf{school\_admin/} \\
-		/ & ClassUserListView & school\_admin/admin\_overview.html \\
-		class/create/ & ClassCreateView & school\_admin/class\_create.html \\
-		class/<class\_pk>/update/ & ClassUpdateView & school\_admin/admin\_class\_management.html \\
-		class/<class\_pk>/delete/ & ClassDeleteView & school\_admin/class\_confirm\_delete.html \\
-		
+		/ & school\_admin/admin\_overview.html \\
+		class/create/ & school\_admin/class\_create.html \\
+		class/<class\_pk>/update/ & school\_admin/admin\_class\_management.html \\
+		class/<class\_pk>/delete/ & school\_admin/class\_confirm\_delete.html \\
+	\midrule
 		\textbf{exercise/} \\
-		%TODO
+		create\_help/<pk>/ & exercise/question\_help\_update.html \\
+		review/ & exercise/exercise\_review\_list.html \\
+		review/<pk>/<user\_pk>/ & exercise/exercise\_review\_detail.html \\
+		review/<pk>/<user\_pk>/archive/ & exercise/exercise\_confirm\_archive.html \\
+		review/<pk>/<user\_pk>/reject/ & exercise/exercise\_confirm\_reject.html \\
+		review/<pk>/<user\_pk>/<answer\_pk>/ & exercise/answer\_review\_form.html \\
 		
+		<topic>/ & exercise/exercise\_list.html \\
+		<topic>/create/ & exercise/exercise\_question\_create.html \\
+		<topic>/<pk>/ & exercise/exercise\_detail.html \\
+		<topic>/<pk>/update/ & exercise/exercise\_question\_create.html \\
+		<topic>/<pk>/delete/ & exercise/exercise\_confirm\_delete.html \\
+		<topic>/<pk>/submit/ & exercise/exercise\_confirm\_submit.html \\
+		
+		<topic>/<pk>/answer/<question\_pk>/ & \\
+		<topic>/<pk>/answer/<question\_pk>/create/ & exercise/answer\_form.html \\
+		<topic>/<pk>/answer/<question\_pk>/update/ & exercise/answer\_form.html \\
+		<topic>/<pk>/answer/<question\_pk>/detail/ & exercise/answer\_detail.html \\ 
+	\midrule
 		\textbf{statistic/} \\
-		/ & StatisticListView & statistic/statistic\_subject.html \\
-		exercise/<topic>/<class\_id>/ & StatisticExerciseListView & statistic/statistic\_exercise.html \\
-		exercise/<topic>/<exercise>/<class\_id>/ & StatisticDetailView & statistic/statistic\_detail.html \\
-		ajax/load\_subjects/ & & subject\_dropdown\_list\_options.html \\
-		ajax/load\_data/ & & subject\_load\_data.html \\
-		
+		/ & statistic/statistic\_subject.html \\
+		exercise/<topic>/<class\_id>/ & statistic/statistic\_exercise.html \\
+		exercise/<topic>/<exercise>/<class\_id>/ & statistic/statistic\_detail.html \\
+		review/<pk>/<user\_pk>/
+		ajax/load\_subjects/ & subject\_dropdown\_list\_options.html \\
+		ajax/load\_data/ & subject\_load\_data.html \\
+	\midrule
 		\textbf{error/} \\
 	\end{tabu}
 	\captionof{table}{URLs}
