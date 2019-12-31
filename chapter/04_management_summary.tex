@@ -6,26 +6,27 @@ In den einzelnen Schulfächern in der Schule wird seit geraumer Zeit immer das s
 
 Die Schüler sitzen in der Schule und hören dem Lehrer zu. Schüler sind aber keine Maschinen, manchmal sind sie krank oder unaufmerksam. Den verpassten Schulstoff müssen sie trotzdem irgendwie nachholen, spätestens wenn die Prüfung bevorsteht. Dies ist jedoch mit einem enormem Zeitaufwand für die Schüler verbunden, da nochmals alles repetiert werden muss. \\
 
-Der Lehrer hat aber noch ein weiteres Problem. Erst wenn eine Prüfung gemacht wird, kann anhand der Noten erkennt werden, wie gut die Schüler ein Thema verstanden haben. Sollte er zu diesem Zeitpunkt feststellen, dass ein Thema immer noch unklar ist, hat er oft nicht mehr genügend Zeit um das Thema noch einmal zu rekapitulieren, da sonst der Zeitplan nicht mehr aufgeht. \\
+Der Lehrer hat aber noch ein weiteres Problem. Erst wenn eine Prüfung gemacht wird, kann anhand der Noten erkannt werden, wie gut die Schüler ein Thema verstanden haben. Sollte zu diesem Zeitpunkt feststellt werden, dass ein Thema immer noch unklar ist, ist oft nicht mehr genügend Zeit vorhanden, um das Thema noch einmal zu rekapitulieren, weil sonst zu wenig Zeit für die restlichen Themen vorhanden ist. \\
 
-%TODO reference to moodle and sofatutor
 Die Idee von Lernplattformen für Schulen ist nicht ganz neu. An der \gls{hsr} wird zum Beispiel Moodle\footcite{moodle_homepage} eingesetzt, ein Open-Source \gls{lms}. Es gibt aber auch komerzielle Lösungen wie sofatutor\footcite{sofatutor_homepage} oder EF Class\footcite{ef_class_homepage}. Diese richten sich aber entweder auf die Schüler direkt oder sind nur für ein einzelnes Fach gedacht. \\
 
-
-Mit dem Aufgaben-Coach möchte man sich aber von Moodle abgrenzen, in dem eine bessere Betreuung der Schüler ermöglicht wird. Wenn ein Lehrer eine Aufgabe erstellt, kann zusätzlich eine Schritt für Schritt Anleitung erstellen. Falls der Schüler die Antwort nicht sofort weiss, wird er mit Hilfe dieser Anleitung durch die Aufgabe geführt und kommt so zum richtigen Resultat. 
+Mit dieser Arbeit möchte man aber eine Anwendung erschaffen, welches in einer Schule eingesetzt ist, sich aber hauptsächlich auf Lernerlebnis der Schüler konzentriert. 
 
 % Bei dieser Bachelorarbeit wird eine Lernplattform erstellt, welche genau dieses Problem angeht. Auf dieser Lernplattform wird die Theorie der Schulfächer in Form von Theoriezusammenfassungen, Videos, Übungen und Quizze zur Verfügung gestellt. Schüler können mit Hilfe dieser Lernplattform unabhängig von ihrem Standort lernen, ob das nun in einer Freistunde während des Schulalltags oder zu Hause am Abdend im Bett ist. Alles, was die Schüler benötigen, ist ein Tablet und eine Internetverbindung. 
 
 % Der Lehrer hat den Vorteil, dass er viel Zeit für die Vorbereitung der Stunden einsparen kann. Durch die Quizze und Übungen sieht der Lehrer auch direkt, auf welchem Stand seine Schüler sind und kann jene Schüler unterstützen, welche ein bestimmtes Thema noch nicht richtig verstanden haben. Schüler, welche aber alles ohne Probleme verstehen, können unanhängig von den anderen mit dem nächsten Thema fortfahren. 
 
 \subsection*{Vorgehen / Technologien}
-Da der Lerncoach Plattformübergreifend funktionieren soll, wurde eine Webanwendung mit Python und dem Webframework Django entwickelt. Die Anwendung wurde so konzipiert, das pro Schule eine separate Instanz zur Verfügung gestellt wird.
+Die Anwendung soll den Schülern rund um die Uhr zur Verfügung stehen und plattformübergreifend verwendbar sein. Um diesen Anforderungen gerecht zu werden, wird eine Webanwendung mit dem Django-Framework und der Programmiersprache Python entwickelt. \\
+Es wurde besonders darauf geachtet, dass die Anwendung modular aufgebaut ist. Möchte man neue Features hinzufügen, soll dies ohne Problem möglich sein.
 
 \subsection*{Ergebnisse}
-Im Zuge dieser Bachelorarbeit ist grundlegende Lernplattform erstellt worden. Es können Theoriezusammenfassungen mit Videos und Bildern erstellt werden. Lehrer sind in der Lage, neue Aufgaben oder Quizze zu erstellen und den Schülern zur Verfügung zu stellen. Haben die Schüler die Aufgaben gelöst, kann der Lehrer diese einsehen und korrigieren. Falls die Lehrperson bemerkt, dass ein Schüler Mühe in einem spezifischen Aufgabengebiet hat, kann er direkt auf diese Schüler zugehen.
+Während dieser Bachelorarbeit ist eine Anwendung mit dem Titel ''Aufgaben-Coaching'' entstanden. Diese Anwendung erlaubt es, Theoriezusammenfassungen mit Videos und Bildern bereitzustellen. Lehrer sind in der Lage, neue Aufgaben zu erstellen und diese den Schülern zur Verfügung zu stellen. Haben die Schüler die Aufgaben gelöst, kann der Lehrer diese einsehen und korrigieren. Falls die Lehrperson bemerkt, dass ein Schüler Mühe in einem spezifischen Aufgabengebiet hat, kann er so direkt auf diese Schüler zugehen. Zudem anhand der Statistiken von gelösten Aufgaben der Wissensstand der gesamten Schulklasse überwacht werden.
 
 \subsection*{Ausblick}
-Nach der Bachelorarbeit soll diese Arbeit weiter in Form eines Startups verfolgt werden. Um produktiv in einer Schule eingesetzt werden zu können, müssen jedoch noch einige Features verbessert werden. Ein zentraler Punkt dabei sind die Statistiken für den Lehrer. Des weiteren muss das User Interface noch weiter ausgearbeitet werden.
+Die Idee für dieses Bachelorarbeits Thema stammt von Luca Gubler. Da für die Bachelorarbeit aber nur ein begrenzter Zeitraum zur Verfügung steht, konnten nicht alle Features im gewünschten Umfang umgesetzt werden. \\
+
+Es ist jedoch geplant, dass diese Arbeit nach dem Studium in Form eines Startups weiter verfolgt wird.
 
 
 \newpage
