@@ -33,7 +33,8 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{titlesec}
-\usepackage{lscape}
+% \usepackage{lscape}
+\usepackage{pdflscape}
 \usepackage{pdfpages}
 %\usepackage{rotating}
 %\usepackage{typearea}
