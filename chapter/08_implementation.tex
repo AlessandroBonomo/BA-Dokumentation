@@ -1,6 +1,6 @@
-\section{Implementation}
+\subsection{Implementation}
 
-\subsection{Apps}
+\subsubsection{Apps}
 Bei Django werden unabhängige Funktionalitäten in unterschiedliche Apps aufgeteilt. Eine App in Django ist eigentlich nichts anderes als ein Python Package, welches eine Reihe von Features zur Verfügung stellt\footcite{django:apps}. Das Ziel dabei ist es, den Code auf die verschiedenen Apps aufzuteilen, so dass diese unabhängig voneinander wiederverwendet werden können.  \\
 In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welche für Aufgaben-Coaching erstellt wurden.
 
@@ -36,9 +36,9 @@ In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welc
 %TODO Weiterschreiben
 
 
-\subsection{URLs}
+\subsubsection{URLs}
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\begin{tabu} to 0.9\textwidth {l X}
 	\toprule
@@ -120,7 +120,7 @@ Django bietet eine simple Möglichkeit an, um zu definieren, welche Seite mit we
 \end{itemize}
 
 
-\noindent Es können beliebig viele solcher URLs definiert werden. Das Framework schreibt keine klare Struktur vor. Aus diesem Grund haben wir uns dazu entschieden, die URL Definitionen auf mehere Dateien aufzuteilen und jeweils direkt in den einzlenen Apps abzulegen. Mit diesem Schritt erreicht man mehrere Vorteile. Zum einen wird das Definieren der URLs einiges übersichtlicher und einfacher anzupassen und zum anderen kann man das Risiko von Konflikten zwischen den URLs reduzieren. Schauen wir uns das ganze anhand eines Beispiels an. \\
+Es können beliebig viele solcher URLs definiert werden. Das Framework schreibt keine klare Struktur vor. Aus diesem Grund haben wir uns dazu entschieden, die URL Definitionen auf mehere Dateien aufzuteilen und jeweils direkt in den einzlenen Apps abzulegen. Mit diesem Schritt erreicht man mehrere Vorteile. Zum einen wird das Definieren der URLs einiges übersichtlicher und einfacher anzupassen und zum anderen kann man das Risiko von Konflikten zwischen den URLs reduzieren. Schauen wir uns das ganze anhand eines Beispiels an. \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLschlecht.png}
@@ -128,10 +128,10 @@ Django bietet eine simple Möglichkeit an, um zu definieren, welche Seite mit we
 	\end{figure}
 \end{minipage}
 
-\noindent Im Bild oben sieht man eine kleine Sammlung verschiedener URLs. Bei genauerer Betrachtung fällt auf, dass die URLs von zwei verschiedenen Apps stammen. Die ersten drei URLs gehören zu den Statistiken und die nachfolgenden zur Benutzerverwaltung. Natürlich kann man Vorkehrungen treffen um das ganze übersichtlicher darzustellen, jedoch wird es schwieriger je mehr Definitionen vorliegen. Zum weiteren ist es sehr aufwendig, wenn die URLs angepasst werden sollen. Sollten zum Beispiel die URLs von ''user/...'' auf ''benutzer/...'' geändert werden, muss dies manuell überall angepasst werden. 
+Im Bild oben sieht man eine kleine Sammlung verschiedener URLs. Bei genauerer Betrachtung fällt auf, dass die URLs von zwei verschiedenen Apps stammen. Die ersten drei URLs gehören zu den Statistiken und die nachfolgenden zur Benutzerverwaltung. Natürlich kann man Vorkehrungen treffen um das ganze übersichtlicher darzustellen, jedoch wird es schwieriger je mehr Definitionen vorliegen. Zum weiteren ist es sehr aufwendig, wenn die URLs angepasst werden sollen. Sollten zum Beispiel die URLs von ''user/...'' auf ''benutzer/...'' geändert werden, muss dies manuell überall angepasst werden. 
 Mit unserer Lösung wird diese Datei in drei neue Dateien aufgeteilt und ist danach folgendermassen strukturiert: \\
 
-\noindent \textbf{user/urls.py} \\
+\textbf{user/urls.py} \\
 Diese Datei wird in der App ''user'' abgelegt und kann so zusammen mit der App simpel in eine andere Applikation kopiert und verwendet werden. Im Bild unten werden nun die URLs dargestellt, welche zur Benutzerverwaltung gehören und man kann erkennen, dass die URLs kürzer geworden sind. Das führende ''user/'' wurde entfernt. Wieso das möglich und auch gewünscht ist, wird weiter unten beschrieben. \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
@@ -141,7 +141,7 @@ Diese Datei wird in der App ''user'' abgelegt und kann so zusammen mit der App s
 \end{minipage}
 
 
-\noindent \textbf{statistic/urls.py} \\
+\textbf{statistic/urls.py} \\
 Diese Datei wird in der App ''statistic'' abgelegt. Wie oben das führende ''user/'' entfernt wurde, konnte auch hier auf das führende ''statistic/'' verzichtet werden. \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
@@ -151,7 +151,7 @@ Diese Datei wird in der App ''statistic'' abgelegt. Wie oben das führende ''use
 \end{minipage}
 
 
-\noindent \textbf{urls.py} \\
+\textbf{urls.py} \\
 Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der Applikation. Der Inhalt der Datei unterscheidet sich auch gegenüber den andereren Dateien. Hier werden keine URLs definiert, sondern es wird angegeben, wo die definierten URLs abgelegt sind. Oben wurde erwähnt, dass die führenden Pfadelemente (''user/'' und ''statistic/'') weggelassen wurden. Effektiv wurden sie jedoch hierhin verschoben. Sollen nun die URLs der Benutzerverwaltung von ''user/...'' nach ''benutzer/...'' geändert werden, kann dies hier vorgenommen werden und wirkt sich auf alle URLs in der Datei ''user/urls.py'' aus. Nun ist es auch möglich in verschiedenen Apps die selben URLs zu definieren, da sie hier beim einbinden mit dem führenden Pfadelement voneinander unterschieden werden können. Dies kann hilfreich sein, wenn Apps von anderen Entwicklern eingebaut werden würden. \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
@@ -163,13 +163,13 @@ Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der App
 
 
 
-\subsection{Testing}
+\subsubsection{Testing}
 
-\subsection{Allgemein}
+\subsubsection*{Allgemein}
 Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
 
-\subsection{Datenbank}
+\subsubsection*{Datenbank}
 Damit die Tests nicht von bereits vorhanden Daten in der Datenbank beeinflusst werden, wird für jeden Testdurchlauf eine eigene temporäre Datenbank erstellt, die exakt wie die in der Produktion verwendete Datenbank konfiguriert ist. Diese temporäre Datenbank wird nach der Testdurchführung wieder vom System entfernt.
 
-\subsection{Test Client}
+\subsubsection*{Test Client}
 Der Test-Client ist eine Pythonklasse, welche als einfacher Webbrowser dient. Mit ihm kann man auf Applikationsebene mit den erstellten Django-Apps agieren. Das heisst, man kann gut und einfach GET und POST Requests simulieren und kann den Inhalt der Webseite überprüfen. 

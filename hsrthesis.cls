@@ -39,6 +39,12 @@
 %\usepackage{typearea}
 \usepackage[acronym]{glossaries}
 \definecolor{lightgrey}{rgb}{.9,.9,.9}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 
 \usepackage{parskip}
 
