@@ -69,7 +69,59 @@ Sollte man in Zukunft jedoch ein anderes Datenbanksystem bevorzugen, kann die Mi
 \subsubsection*{Python Libraries}
 
 \subsubsection{UI Design}
-Bevor man mit der Entwicklung des Frontends beginnen konnte, musste geplant werden, wie das User Interface genau aussehen soll. Mit Hilfe der Use Cases konnte ein erster Entwurf erstellt werden. 
+Bevor mit der Entwicklung des Frontends begonnen werden kann, muss genau geplant werden, wie dieses aussehen soll. Um ein möglichst gutes Ergebnis zu erzielen, ist es wichtig sich folgende Fragen zu stellen:
+
+\begin{itemize}
+	\item Welche Anforderungen werden an die Webseite gestellt?
+	\item Welche Benutzergruppen werden die Applikation verwenden?
+	\item Was sind die Bedürfnisse der einzelnen Gruppen?
+\end{itemize}
+
+Durch das Beantworten der einzelnen Fragen, kann schnell herausgefunden werden, welche Anforderungen an das Frontend gestellt werden. Da der Aufgaben-Coach von komplett verschiedenen Benutzergruppen verwendet und damit gearbeitet wird, sollte das UI mögichst simpel und effizient gestaltet werden. Folgende Anforderungen konnten herauskristallisiert werden:
+
+\begin{itemize}
+	\item Mobile-First \\
+		Bei einer der Benutzergruppen handelt es sich um Schüler. Die Gruppe Schüler ist die Hauptnutzergruppe der Applikation und soll desshalb besonders gut abgeholt werden. Um möglichst gut auf ihre Bedürfnisse einzugehen, soll der komplette Teil, der für die Schüler gedacht ist, nach Mobile First designed und implementiert werden.
+		
+		%TODO https://www.jugendundmedien.ch/digitale-medien/fakten-zahlen.html
+	\item Struktur \\
+		Internetnutzer haben in der Regel eine relativ kurze Aufmerksamkeitsspanne, weshalb anhand der Struktur auf den ersten Blick klar sein sollte, was auf der Webseite möglich ist und was nicht. 
+		
+		%TODO https://www.websitebuilder-test.com/homepage-erstellen/#struktur
+	\item Navigation \\
+		Die Navigation über die Webseite soll so einfach und simpel wie möglich gehalten werden. Es soll möglich sein von jedem beliebigen Punkt der Webseite in kürzester Zeit zu einem beliebig anderen Punkt navigieren zu können.
+		
+		%TODO https://www.usability-tipps.de/info/index.php/erprobte-mittel-zur-wahrung-orientierung-webseiten/
+	
+	\item Orientierung \\
+		Die Benutzer der Applikation sollen sich auf der Webseite zurecht finden und zu jedem Zeitpunkt wissen, wo sie sich befinden. Eine einfache Orientierung ist der Grundstein für das Wohlbefinden der Benutzer und soll deshalb berücksichtigt werden.
+		
+	\item Style \\
+		Die Webseite soll überschaubar sein und so einfach wie möglich gehalten werden. Überladene Webseiten führen schnell zu verwirrung, was vermieden werden sollte. Ausserdem soll die Applikation so gestylet werden, dass sie selbsterklärend ist.
+		
+	\item Kontrast \\
+		Die dargestellten Elemente sollen gut erkennbar sein und nicht in der Webseite versinken. Natürlich soll damit nicht übertrieben und mit knalligen Farben um sich geworfen werden.
+\end{itemize}
+
+Basierend auf den oben aufgelisteten UI-Design Anforderungen, wurden folgende Entscheidungen getroffen:
+
+\begin{itemize}
+	\item Mobile-First \\
+	
+	\item Struktur \\
+		
+	\item Navigation \\
+		Um eine schnelle Navigation zu ermöglichen, wird die Applikation in 5 Bereiche aufgeteilt, welche über die Navigationsleite erreichbar sind. Dabei handelt es sich um folgende Bereiche: Statistiken, Klassenverwaltung, Adminpanel, Schulstoff und User. 
+	\item Orientierung \\
+		Um den Benutzern eine möglichst gute Orientierung zu gewähren, wurden Breadcrumbs eingebaut. Um zusätzlich eine einheitliche Navigation durch die Applikation zu bieten, wurde entschieden, die Breadcrumbs zu verwenden.
+	\item Style \\
+		Auf den einzelnen Seiten wir nur das nötigsten angezeigt. Auf den einzelnen Seite wird immer nur das nötigsten angezeigt und auf unnötiges verzichtet.
+		%TODO Googlen, was üblich ist um eine Webseite zu designen.
+	\item Kontrast \\
+		Es wurde auf knallige Farben verzichtet. Die wichtigen Elemente pro Seite sind einfach zu erkennen, da auf eine schlichte Gestalltung gesetzt wurde.
+\end{itemize}
+
+
 
 \subsubsection*{Mockup}
 
