@@ -4,11 +4,11 @@ Für die Umsetzung der Anwendung gibt es zwei Optionen. Man kann zwischen einer 
 
 Native Apps haben zwar einige Vorteile. Die Integration mit anderen Anwendungen ist so zum Beispiel einfacher. Zudem wäre die Monetarisierung auch um einiges einfacher, denn eine Native App kann sehr gut im App Store platziert werden. So steigt auch gleich die Bekanntheit der Applikation\footcite{native_app}. \\
 
-Die Entscheidung bei der Entwicklung von Aufgaben-Coaching fiel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Tablets arbeiten. Hinzu kommt noch die Anforderung der Lehrer. Da diese hauptsächlich auf Notebooks oder Desktop PCs arbeiten, müsste für sie auch eine separate Anwendung entwickelt werden. Mit einer Webanwendung hat man den Vorteil, nur eine Anwendung entwickeln zu müssen, auf welche alle Benutzer Zugriff haben. Für grosse Firmen ist dies kein Problem, mehrere Anwendungen für unterschiedliche Benutzergruppen zu entwickeln. Möchte man die Idee aber als Startup weiter verfolgen, hat man zu Beginn weder die Zeit, noch das Kapital, um gleich mehrere Anwendungen zu entwickeln. \\
+Die Entscheidung bei der Entwicklung von Aufgaben-Coaching fiel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Tablets arbeiten. Mit einer Native App müsste für jedes Betriebssystem ein separates Programm erstellt werden.\\
 
-Zusätzlich kommt noch die Anforderung der Lehrer und Admins hinzu. Im Gegensatz zu den Schülern arbeiten diese meistens an einem Notebook
+Hinzu kommt noch die Anforderung der Lehrer. Da diese hauptsächlich auf Notebooks oder Desktop PCs arbeiten, müsste für sie auch eine separate Anwendung entwickelt werden. Mit einer Webanwendung hat man den Vorteil, nur eine Anwendung entwickeln zu müssen, auf welche alle Benutzer Zugriff haben.\\
 
-Zudem kann man mit Web Anwendungen die Supportkosten relativ tief halten, was auf Schulen vielleicht noch ein bisschen attraktiver wirkt. Die Anwendung kann direkt im Browser aufgerufen werden und es muss nichts im vorhinein auf jedem Device installiert werden.
+Ein weiterer Vorteil von Web Anwendungen ist, dass im vorhinein kein Programm auf dem Device installiert werden muss. Alles, was ein Benutzer braucht, ist ein Internetzugang und ein Tablet. Dies senkt zugleich die Supportkosten der Schule, da so keine Zeit für die Installation oder das Updaten verbraucht wird.
 
 \begin{figure}[H]
 \begin{center}
@@ -36,8 +36,9 @@ In der Abbildung \ref{fig:domain_model_full} ist das vollständige Domain Model 
 
 \end{landscape}
 
+%TODO SchoolClass im Domain Model zeigen
 \subsubsection*{School}
-Ein zentraler Punkt der Anwendung ist die Schule und das User Management. Die User sind einer der drei Rollen Student, Teacher oder Admin zugeteilt. Da jede Rolle unterschiedliche Rechte hat, konnte nicht das Standard User Model von Django selber verwendet werden. \\
+Ein zentraler Punkt der Anwendung ist die Schule und das User Management. Die User sind einer der drei Rollen Student, Teacher oder Admin zugeteilt. Da jede Rolle unterschiedliche Rechte hat, konnte nicht das Standard User Model von Django selbst verwendet werden. \\
 Es stehen drei Möglichkeiten zur Verfügung, wie unterschiedliche User Rollen implementiert werden können.
 
 \begin{enumerate}
@@ -62,6 +63,7 @@ Der Admin kann als einziger User Typ für sich alleine existieren. Schüler und 
 Wenn dieses Projekt als Startup weiter verfolgt wird, dann würde pro Schule eine neue Instanz der Anwendung deployed werden. So entstehen keine Multi Tenancy Probleme. Möchte man in Zukunft jedoch einen Multi Tenancy Ansatz verfolgen, müsste das Domain Model dementsprechend angepasst werden. Ein möglicher Lösungsansatz wäre, wenn jeder Schule eine eigene Subdomain, wie zum Beispiel schule-gossau.aufgaben-coach.ch, vergeben würde. Anhand der Subdomain können dann die einzelnen User identifiziert werden\footcite{django:multi_tenancy}.
 
 \newpage
+%TODO User, StudentProfile und TeacherProfile entfernen
 \subsubsection*{Study Content}
 Ein zentraler Punkt dieser Anwendung sind die Schulfächer. Pro Subject gibt es mehrere Topics. Topics wiederum können mehrere Lessons haben. \\ 
 
@@ -123,13 +125,14 @@ Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl st
 
 %TODO Satzstellung anschauen
 
-Die Wahl fiel schnell auf Python, da bereits etwas KnowHow über diese Programmiersprache vorhanden ist. \\
-Gemäss Developer Survey Results\footcite{developer_survey_results} von Stack Overflow ist Python (41.7\%) etwas bekannter als Java (41.1\%). Nur JavaScript (67.8\%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python auch noch weiter gestiegen. Man geht also davon aus, dass man auch in Zukunft noch mit Python arbeiten kann.
+Gemäss Developer Survey Results\footcite{developer_survey_results} von Stack Overflow ist Python (41.7\%) etwas beliebter als Java (41.1\%). Nur JavaScript (67.8\%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python auch noch weiter gestiegen. \\
+
+Die Wahl der Programmiersprache fiel schnell auf Python, da bereits etwas KnowHow vorhanden ist. Man geht aber davon aus, dass Python in Zukunft noch an Beliebtheit steigt und man weiterhin damit arbeiten kann.
 
 
 \subsubsection*{Web Framework}
-Bei Python selber steht man vor der Auswahl von verschiedenen Web Frameworks. Gemäss einer Umfrage von JetBrains über Python wird die Frage ''What web frameworks / libraries do you use in addition to Python?'' mit dem Kommentar ''Django and Flask continue to be by far the most popular Python web frameworks.'' zusammen gefasst. \\
-Laut der oben genannten Umfrage verwenden 43\% der Entwickler  Django als Web Framework. Flask folgt dicht darauf mit 41\%. Das nächst bekannteste Framework ist Tornado mit nur 6\%. \\
+Mit Python hat man die Auswahl von verschiedenen Web Frameworks. Gemäss einer Umfrage von JetBrains wird die Frage ''What web frameworks / libraries do you use in addition to Python?'' mit dem Kommentar ''Django and Flask continue to be by far the most popular Python web frameworks.'' zusammengefasst. \\
+Laut der oben genannten Umfrage verwenden 43\% der Entwickler  Django als Web Framework. Flask folgt dicht darauf mit 41\%. Das nächst bekannteste Framework ist Tornado mit nur noch 6\%. \\
 Bei der Evaluation konzentrierte man sich deshalb hauptsächlich auf Django und Flask. Mit bekannteren Frameworks hat man den Vorteil, dass es einfacher ist, Hilfe und gute Dokumentationen zu finden. Mit weit verbreiteten Technologien kann man auch davon ausgehen, dass diese noch längere Zeit bestehen bleiben.  \\ 
 
 %TODO zitat einbauen
@@ -137,10 +140,10 @@ Flask\footcite{flask:foreword} beschreibt sich selber mit den Worten:
 
 \begin{displayquote}
 Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja and has become one of the most popular Python web application frameworks. \\
-Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.'
+Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.
 \end{displayquote}
 
-Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Webanwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungen bereit stehen. \\
+Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Webanwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungsmöglichkeiten bereit stehen. \\
 
 Django verfolgt dagegen eher den Ansatz, bereits unterschiedliche Funktionalitäten mitzuliefern, was den Entwicklern Arbeit abnehmen soll. So ist zum Beispiel bereits ein OR-Mapper oder ein Admin Interface integriert\footcite{django:overview}. 
 Django kommt aber auch mit einigen Nachteilen. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden\footcite{django:advantages_disadvantages}.
