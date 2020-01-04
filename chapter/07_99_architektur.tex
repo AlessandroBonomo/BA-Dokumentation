@@ -17,8 +17,10 @@ Zudem kann man mit Web Anwendungen die Supportkosten relativ tief halten, was au
 	\label{fig:system_overview}
 \end{center}
 \end{figure}
+
+
 \subsection{Domain Model}
-In der Abbildung \ref{fig:domain_model_full} ist das vollständige Domain Model Model abgebildet. Um dem Leser ein klares Bild zu verschaffen, wurde dieses in die einzelnen Teilbereiche aufgeteilt.
+In der Abbildung \ref{fig:domain_model_full} ist das vollständige Domain Model Model abgebildet. Dem Leser soll so ein Überblick über die einzelnen Teilgebiete der Anwendung gegeben werden.
 
 \begin{landscape}
 
@@ -59,6 +61,7 @@ Der Admin kann als einziger User Typ für sich alleine existieren. Schüler und 
 
 Wenn dieses Projekt als Startup weiter verfolgt wird, dann würde pro Schule eine neue Instanz der Anwendung deployed werden. So entstehen keine Multi Tenancy Probleme. Möchte man in Zukunft jedoch einen Multi Tenancy Ansatz verfolgen, müsste das Domain Model dementsprechend angepasst werden. Ein möglicher Lösungsansatz wäre, wenn jeder Schule eine eigene Subdomain, wie zum Beispiel schule-gossau.aufgaben-coach.ch, vergeben würde. Anhand der Subdomain können dann die einzelnen User identifiziert werden\footcite{django:multi_tenancy}.
 
+\newpage
 \subsubsection*{Study Content}
 Ein zentraler Punkt dieser Anwendung sind die Schulfächer. Pro Subject gibt es mehrere Topics. Topics wiederum können mehrere Lessons haben. \\ 
 
@@ -73,6 +76,7 @@ Ein zentraler Punkt dieser Anwendung sind die Schulfächer. Pro Subject gibt es 
 
 Ein Subjects kann einer Klasse zugewiesen werden, welche erst dann Zugriff auf die Topics und Lessons hat. Im Moment ist es nicht möglich, einzelne Topics oder Lessons freizuschalten. Möchte man diese Funktionalität in Zukunft haben, muss eine neue Tabelle, ähnlich wie SubjectEnrollment, erstellt werden.
 
+\newpage
 \subsubsection*{Exercise}
 Das Herzstück der Anwendung sind die Exercises. Lehrer können Übungen erstellen, welche aus mehreren Teilaufgaben bestehen, welche wiederm mehrere Hilfestellungen haben. 
 
@@ -87,6 +91,7 @@ Das Herzstück der Anwendung sind die Exercises. Lehrer können Übungen erstell
 Die Tabelle Answer dient zur Speicherung der Antworten von Schülern. Die beiden Felder ''is\_submitted'' und ''is\_archived'' sind für den Status der Aufgaben. Ist eine Aufgabe submitted, also abgegeben, kann sie nicht weiter vom Schüler bearbeitet werden. Erst wenn Aufgaben abgegeben sind, können sie vom Lehrer angeschaut werden. \\ 
 Wurden die Aufgaben vom Lehrer korrigiert, bekommen sie den Status ''is\_archived''.
 
+\newpage
 \subsubsection*{Forum}
 Für jede Frage in einer Übung gibt es ein Forum. Die Schüler haben einen Ort, in welchem Fragen gestellt werden können. Da es für jede Frage ein Forum gibt, werden die Schüler auch nicht von anderen Forumsbeiträgen abgelenkt.
 \begin{figure}[H]
