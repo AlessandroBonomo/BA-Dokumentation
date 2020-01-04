@@ -1,6 +1,6 @@
-\subsection{Implementation}
+\section{Implementation}
 
-\subsubsection{Apps}
+\subsection{Apps}
 Bei Django werden unabhängige Funktionalitäten in unterschiedliche Apps aufgeteilt. Eine App in Django ist eigentlich nichts anderes als ein Python Package, welches eine Reihe von Features zur Verfügung stellt\footcite{django:apps}. Das Ziel dabei ist es, den Code auf die verschiedenen Apps aufzuteilen, so dass diese unabhängig voneinander wiederverwendet werden können.  \\
 In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welche für Aufgaben-Coaching erstellt wurden.
 
@@ -36,7 +36,7 @@ In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welc
 %TODO Weiterschreiben
 
 
-\subsubsection{URLs}
+\subsection{URLs}
 
 \begin{table}[H]
 	\centering
@@ -161,9 +161,7 @@ Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der App
 \end{minipage}
 
 
-
-
-\subsubsection{Testing}
+\subsection{Testing}
 
 \subsubsection*{Allgemein}
 Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
