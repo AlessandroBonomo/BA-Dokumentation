@@ -78,7 +78,7 @@ Sollte man in Zukunft jedoch ein anderes Datenbanksystem bevorzugen, kann die Mi
 \subsubsection*{Python Libraries}
 
 \subsubsection{UI Design}
-Bevor mit der Entwicklung des Frontends begonnen werden kann, muss genau geplant werden, wie dieses aussehen soll. Um ein möglichst gutes Ergebnis zu erzielen, ist es wichtig sich folgende Fragen zu stellen:
+Bevor mit der Entwicklung des Frontends begonnen werden kann, muss geplant werden, wie dieses aussehen soll. Um ein möglichst gutes Ergebnis zu erzielen, ist es wichtig sich folgende Fragen zu stellen:
 
 \begin{itemize}
 	\item Welche Anforderungen werden an die Webseite gestellt?
@@ -89,14 +89,16 @@ Bevor mit der Entwicklung des Frontends begonnen werden kann, muss genau geplant
 Durch das Beantworten der einzelnen Fragen, kann schnell herausgefunden werden, welche Anforderungen an das Frontend gestellt werden. Da der Aufgaben-Coach von komplett verschiedenen Benutzergruppen verwendet und damit gearbeitet wird, sollte das UI mögichst simpel und effizient gestaltet werden. Folgende Anforderungen konnten herauskristallisiert werden:
 
 \begin{itemize}
-	\item Mobile-First \\
-		Bei einer der Benutzergruppen handelt es sich um Schüler. Die Gruppe Schüler ist die Hauptnutzergruppe der Applikation und soll desshalb besonders gut abgeholt werden. Um möglichst gut auf ihre Bedürfnisse einzugehen, soll der komplette Teil, der für die Schüler gedacht ist, nach Mobile First designed und implementiert werden.
+	\item Usability \\
+		Bei einer der Benutzergruppen handelt es sich um Schüler. Die Gruppe Schüler ist die Hauptnutzergruppe der Applikation und soll desshalb besonders gut abgeholt werden. Um möglichst auf ihre Bedürfnisse einzugehen, soll der komplette Teil, der für die Schüler gedacht ist, ebenfalls über Tablets und Mobiles bedienbar sein.
 		
 		%TODO https://www.jugendundmedien.ch/digitale-medien/fakten-zahlen.html
+		
 	\item Struktur \\
 		Internetnutzer haben in der Regel eine relativ kurze Aufmerksamkeitsspanne, weshalb anhand der Struktur auf den ersten Blick klar sein sollte, was auf der Webseite möglich ist und was nicht. 
 		
 		%TODO https://www.websitebuilder-test.com/homepage-erstellen/#struktur
+		
 	\item Navigation \\
 		Die Navigation über die Webseite soll so einfach und simpel wie möglich gehalten werden. Es soll möglich sein von jedem beliebigen Punkt der Webseite in kürzester Zeit zu einem beliebig anderen Punkt navigieren zu können.
 		
@@ -105,9 +107,6 @@ Durch das Beantworten der einzelnen Fragen, kann schnell herausgefunden werden, 
 	\item Orientierung \\
 		Die Benutzer der Applikation sollen sich auf der Webseite zurecht finden und zu jedem Zeitpunkt wissen, wo sie sich befinden. Eine einfache Orientierung ist der Grundstein für das Wohlbefinden der Benutzer und soll deshalb berücksichtigt werden.
 		
-	\item Style \\
-		Die Webseite soll überschaubar sein und so einfach wie möglich gehalten werden. Überladene Webseiten führen schnell zu verwirrung, was vermieden werden sollte. Ausserdem soll die Applikation so gestylet werden, dass sie selbsterklärend ist.
-		
 	\item Kontrast \\
 		Die dargestellten Elemente sollen gut erkennbar sein und nicht in der Webseite versinken. Natürlich soll damit nicht übertrieben und mit knalligen Farben um sich geworfen werden.
 \end{itemize}
@@ -115,24 +114,78 @@ Durch das Beantworten der einzelnen Fragen, kann schnell herausgefunden werden, 
 Basierend auf den oben aufgelisteten UI-Design Anforderungen, wurden folgende Entscheidungen getroffen:
 
 \begin{itemize}
-	\item Mobile-First \\
-	
+	\item Usability \\
+		Webseiten welche über Tablets und Mobilies verwendet werden, sollten niemals überladen sein. Aus diesem Grund sollen die Teile der Applikation, welche für die Schüler gedacht sind, schlicht und einfach gehalten werden. Wo auch immer möglich soll auf lange Texte verzichtet werden. Die einzelnen Seiten der Webapplikation sollen nur die für sie gedachte Aufgabe lösen.
+		
+		%TODO https://www.cubetech.ch/mobile-first-nur-ein-trend-oder-schon-bald-die-zukunft/
+		
 	\item Struktur \\
+		Um eine möglichst benutzerfreundliche Struktur aufzubauen, soll auf ein Kompromiss zwischen, ''eine Webseite so einfach wie möglich halten und nur eine bestimmte Aufgabe lösen zu lassen'' und ''eine bestimmte Aufgabe mit so wenigen Klicks wie möglich lösen zu können'', gesetzt werden. \\
 		
 	\item Navigation \\
-		Um eine schnelle Navigation zu ermöglichen, wird die Applikation in 5 Bereiche aufgeteilt, welche über die Navigationsleite erreichbar sind. Dabei handelt es sich um folgende Bereiche: Statistiken, Klassenverwaltung, Adminpanel, Schulstoff und User. 
+		Um eine schnelle Navigation zu ermöglichen, soll die Applikation in fünf Bereiche aufgeteilt werden, welche über die Navigationsleite erreichbar sind. Dabei soll es sich um folgende Bereiche handeln: Statistiken, Klassenverwaltung, Adminpanel, Schulstoff und User. 
+		
 	\item Orientierung \\
-		Um den Benutzern eine möglichst gute Orientierung zu gewähren, wurden Breadcrumbs eingebaut. Um zusätzlich eine einheitliche Navigation durch die Applikation zu bieten, wurde entschieden, die Breadcrumbs zu verwenden.
-	\item Style \\
-		Auf den einzelnen Seiten wir nur das nötigsten angezeigt. Auf den einzelnen Seite wird immer nur das nötigsten angezeigt und auf unnötiges verzichtet.
-		%TODO Googlen, was üblich ist um eine Webseite zu designen.
+		Um den Benutzern eine möglichst gute Orientierung zu gewähren, sollen Breadcrumbs eingebaut werden. Um zusätzlich eine einheitliche Navigation durch die Applikation zu bieten, sollen die Breadcrumbs auch zum navigieren verwendet werden können.
+		
 	\item Kontrast \\
-		Es wurde auf knallige Farben verzichtet. Die wichtigen Elemente pro Seite sind einfach zu erkennen, da auf eine schlichte Gestalltung gesetzt wurde.
+		Es soll auf knallige Farben und Eye­cat­cher verzichtet werden. Wichtige Elemente sollen zwar mit Farbe hervorgehoben werden, jedoch nicht dadurch auffallen. Die schlichte Gestalltung der Webseite soll die Aufmerksamkeit auf die entsprechenden Elemente leiten.
 \end{itemize}
 
 
-
 \subsubsection*{Mockup}
+%TODO https://www.iqual.ch/de/internet-glossar/mockups
+Anhand der getroffenen Entscheidungen wurden Mockups erstellt. Der Entscheid zum Erstellen von Mockups hat mehrere Gründe und bietet auch gleich verschiedene Vorteile. Während dem Erstellen von Mockups kann bereits früh erkannt werden, ob wichtige Punkte vergessen oder vernachlässigt wurden. Sobald die Mockups fertiggestellt sind, können damit bereits erste Tests durchgeführt werden. Zum Beispiel kann geprüft werden, ob alle geforderten funktionalen Anforderungen erfüllt werden und es können erstmals Usability-Tests durchgeführt werden, was viel Zeit und unnötige Arbeit ersparen kann. \\
+
+Nachfolgend werden einige Beispiele für Ergebnisse der getroffenen Entscheidungen für die Mockups aufgelistet. Im Anhang sind alle gemachten Mockups zu finden. \\ %TODO Link zu Anhang einbauen.
+
+Usability: \\
+Auf dem Dashboard wird der Wochenplan des Schülers, gefolgt von den derzeit besuchten Fächern, knapp und ersichtlich aufgelistet. \\
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+	\centering
+		\includegraphics[width=5cm, keepaspectratio]{images/Mockups/Dashboard_Smartphone.png}
+		\caption{Mockup Smartphone Dashboard}
+	\end{figure}
+\end{minipage}
+
+
+Struktur: \\
+Die Aufgabe dieser Seite ist es, neue Fragen zu definieren. Mit dem Risiko die Seite ein wenig zu überladen, dem Benutzer jedoch eine bessere Übersicht zu bieten, wurde ein Kompromiss eingegangen und entschieden, dass auch die dazugehörenden Hilfestellungen erfasst werden können. \\
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+	\centering
+		\includegraphics[width=\textwidth, keepaspectratio]{images/Mockups/AufgabeErfassen_Desktop.png}
+		\caption{Mockup Aufgabe erfassen Desktop}
+	\end{figure}
+\end{minipage}
+
+
+Navigation: \\
+In der Navigationsbar sind die fünf definierten Bereiche ersichtlich. Dashboard stellt den Schulstoff Bereich dar, Statistiken die Statistiken, Klassenverwaltung die Klassenverwaltung, Admin das Adminpanel und Logout/Login die User. \\
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+	\centering
+		\includegraphics[width=\textwidth, keepaspectratio]{images/Mockups/Navigationsleiste_Desktop.png}
+		\caption{Mockup Navigationsbar Desktop}
+	\end{figure}
+\end{minipage}
+
+
+Orientierung: \\
+Durch die Breadcrumbs wird hierarchisch dargestellt, wo man sich aktuell in der Webapplikation befindet. Mit einem Klick auf die übergeordneten Bereiche, navigiert man sofort an die gewünschte Stelle. \\
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+	\centering
+		\includegraphics[width=\textwidth, keepaspectratio]{images/Mockups/Breadcrumbs_Desktop.png}
+		\caption{Mockup Breadcrumbs Desktop}
+	\end{figure}
+\end{minipage}
+
+
+Kontrast: \\
+Da die Mockups in schwarz und weiss erstellt wurden, gibt es hierfür kein Beispiel. Die Entscheidung wurde natürlich dennoch in die Entwicklung miteinbezogen.
+
 
 
 \subsubsection*{Effektive Webseite}
