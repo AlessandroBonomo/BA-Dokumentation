@@ -5,24 +5,19 @@
 Luca Gubler arbeitete neben dem Studium als IT Supporter in der Oberstufe Gossau ZH. Während eines Gespräches mit seinem Vorgesetzten bemängelte dieser, dass es keine guten E-Learning Plattformen für Schulen gibt. Zwar gebe es vereinzelt Lehrer oder Schulen, welche dies selber in die Hand nehmen und eine Open Source Tool wie Moodle verwenden und darauf den Content selber erfassen. Es wird jedoch viel Zeit benötigt, bis der gesamte Schulstoff digital erfasst wird. Solche Projekte würden auch oft nur halbherzig umgesetzt und geraten dann in Vergessenheit. Meistens lässt auch die Qualität zu wünschen übrig.
 
 \subsubsection{Problemstellung / Vision}
-Aus diesem Gespräch heraus entstand die Idee, eine All-In-One Lernplattform für Schulen zu erstellen. In einem ersten Schritt richtet sich die Plattform an die Sekundarstufe 1 und soll den ganzen Schulstoff in Form von Videos und Theorie-Zusammenfassungen zur Verfügung stellen. Zudem gibt es Übungen zu den einzelnen Themen. Sobald die Schüler eine Aufgabe gelöst haben, kann der Lehrer Statistiken einsehen, wie gut die Schüler diese Aufgaben gelöst haben. Falls zum Beispiel eine Aufgabe besonders schlecht gelöst wurde, kann der Lehrer diese Aufgabe mit der ganzen Klasse besprechen. Zudem kann der Lehrer auf einzelne Schüler zugehen, falls er bemerkt, dass diese Hilfe in einem spezifischen Aufgabengebiet benötigen. \\
+Aus diesem Gespräch heraus entstand die Idee, eine All-In-One Lernplattform für Schulen zu erstellen. In einem ersten Schritt richtet sich die Plattform an die Sekundarstufe 1 und soll den ganzen Schulstoff in Form von Videos und Theorie-Zusammenfassungen zur Verfügung stellen. Zudem gibt es Übungen zu den einzelnen Themen. Sobald die Schüler eine Aufgabe gelöst haben, kann der Lehrer Statistiken einsehen, wie gut die Schüler diese Aufgaben gelöst haben. Falls zum Beispiel eine Aufgabe von der ganzen Klasse überdurchschnittlich schlecht gelöst wurde, kann der Lehrer diese Aufgabe mit der ganzen Klasse besprechen. Bemerkt der Lehrer, dass einzelne Schüler Hilfe in einem spezifischen Aufgabengebiet benötigen, kann er direkt auf diese zugehen.\\
 
 Des Weiteren soll ein Forum bereitstehen, in welchem Schüler Fragen zu spezifischen Aufgaben stellen können. Falls der Lehrer sieht, dass auch hier die Schüler etwas nicht ganz verstanden haben, kann er nochmals direkt auf ein Thema eingehen. \\
 
 Eine solche Plattform soll es den Schülern erlauben, unabhängig voneinander zu lernen. Falls ein Schüler ein Thema schneller lernt als andere, so soll er während der Schulzeit ein anderes Thema lernen können und nicht von anderen Schülern aufgehaltet werden. Trotzdem soll der Lehrer über den Wissensstand seiner Schüler informiert sein und diese gezielt unterstützen können.
 
 \subsubsection{Aufgabenstellung}
-Bei dieser Problemstellung handelt es sich um eine grobe Beschreibung der gesamten Idee. Da der Umfang dieser Bachelorarbeit begrenzt ist, können nicht alle Punkte umgesetzt werden. Die Idee für eine solche Idee ist jedoch nicht ganz neu und es gibt Ähnlichkeiten zu bereits existierenden Tools. Aus diesem Grund wurde nach einem Punkt gesucht, in welchem man sich von den existierenden Tools abheben kann. \\
+Bei dieser Problemstellung handelt es sich um eine grobe Beschreibung der gesamten Idee. Da die Zeit dieser Bachelorarbeit begrenzt ist, können nicht alle Punkte in vollem Umfang umgesetzt werden. Die Idee für eine solche Idee ist jedoch nicht ganz neu und es gibt Ähnlichkeiten zu bereits existierenden Tools. Aus diesem Grund wurde nach einem Punkt gesucht, in welchem man sich von den existierenden Tools abheben kann. \\
 
 In Zusammenarbeit mit Frank Koch, dem Betreuer dieser Bachelorarbeit und dem Moodle Experten der \gls{hsr}, kam man zum Schluss, dass man sich mit dem aufgabenspezifichen Teil der Anwendung von solchen Tools abgrenzen kann. Die Schüler sollen in der Lage sein, Aufgaben zu lösen. Falls diese jedoch nicht wissen, wie man beim einem Aufgabentyp vorgehen muss, können sie mit Hilfestellungen Schritt für Schritt durch die Aufgabe geleitet werden. So können neue wie auch schwierige und komplizierte Aufgaben trotzdem selbstständig erarbeitet werden. \\
-%Schlussendlich soll jedoch eine lauffähige Anwendung existieren, also kommt einiges an Funktionalität hinzu. So muss zum Beispiel ein User Management existieren. Ein Administrator muss neue Lehrer und Schüler erfassen und diese einer Schulklasse zuweisen können.
-%\\
-%Auf der Lernplattform ist der gesamte Schulstoff der Sekundarstufe vorhanden. Die Lehrer können einzelne Fächer freischalten, so dass diese für die Schüler sichtbar sind. Haben die Schüler eine Aufgabe gelöst, kann der Lehrer sehen, wie viele Schüler diese Aufgabe gelöst haben und wie gut der Klassenschnitt ist.
-%\\
-%Die Schüler haben die Möglichkeit, die freigeschaltenen Fächer anzusehen und Quizze und Übungen zu lösen.
 
 \subsubsection{Zielgruppen}
-In einem ersten Schritt richtet sich der Aufgaben-Coach an alle drei Stufen der Sekundarstufe 1. Später soll der Aufgaben-Coach aber auch für die Primarstufe oder Sekundarstufe 2 zugänglich gemacht werden. 
+Für den Moment ist Aufgaben-Coach für die Sekundarstufe 1 ausgelegt. Später soll es jedoch auch möglich sein, Aufgaben-Coach in anderen Schulstufen einzusetzen.
 
 \subsection{Stand der Technik}
 Es gibt bereits einige Tools, welche Lerninhalte für Schüler zur Verfügung stellen. Diese bestehenden Tools lassen sich in zwei Kategorien einteilen:
@@ -33,25 +28,22 @@ Es gibt bereits einige Tools, welche Lerninhalte für Schüler zur Verfügung st
 
 \subsubsection{Existierende Produkte}
 \subsubsection*{Kommerzielle Anbieter}
-Sofatutor gehört wohl zu den grössten und bekanntesten Anbietern von Lerninhalten im \gls{dach} Raum. Sofatutor richtet sich jedoch hauptsächlich an Schüler, welche Nachhilfe in einem bestimmten Fach brauchen. In einem begrenzten Rahmen ist es auch möglich, sofatutor im Schulaltag einzubinden\footcite{sofatutor_fuer_lehrer}. Lehrer können ihren Schülern einzelne Videos oder Übungen freischalten. \\
+Sofatutor gehört wohl zu den grössten und bekanntesten Anbietern von Lerninhalten im \gls{dach} Raum. Sofatutor richtet sich jedoch hauptsächlich an Schüler, welche Nachhilfe in einem bestimmten Fach brauchen. In einem begrenzten Rahmen ist es auch möglich, sofatutor im Schulaltag einzubinden\footcite{sofatutor_fuer_lehrer}. Lehrer können ihren Schülern zum Beispiel einzelne Videos oder Übungen freischalten. \\
 
-EF Class ist ein weiterer Anbieter von Lerninhalten. Hier werden aber nur Inhalte rund um den English Unterricht angeboten. Um alle Fächer abzudecken, müsste eine Schule gleich mehrere solcher Tools einsetzen. \\
+EF Class ist ein weiterer Anbieter von Lerninhalten. Hier werden aber nur Inhalte rund um den English Unterricht angeboten. Um alle Fächer abzudecken, müsste eine Schule gleich mehrere solcher Tools einkaufen. \\
 
 %TODO eigenes kapitel mit diesem abschnitt
 %Mit dem Aufgaben-Coach verfolgt man aber das Ziel des ''Flipped Classroom''. Bei der klassischen Methode, wie sie zur Zeit in der Schule angewendet wird, lernen die Schüler die Theorie in der Schule und vertiefen das Wissen durch Übungen zu Hause. Beim ''flipped classroom'' stellt der Lehrer den Schülern die Theorie zum Beispiel als Video zur Verfügung. Die Schüler können die Theorie so zu Hause lernen und in der Schule dann die darauf aufbauenden Übungen lösen. So benötigen die Schüler nur dann die Hilfe des Lehrers, wenn sie vor einem Problem stehen. Der Lehrer steht also nur noch als eine Art Coach zur Verfügung. 
 
 %TODO schreib über CMS / LMS und andere Tools
 \subsubsection*{Open Source Projekte}
-Grundlegend fallen Open Source Lösungen in die Kategorie der \gls{lms}. \gls{lms} selber ist eine Unterkategorie von \gls{cms}. \gls{cms} werden typischerweise als \gls{ecm} oder \gls{wcm} verwendet. Ein \gls{ecm} ist auf die Arbeitswelt ausgerichtet und stellt Funktionen zur Dokumentverwaltung oder der Verwaltung digitaler Inhalte zur Verfügung. Zudem wird ein rollenbasierter Zugriff auf die Inhalte von Firmen ermöglicht. SharePoint\footcite{sharepoint} ist ein bekanntes \gls{ecm} und ermöglicht es Dateien zu speichern oder zu teilen, ist jedoch hauptsächlich für den firmeninternen Gebrauch ausgelegt. \\
+Grundlegend fallen Open Source Lösungen in die Kategorie der \gls{lms}. \gls{lms} selber ist eine Unterkategorie von \gls{cms}. \gls{cms} werden typischerweise als \gls{ecm} oder \gls{wcm} verwendet. Ein \gls{ecm} ist auf die Arbeitswelt ausgerichtet und stellt Funktionen zur Dokumentverwaltung oder der Verwaltung digitaler Inhalte zur Verfügung. Zudem wird ein rollenbasierter Zugriff auf die Inhalte ermöglicht. SharePoint\footcite{sharepoint} ist ein bekanntes \gls{ecm} und ermöglicht es Dateien zu speichern oder zu teilen, ist jedoch, wie man in \gls{ecm} heraushören kann, hauptsächlich für den firmeninternen Gebrauch ausgelegt. \\
 
-Mit einem \gls{wcm} kann praktisch ohne grosses Vorwissen eine Website erstellt werden. So können zum Beispiel auf sehr einfache Weise neue Seiten erstellt und verwaltet werden. Gemäss dieser Statistik von Internet Live Stats\footcite{internet_live_stats} gibt es über 1.7 Milliarden unique Websites. Unter ''unique'' wird eine Website mit einzigartigem Hostname verstanden. Diese hohe Nummer ist aber haupstächlich wegen dem Gebrauch unterschiedlicher \gls{cms} so hoch, da auch laien sehr schnell Websites erstellen können. WordPress ist mit Abstand meist eingesetzte \gls{cms}. Mit über 27 Millionen Websites besitzt WordPress einem Marktanteil von 53.3\%. Der zweite Platz belegt Joomla! mit gerade einmal 3.8 Millionen Websites und einem Marktanteil von 7.5\%\footcite{cms_market_share}. Die Differenz dieser beiden \gls{cms} ist relativ hoch. \\
+Mit einem \gls{wcm} kann praktisch ohne grosses Vorwissen eine Website erstellt werden. So können zum Beispiel auf sehr einfache Art und Weise neue Seiten erstellt und verwaltet werden. Gemäss dieser Statistik von Internet Live Stats\footcite{internet_live_stats} gibt es über 1.7 Milliarden unique Websites. Unter ''unique'' wird eine Website mit einzigartigem Hostname verstanden. Diese hohe Nummer ist aber haupstächlich wegen dem Gebrauch unterschiedlicher \gls{cms} so hoch, da auch laien sehr schnell Websites erstellen können. Unter allen \gls{cms} ist WordPress das mit Abstand meist eingesetzte Tool und besitzt mit über 27 Millionen Websites einem Marktanteil von 53.3\%. Der zweite Platz belegt Joomla! mit gerade einmal 3.8 Millionen Websites und einem Marktanteil von 7.5\%\footcite{cms_market_share}.\\
 
-Um E-Learning Websites zu erstellen, gibt es nochmals eine Unterkategorie von \gls{wcm}, sogenannte \gls{lms}. Die Hauptfunktion solcher Tools ist das Bereitstellen von Online Trainings. Ein grosser Vorteil solcher Tools ist, dass sie sehr flexibel eingesetzt werden können. Eine Firma kann zum Beispiel interne Weiterbildungs Videos veröffentlichen, während eine Schule ihre Fächer über eine solche Plattform verwaltet. \\
+Um E-Learning Websites zu erstellen, gibt es nochmals eine separete Unterkategorie von \gls{wcm}, sogenannte \gls{lms}. Die Hauptfunktion solcher Tools ist das Bereitstellen von Online Trainings. Ein grosser Vorteil solcher Tools ist, dass sie sehr flexibel eingesetzt werden können. Eine Firma kann zum Beispiel interne Weiterbildungen anbieten, während eine Schule den Schülern die Theorie zu einzelnen Themen anbietet. \\
 
-\newpage
-Eines der wohl bekanntesten \gls{lms} ist Moodle\footcite{moodle_homepage}, welches auch an der \gls{hsr} zum Einsatz kommt. Moodle belegt jedoch nur Platz 19 der besten \gls{lms} basierend auf User Experience\footcite{moodle_ux}. Es ist jedoch anzumerken, dass diese Umfrage aus dem Jahr 2018 kommt. In der Umfrage von 2019 wurde Moodle nicht mehr aufgelistet. Platz 1 wird in beiden Jahren von Looop\footcite{looop_homepage} belegt. \\
-
-Mit praktisch jedem \gls{lms} können Kurse den Teilnehmern zur Verfügung gestellt werden. Die meisten dieser Systeme richten sich aber an Firmen, welche Trainings für ihre Mitarbeiter bereitstellen möchten. 
+Eines der wohl bekanntesten \gls{lms} ist Moodle\footcite{moodle_homepage}, welches auch an der \gls{hsr} zum Einsatz kommt. Moodle belegt jedoch nur Platz 19 von 20 der besten \gls{lms} basierend auf User Experience\footcite{moodle_ux}. Diese Umfrage stammt jedoch aus dem Jahr 2018, in der Umfrage von 2019 wird Moodle gar nicht mehr aufgelistet. Moodle schnitt mit 70\% ab, während Looop\footcite{looop_homepage} Platz 1 mit 90\% besetzt. Es ist jedoch nicht ersichtlich, warum Moodle schlecht Abschnitt, denn 88\% der Bentuzer würden Moodle weiter empfehlen.
 
 
 %Unter einem \gls{cms} versteht man ein System, welches die die Erstellung und Verwaltung von digitalen Inhalten ermöglicht. 
@@ -64,25 +56,26 @@ Mit praktisch jedem \gls{lms} können Kurse den Teilnehmern zur Verfügung geste
 %An diesem Punkt möchte man mit dem Aufgaben-Coach ansetzen. Mit dieser Plattform soll der Lehrer bei den Aufgaben eine Schritt für Schritt Anleitung erstellen können. Benötigen die Schüler Hilfe bei einer Aufgabe, können sie die Aufgabe selbständig lösen und bekommen mit der Hilfe eine genaue Anleitung.
 
 \subsubsection{Flipped Classroom}
-Solche Anwendungen erlauben es einer Lehrperson, das Flipped Classroom Prinzip in den Unterricht zu integrieren. In der klassischen Unterrichtsmethode besteht der Unterricht aus einer Phase, in welcher die Lehrperson den Schülern die Theorie zu einem neuen Thema beibringt. In der zweiten Phase zu Hause lösen die Schüler auf der erlernten Theorie aufbauende Übungen. Flipped Classroom vertauscht nun diese beiden Phasen. Die Lerninhalte werden zu Hause von den Schülern erarbeitet. Dies kann in Form von Videos oder Theorie Texten statt finden. Die Anwendung, also das Lösen von Aufgaben, findet dann während der Unterrichts Zeit statt\footcite{flipped_classroom_theorie}. \\
+Plattformen wie Moodle erlauben es einer Lehrperson, das Flipped Classroom Prinzip in den Unterricht zu integrieren. In der klassischen Unterrichtsmethode besteht der Unterricht aus einer Phase, in welcher die Lehrperson den Schülern die Theorie zu einem neuen Thema beibringt. In der zweiten Phase lösen die Schüler auf der erlerntetn Theorie aufbauende Übungen. Dies findet dann meistens zu Hause in Form von Hausaufgaben statt. Flipped Classroom vertauscht nun diese beiden Phasen. Die Lerninhalte werden zu Hause von den Schülern erarbeitet. Dies kann in Form von Videos oder Theoriezusammenfassungen stattfinden. Die Anwendung, also das Lösen von Aufgaben, findet dann während dem Unterricht statt\footcite{flipped_classroom_theorie}. \\
 
-Da die Schüler die Theorie zu Hause lernen, hat eine Lehrperson während des Unterrichtes viel mehr Zeit, um sich direkt mit den Schülern zu befassen. Die Lehrperson kann jene Schüler coachen, welche das Thema noch nicht ganz begriffen haben. Die Schüler, welche das Thema aber verstehen, können bereits mit dem nächsten Thema beginnen und werden nicht abgelenkt. \\
+Da die Schüler die Theorie zu Hause lernen, hat eine Lehrperson während des Unterrichtes viel mehr Zeit, um sich direkt und individuell mit den Schülern zu befassen. Die Lehrperson kann jene Schüler coachen, welche ein Thema noch nicht ganz verstehen. Die Schüler, welche das Thema aber verstehen, können bereits mit dem nächsten Thema beginnen und werden nicht aufgehalten. \\
 
-Flipped Classroom kommt jedoch nicht nur mit Vorteilen. Nachfolgend ist eine Liste mit Vor- und Nachteilen von Flipped Classroom\footcite{flipped_classroom_pro_con}.
+Auf den ersten Blick bietet Flipped Classroom viele Vorteile. Nachfolgend befindet sich eine kurze Übersicht mit Vor- und Nachteilen\footcite{flipped_classroom_pro_con}.
 
 \newpage
 \subsubsection*{Vorteile}
 \begin{itemize}
-	\item Die Schüler haben mehr Kontrolle über ihr eigenes Lernen. Sie können selber entscheiden, in welchem Tempo sie etwas lernen. Fragen oder Unklarheiten können dann im Unterricht mit einer Lehrperson besprochen werden. Jene Schüler, welche ein Konzept nicht auf anhieb verstehen, können sich die Theorie in Ruhe nochmals anschauen, ohne den Anhang an den Unterricht zu verlieren.
-	\item Während des Unterrichts gibt es weniger Frontalunterricht, dafür mehr Übungen und Projektarbeiten. Die Schüler können sich so gegenseitig unterstützen und beim lernen helfen. Der Lehrer coacht sie nur dabei.
+	\item Die Schüler haben mehr Kontrolle über ihr eigenes Lernen. Sie können selber entscheiden, in welchem Tempo sie etwas lernen. Fragen oder Unklarheiten können dann im Unterricht mit einer Lehrperson besprochen werden. Jene Schüler, welche ein Konzept nicht auf Anhieb verstehen, können sich die Theorie in Ruhe nochmals anschauen, ohne den Anhang an den Unterricht zu verlieren.
+	\item Während des Unterrichts gibt es weniger Frontalunterricht, dafür mehr Übungen und Projektarbeiten. Die Schüler können sich so gegenseitig unterstützen und beim lernen helfen. Die Lehrperson ist nur noch als Coach tätig und unterstützt einzelne Schüler.
 	\item Die Lektionen sind immer Verfügbar. Kann ein Schüler wegen Krankheit nicht in den Unterricht kommen, so kann die Theorie trotzdem erlernt werden. 
 	\item Weil die Lektionen praktisch 24/7 verfügbar sind, können die Eltern auch zu Hause schauen, was die Kinder im Unterricht genau machen. So können sie sich auch selbst besser vorbereiten, falls sie ihre Kinder unterstützen wollen. 
 \end{itemize}
 
 \subsubsection*{Nachteile}
 \begin{itemize}
-	\item Ein grosser Nachteil ist, dass die Infrastruktur vorhanden sein muss. In der Schule werden den Schülern vielleicht Tablets verteilt, auf welchen sie die Videos anschauen können. Zu Hause braucht der Schüler aber ein eigenes Tablet und einen Internet Anschluss. Es kann durchaus vorkommen, dass diese Infrastruktur nicht in jedem Haushalt vorhanden ist.
-	\item Die Schüler werden dazu aufgefordert, sich zu Hause vorzubereiten. Es kann aber nicht garantiert werden, dass die Schüler das tatsächlich auch tun.
+	\item Ein grosser Nachteil ist, dass die Infrastruktur vorhanden sein muss. In der Schule werden den Schülern vielleicht Tablets verteilt, auf welchen sie die Videos anschauen können. Zu Hause braucht der Schüler aber ein eigenes Tablet und einen Internet Anschluss. Es kann durchaus vorkommen, dass diese Infrastruktur nicht in jedem Haushalt vorhanden ist. \\
+	In der Schule sollte dies jedoch kein Problem sein, da die Digitalisierung der Schulen immer weiter voran schreitet\footcite{digitale_schule}.
+	\item Die Schüler werden dazu aufgefordert, sich zu Hause vorzubereiten. Es kann aber nicht garantiert werden, dass die Schüler das auch tatsächlich tun.
 	\item Bei Flipped Classroom verbringen die Schüler automatisch mehr Zeit vor einem Bildschirm. Es kann Eltern geben, die das jedoch nicht so toll finden, wenn ihre Kinder die ganze Zeit auf einen Bildschirm starren.
 \end{itemize}
 
@@ -94,17 +87,27 @@ Für die Konzeption war es hilfreich, dass die \gls{hsr} selber eine Moodle Seit
 
 \subsubsection{Zentrale Elemente}
 \subsubsection*{Benutzer und Rechte}
-Es gibt die Gruppen ''Administrator'', ''Lehrer'' und ''Schüler'', in welche eine Person eingeteilt werden kann. \\
+Eine Person kann einer der Rollen ''Administrator'', ''Lehrer'' oder ''Schüler'', zugewiesen werden. \\
 
-Lehrer können den Inhalt ihrer Klasse verwalten und entscheiden, welche Fächer für die Schüler zugänglich sind. Sie erstellen Aufgaben und Quizzes, welche sie über einen Wochenplan einer Klasse zuweisen können. Zudem hat der Lehrer Zugriff auf verschiedene Statistiken über seine Klassen. \\
+Der Administrator ist für das erfassen der einzelnen Personen und der Zuweisung in die Klassen zuständig. \\
 
-Schüler sind lediglich in der Lage, den freigegebenen Inhalt zu sehen und die dazu gehörigen Aufgaben und Quizze zu lösen. Ferner sollen sie auch in der Lage sein, Statistiken über ihren Lernfortschritt einzusehen.
+Lehrer können den Inhalt ihrer Klasse verwalten und entscheiden, welche Fächer für die Schüler zugänglich sind. Sie erstellen Aufgaben, welche sie über einen Wochenplan einer Klasse zuweisen können. Zudem hat der Lehrer Zugriff auf verschiedene Statistiken über seine Klassen. \\
+
+Schüler sind in der Lage, den freigegebenen Inhalt zu sehen und die dazugehörigen Aufgaben zu lösen. Sie haben auch Zugriff auf ein Forum, in welchem Fragen zu Aufgaben gestellt werden können.
 
 \subsubsection*{Lerninhalte}
-Zur Zeit können nur die Betreiber der Plattform neue Lerninhalte verfassen oder bearbeiten. Zu einem späteren Zeitpunkt sollen auch Lehrpersonen dazu in der Lage sein. Für die Bachelorarbeit steht jedoch nur ein begrenzter Zeitraum zur Verfügung und diese Funktionalität wird bereits sehr gut in Moodle umgesetzt. Man hätte hier also keinen Mehrwert generieren können. Aus diesem Grund entschied man sich dafür, nicht weiter darauf einzugehen. 
+Die Lehrer sind in der Lage, einzelne Fächer für die Schüler einer Klasse freizuschalten. Im Moment gibt es keine Möglichkeit, dass Lehrer selber Anpassungen an Inhalten vornehmen. Nur die Betreiber von Aufgaben-Coaching sind in der Lage, neue Theorieinhalte zu erstellen oder zu bearbeiten. In Zukunft ist jedoch geplant, dass auch Lehrpersonen Inhalte hochladen und ihren Schülern zur Verfügung stellen können.
 
 \subsubsection*{Aufgaben}
-Lehrpersonen können neue Aufgaben erstellen. Auf der dafür erstellten Seite der Webappliaktion können diese erfasst werden. Pro Aufgabe können mehrere Fragen, oder auch ''Übungen'' erstellt werden. Eine solche Frage im Kontext Mathematik könnte zum Beispiel folgendes sein: ''Was ergibt 3/4 + 1/2?''. Für jede Frage können mehere Hilfestellungen erfasst werden. Eine Hilfestellung sollte dem Schüler die Möglichkeit bieten, Schritt für Schritt durch eine Frage geleitet zu werden. Der Sinn der Aufgaben ist es, den Schülern eine Möglichkeit zu bieten, den gelernten Stoff durch praktische Übung zu vertiefen und die Lehrperson auf dem aktuellen Stand zu halten.
+Lehrpersonen können neue Aufgaben erstellen, welche anschliessend von den Schülern gelöst werden können. Pro Übung können mehrere Fragen erstellt werden. Für jede dieser Fragen können Hilfestellungen erfasst werden. Diese Hilfestellung soll es dem Schüler ermöglichen, auch schwierige Fragen selber beantworten zu können. Ein Schüler hat so die Möglichkeit, die erlernte Theorie mit praktischen Aufgaben zu vertiefen. \\
+
+Wurde eine Aufgabe abgegeben, kann diese von einer Lehrperson korrigiert werden. Dazu kann mit Filteroptionen nach abgegebenen Aufgaben gesucht werden. Wählt die Lehrperson die abgegebene Aufgabe eines Schülers aus, kann er für jede einzelne Frage sagen, ob diese richtig oder falsch ist und Punkte vergeben. Sollte die Aufgabe jedoch falsch gelöst worden sein, kann diese mit einem Feedback an den Schüler zurückgewiesen werden. Dieser hat dann nochmals die Möglichkeit, die Aufgabe zu verbessern. 
+
+\subsubsection*{Statistiken}
+Mit allen abgegebenen Aufgaben wird eine Statistik erstellt. Anhand dieser Statistiken kann eine Lehrperson erkennen, wie gut die Klasse oder ein einzelner Schüler ein Thema versteht. Dies erlaubt der Lehrperson auch, gezielt auf diese Schüler einzugehen und die Wissenslücken zu schliessen.
+
+\subsubsection*{Forum}
+Einem Schüler sollte es mit Hilfe der Hilfestellungen möglich sein, eine Aufgabe selbstständig zu lösen. Sollten dennoch Fragen oder Unklarheiten auftreten, kann er diese in einem Forum stellen, welche sich rund um diese einzelne Aufgabe drehen. In diesem Forum befinden sich auch früher gestellte Fragen, welche die Frage des Schülers vielleicht gleich beantwortet.
 
 %\subsubsection*{Quizzes}
 %Auf der dafür erstellten Seite der Webapplikation, können Lehrpersonen neue Quizzes erstellen. Ein Quiz besteht wie eine Aufgabe aus mehreren verschiedenen Fragen. Für jede Frage gibt es eine vielzahl von Antwortmöglichkeiten, von denen eine bis mehrere richtig sind. Mit Hilfe der automatisierten Auswertung der Quizze soll die Lehrperson einen Überblick bekommen, wie gut eine Klasse, aber auch einzelne Schüler, ein bestimmtes Thema verstanden haben. Der Vorteil von Quizzes gegenüber klassischen Prüfungen ist, dass der Lehrer bereits während dem Unterrichten eines Themas sieht, wie der aktuelle Stand der Klasse ist. Quizze können Lehrpersonen also direkt bei der Gestalltung des Unterrichts unterstützen.

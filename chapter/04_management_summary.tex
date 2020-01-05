@@ -2,28 +2,31 @@
 %\addcontentsline{toc}{section}{\protect\numberline{}Management Summary}
 
 \subsection{Ausgangslage}
-Die Digitalisierung der Schulen in der Schweiz schreitet immer weiter voran und es wird sehr viel Geld in die digitale Ausstattung investiert\footcite{krummenacher_2019}. 
+Mit der Umsetzung des Lehrplan21 gibt in allen 21 deutsch- und mehrsprachigen Kantonen den selben Lehrplan. Unter den Zielen des Lehrplan21 findet man folgenden Punkt\footcite{lp21_ziel}:
 
-In den einzelnen Schulfächern in der Schule wird seit geraumer Zeit immer das selbe unterrichtet. Der Lehrer steht vor der Klasse und bringt seinen Schülern ein neues Thema bei. Das Wissen, welches der Lehrer jedoch vermittelt, zählt zum Grundwissen und dieses hat sich in den letzten Jahren nicht verändert. Der Satz von Pythagoras hat sich seit seiner Entdeckung nicht verändert. Somit erzählt der Lehrer Jahr für Jahr das selbe. Dies wiederum bedeutet, dass sich die Lehrer mehr auf den Schulstoff konzentriert und nicht auf das, was wirklich wichtig ist - die Schüler. \\
+\begin{displayquote}
+Ein gemeinsamer Lehrplan ist eine Grundlage für die Koordination der Lehrmittel und erleichtert die gemeinsame Entwicklung von Lehrmitteln für die deutschsprachige Schweiz.
+\end{displayquote}
 
-Die Schüler sitzen in der Schule und hören dem Lehrer zu. Schüler sind aber keine Maschinen, manchmal sind sie krank oder unaufmerksam. Den verpassten Schulstoff müssen sie trotzdem irgendwie nachholen, spätestens wenn die Prüfung bevorsteht. Dies ist jedoch mit einem enormem Zeitaufwand für die Schüler verbunden, da nochmals alles repetiert werden muss. \\
+Mit dem heutigen Unterrichtsmodell gibt es aber einige Nachteile. Kann ein Lernender auf Grund von Krankheit nicht in die Schule, so wird der gesamte Schulstoff verpasst. Diese Person ist jedoch dazu gezwungen, den verpassten Stoff nachzuholen. Es bleibt nichts anderes übrig, als das zu Hause zu tun. Da ein Grossteil des Unterrichts daraus besteht, dass eine Lehrperson den Schülern die Theorie beibringt, kann die Lehrperson nicht auf die Bedürfnisse individuelle Schüler eingehen. Manche haben die Theorie schon verstanden, während andere längst abgehenkt haben. \\
 
-Der Lehrer hat aber noch ein weiteres Problem. Erst wenn eine Prüfung gemacht wird, kann anhand der Noten erkannt werden, wie gut die Schüler ein Thema verstanden haben. Sollte zu diesem Zeitpunkt feststellt werden, dass ein Thema immer noch unklar ist, ist oft nicht mehr genügend Zeit vorhanden, um das Thema noch einmal zu rekapitulieren, weil sonst zu wenig Zeit für die restlichen Themen vorhanden ist. \\
+Ein weiteres Problem der Lehrpersonen ist, dass diese erst sehr spät ein Feedback über den Wissensstand der Schüler bekommen. Erst wenn eine Prüfung durchgeführt wurde, sieht der Lehrer, wie gut die einzelnen Schüler der Klasse ein Thema verstanden haben. Bemerkt eine Lehrperson zu diesem Zeitpunkt, dass eine Wissenslücke besteht, ist meist nicht mehr genügend Zeit vorhanden, um dieses Thema nochmals in Ruhe anzuschauen. \\
+
 
 Die Idee von Lernplattformen für Schulen ist nicht ganz neu. An der \gls{hsr} wird zum Beispiel Moodle\footcite{moodle_homepage} eingesetzt, ein Open-Source \gls{lms}. Es gibt aber auch komerzielle Lösungen wie sofatutor\footcite{sofatutor_homepage} oder EF Class\footcite{ef_class_homepage}. Diese richten sich aber entweder auf die Schüler direkt oder sind nur für ein einzelnes Fach gedacht. \\
 
-Mit dieser Arbeit möchte man aber eine Anwendung erschaffen, welches in einer Schule eingesetzt ist, sich aber hauptsächlich auf Lernerlebnis der Schüler konzentriert. 
+Mit dieser Bachelorarbeit möchte man eine Anwendung erschaffen, welches direkt im Unterricht verwendet werden kann. Lernende sollen in der Lage sein, unabhängig und individuell einzelne Themen zu erlernen, während eine Lehrperson trotzdem im Lage ist, denn Wissen einzelner Lernenden zu überprüfen.
 
 % Bei dieser Bachelorarbeit wird eine Lernplattform erstellt, welche genau dieses Problem angeht. Auf dieser Lernplattform wird die Theorie der Schulfächer in Form von Theoriezusammenfassungen, Videos, Übungen und Quizze zur Verfügung gestellt. Schüler können mit Hilfe dieser Lernplattform unabhängig von ihrem Standort lernen, ob das nun in einer Freistunde während des Schulalltags oder zu Hause am Abdend im Bett ist. Alles, was die Schüler benötigen, ist ein Tablet und eine Internetverbindung. 
 
 % Der Lehrer hat den Vorteil, dass er viel Zeit für die Vorbereitung der Stunden einsparen kann. Durch die Quizze und Übungen sieht der Lehrer auch direkt, auf welchem Stand seine Schüler sind und kann jene Schüler unterstützen, welche ein bestimmtes Thema noch nicht richtig verstanden haben. Schüler, welche aber alles ohne Probleme verstehen, können unanhängig von den anderen mit dem nächsten Thema fortfahren. 
 
 \subsection{Vorgehen / Technologien}
-Die Anwendung soll den Schülern rund um die Uhr zur Verfügung stehen und plattformübergreifend verwendbar sein. Um diesen Anforderungen gerecht zu werden, wird eine Webanwendung mit dem Django-Framework und der Programmiersprache Python entwickelt. \\
-Es wurde besonders darauf geachtet, dass die Anwendung modular aufgebaut ist. Möchte man neue Features hinzufügen, soll dies ohne Problem möglich sein.
+Die Anwendung soll den Schülern rund um die Uhr zur Verfügung stehen und plattformübergreifend verwendbar sein. So kann die Anwendung auch zu Hause verwendet werden. Um diesen Anforderungen gerecht zu werden, wird eine Webanwendung mit dem Django-Framework und der Programmiersprache Python entwickelt. \\
+Es wurde besonders darauf geachtet, dass die Anwendung modular aufgebaut ist. In Zukunft können auf der bestehenden Plattform weitere Features implementiert werden.
 
 \subsection{Ergebnisse}
-Während dieser Bachelorarbeit ist eine Anwendung mit dem Titel ''Aufgaben-Coaching'' entstanden. Diese Anwendung erlaubt es, Theoriezusammenfassungen mit Videos und Bildern bereitzustellen. Lehrer sind in der Lage, neue Aufgaben zu erstellen und diese den Schülern zur Verfügung zu stellen. Haben die Schüler die Aufgaben gelöst, kann der Lehrer diese einsehen und korrigieren. Falls die Lehrperson bemerkt, dass ein Schüler Mühe in einem spezifischen Aufgabengebiet hat, kann er so direkt auf diese Schüler zugehen. Zudem anhand der Statistiken von gelösten Aufgaben der Wissensstand der gesamten Schulklasse überwacht werden.
+Während dieser Bachelorarbeit ist eine Anwendung mit dem Titel ''Aufgaben-Coaching'' entstanden. Diese Anwendung erlaubt es, Theoriezusammenfassungen mit Videos und Bildern bereitzustellen. Lehrer sind in der Lage, neue Aufgaben zu erstellen und diese den Schülern zur Verfügung zu stellen. Haben die Schüler die Aufgaben gelöst, kann der Lehrer diese einsehen und korrigieren. Mit diesen gelösten Aufgaben werden Statistiken generiert, mit welchen eine Lehrperson jederzeit den Wissensstand der Klasse prüfen kann. Bemerkt die Lehrperson, dass ein einzelner Lernender Schwierigkeiten in einem spezifischen Aufgabengebiet hat, so kann die Lehrperson direkt und individuell auf Personen zugehen, ohne die anderen Lernenden vom lernen abzuhalten.
 
 \subsection{Ausblick}
 Die Idee für dieses Bachelorarbeits Thema stammt von Luca Gubler. Da für die Bachelorarbeit aber nur ein begrenzter Zeitraum zur Verfügung steht, konnten nicht alle Features im gewünschten Umfang umgesetzt werden. \\
