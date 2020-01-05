@@ -180,12 +180,11 @@ Zusätzlich zur System Overview in Abbildung \ref{fig:system_overview}, wird hie
 \end{center}
 \end{figure}
 
-\subsubsection*{Mailserver}
-Warum braucht es den Mailserver?
-
 \subsubsection*{Webserver}
-Apache oder NGINX
+Bei der Evaluation eines Webserver beschränkte man sich auf NGINX und Apache. Wie man auf einer Statistik von w3techs\footcite{webserver_usage} entnehmen kann, wird in 42\% der Webserver Apache eingesetzt. NGINX kommt mit 31.3\% etwas weniger zum Einsatz. \\
 
-\subsection*{WSGI}
-was ist das? warum gunicorn?
+Apache kommt öfters zum Einsatz und ist flexibler als NGINX\footcite{webserver_comparison}. Dennoch entschied man sich für NGINX. Bei dieser Entscheidung achtete man hauptsächlich auf die Performance der beiden Webserver, bei welcher NGINX in den Kategorien ''Requests per second'', ''Time per request'' und ''Transfer rate'' durchschnittlich besser abschnitt\footcite{webserver_performance}.
+
+\subsection*{Web Server Gateway Interface}
+Während der Entwicklungsphase wurde der Development Server, welcher direkt mit dem Django Framework mitgeliefert wird, verwendet. In der produktiven Umgebung reicht dies jedoch nicht mehr aus, weshalb ein \gls{wsgi} eingesetzt wird. Dieser beschreibt, wie der Web Server mit einer Web Anwendung kommuniziert. Anfragen an den Webserver werden zur Web Anwendung geleitet. Sobald der Request bearbeitet wurde, wird die Response an den Webserver zurück geschickt\footcite{wsgi_description}.
 

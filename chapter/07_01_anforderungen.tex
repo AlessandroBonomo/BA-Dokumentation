@@ -40,32 +40,24 @@ Es ist schon mehrmals vorgekommen, dass sich die Lehrer bei ihm beschweren. Oftm
 Mit Aufgaben-Coach hat Liam eine Webanwendung gefunden, mit welchem die Schüler sich die Theorie selber beibringen können. Während der Unterrichtszeit kann sich eine Lerhperson dann um die Bedürfnisse der einzelnen Schüler kümmern. \\
 Lehrpersonen sparen auch viel Zeit bei der Vorbereitung, da bereits ein roter Faden durch den gesamten Stoff besteht.
 
-\subsection{Use Cases}
+\subsection{Funktionale Anforderungen}
 
 \subsubsection{Use Case Diagramm}
+In der Abbildung \ref{uc_diagram} befindet sich das Use Case Diagramm. Dieses Diagramm soll die Abhängigkeiten zwischen Aktoren, den einzelnen Use Cases und externen Systemen visualisieren.
+
 \begin{minipage}{\textwidth}
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/UseCaseDiagramm.png}
 	\caption{Use Case Diagramm}
+	\label{uc_diagram}
 \end{figure}
 
 \end{minipage}
 
 
-\begin{tabular}{| p{1cm} | p{1.3cm}|}
-	\hline
-	\textbf{Farbe} & \textbf{Priorität} \\
-	\hline	
-	grün & hoch \\
-	\hline
-	orange & tief \\
-	\hline
-\end{tabular}
-
-
 \subsubsection{Aktoren}
-
+In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung interagieren. 
 \begin{table}[H]
 	\centering
 	\begin{tabu} to 0.9\textwidth {l X}
@@ -74,113 +66,137 @@ Lehrpersonen sparen auch viel Zeit bei der Vorbereitung, da bereits ein roter Fa
 	\midrule
 	Administrator & Der Administrator ist für die Verwaltung der Klassen, Lehrer und Schüler zuständig. Er kann Klassen erstellen sowie Lehrpersonen und Schüler diesen Klassen zuweisen. \\
 	\midrule
-		Lehrer & Der Lehrer verwaltet die ihm zugewiesenen Klassen. Er kann Fächer für seine Klassen freischalten sowie Aufgaben erstellen und diese der Klasse zuweisen. Zusätzlich kann er Statistiken einsehen, die ihn über den aktuellen Wissensstand seiner Klasse informieren. \\
+	Lehrer & Der Lehrer verwaltet die ihm zugewiesenen Klassen. Er kann Fächer für seine Klassen freischalten sowie Aufgaben erstellen und diese der Klasse zuweisen. Zusätzlich kann er Statistiken einsehen, die ihn über den aktuellen Wissensstand seiner Klasse informieren. \\
 	\midrule
-		Schüler & Die Schüler haben Zugriff auf freigeschaltete Lerninhalte und können diese anschauen. Falls Fragen auftreten, können diese im aufgaben-spezifischen Forum gestellt werden. Zusätzlich können Aufgaben gelöst werden. \\
+	Schüler & Die Schüler haben Zugriff auf freigeschaltete Lerninhalte und können diese anschauen. Falls Fragen auftreten, können diese im aufgaben-spezifischen Forum gestellt werden. Zusätzlich können Aufgaben gelöst werden. \\
+	\midrule
+	Mail Server & Der Mail Server dient zum versenden von Nachrichten, falls zum Beispiel eine Lehrperson ein Feedback an einen Lernenden schicken möchte. \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Aktoren}
+	\label{aktoren}
 \end{table}
 
 
 \subsubsection{Beschreibung der Use Cases}
-\textbf{UC01: CRUD person}
+\subsubsection*{CRUD person}
 
-\noindent Hauptszenario: \\
-Ein Administrator kann einen neuen Benutzer erstellen. Dabei kann er zwischen Lehrern und Schülern unterscheiden. Es müssen Angaben wie Vorname, Nachname, Benutzername, E-Mail Adresse und Passwort gemacht werden. Das System erstellt den gewünschten Benutzer, sodass dieser die Applikation ab sofort benutzen kann. \\
-
-\noindent Alternatives Szenario: \\
-Ein Administrator löscht eine nicht mehr berechtigte Person aus dem System. \\
-
-
-\noindent \textbf{UC02: CRUD class}
-
-\noindent Hauptszenario: \\
-Ein Administrator erstellt eine neue Klasse. Dabei muss er den Namen der Klasse, wie auch das Eintrittsdatum angeben. Mit Hilfe des Eintrittsdatums kann im späteren Verlauf der Arbeit eine Statistik über mehrere ''Generationen'' von Klassen gemacht werden. \\
-
-\noindent Alternatives Szenario: \\
-Ein Administrator löscht eine nicht mehr benötigte Klasse aus dem System. \\
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Administrator kann einen neuen Benutzer erstellen. Neue Benutzer können entweder die Rolle ''Schüler'' oder ''Lehrer'' haben.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Der Administrator entfernt eine Person aus dem System.
+		\item Der ändert die Angaben zu einer bereists existierenden Person. 
+	\end{itemize}
+\end{itemize}
 
 
-\noindent \textbf{UC03: assigne persons}
+\subsubsection*{CRUD school class}
 
-\noindent Hauptszenario: \\
-Ein Administrator wählt eine bereits erstellte Klasse und weisst dieser eine unbestimmte Anzahl Lehrpersonen zu, sowie auch Schüler, welche noch keiner anderen Klasse zugewiesen wurden. \\
-
-\noindent Alternatives Szenario: \\
-Ein Administrator wählt eine bereits erstellte Klasse und entfernt Schüler und/oder Lehrer von dieser. \\
-
-
-\noindent \textbf{UC04: CRUD exercise}
-
-\noindent Hauptszenario: \\
-Ein Lehrer definiert eine neue Aufgabe. Zur Aufgabe erstellt er mehrere Fragen. Zu jeder Frage kann er Hilfestellungen definieren, sowie angeben was die maximale Punktezahl ist. \\
-
-\noindent Alternatives Szenario: \\
-Ein Lehrer wählt eine erstellte Aufgabe aus und bearbeitet die Fragen dazu. Das heisst, es können weitere Fragen erstellt, bereits erstellte entfernt, oder aber auch neue Hilfestellungen hinzugefügt werden. \\
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Administrator erstellt eine neue Klasse, welcher Lehrpersonen und Schüler zugewiesen werden können.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Nach Ablauf eines Schuljahres kann der Administrator Klassen aus dem System entfernen.
+		\item Der Administrator kann einzelne Schüler aus einer Klasse entfernen und diese einer anderen Klasse zuweisen.
+	\end{itemize}
+\end{itemize}
 
 
-\noindent \textbf{UC05: CRUD weekly schedule}
-
-\noindent Hauptszenario: \\
-Ein Lehrer erstellt einen Wochenplan. Er erweitert Aufgaben und Quizzes mit einer Deadline und weisst diese einer seiner Klassen zu. \\
-
-\noindent Alternatives Szenario: \\
-Ein Lehrer bearbeitet einen bereits erstellten Wochenplan. Die Deadline einer Aufgabe wird um einen oder zwei Tage verschoben. \\
-
-
-\noindent \textbf{UC06: CRUD quiz}
-
-\noindent Hauptszenario: \\
-Ein Lehrer definiert ein Quiz. Dazu erfasst er einige Fragen, die entsprechenden Antwortmöglichkeiten und die Lösungen. \\
+\subsubsection*{CRUD exercise}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Lehrer kann neue Aufgaben erstellen und diese einem Thema zuweisen. Pro Aufgabe gibt es mehrere Fragen, welche wiederum mehrere Hifestellungen enthalten können. Für jede Frage kann auch eine Punktzahl angegeben werden. 
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Der Lehrer passt einzelne Fragen oder Hilfestellungen an oder fügt neue Fragen einer Aufgabe hinzu.
+	\end{itemize}
+\end{itemize}
 
 
-\noindent \textbf{UC07: publish study content}
 
-\noindent Hauptszenario: \\
-Ein Lehrer schaltet ein neues Fach oder ein neues Thema für eine Klasse frei. \\
-
-\noindent Alternatives Szenario: \\
-Ein Lehrer entzieht einer Klasse das Recht ein Fach oder ein Thema zu sehen. \\
-
-
-\noindent \textbf{UC08: view statistics}
-
-\noindent Hauptszenario: \\
-Ein Lehrer wählt eine Klasse und ein ihr zugewiesenes Fach aus. Das System berechnet anhand der von dieser Klasse gelösten Aufgaben eine Statistik und stellt diese dar. Wenn der Lehrer genauere Details sehen will, erstellt das System eine detailiertere Statistik. \\
-
-
-\noindent \textbf{UC09: use forum}
-
-\noindent Hauptszenario: \\
-Ein Schüler sieht das aufgabenspezifische Forum. Findet er nicht die gewünschte Antwort, stellt er selber eine Frage. \\
-
-\noindent Alternatives Szenario: \\
-Ein Lehrer sieht, dass ein Schüler eine unbeantwortete Frage hat und beantwortet diese. \\
+\subsubsection*{Assign exercise to weekly schedule}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Lehrer passt den Wochenplan einer Klasse an und fügt neue Aufgaben hinzu.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Der Lehrer kann zugewiesene Aufgaben auch auf andere Tage verschieben.
+	\end{itemize}
+\end{itemize}
 
 
-\noindent \textbf{UC10: send mail}
 
-\noindent Hauptszenario: \\
-Das System bemerkt, dass eine von einem Schüler gestellte Frage im Forum über längere Zeit nicht beantwortet wurde und informiert den Lehrer darüber per Mail. \\
+\subsubsection*{Publish content}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Lehrer kann für einzelne Klassen die Fächer freischalten.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Freigeschaltene Fächer können wieder entfernt werden
+	\end{itemize}
+\end{itemize}
 
 
-\noindent \textbf{UC011: solve exercise}
 
-\noindent Hauptszenario: \\
-Ein Schüler löst eine Aufgabe. \\
+\subsubsection*{View statistics}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Lehrer kann die Statistiken einzelner Klassen oder Schüler ansehen. Diese Ansicht zeigt dem Lehrer, auf welchem Wissensstand eine Klasse ist.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Bemerkgt der Lehrer, dass einzelne Schüler ein Thema noch nicht ganz verstanden hat, kann er die Unklarheiten individueller Schüler klären.
+	\end{itemize}
+\end{itemize}
 
-\noindent Alternatives Szenario: \\
-Ein Schüler überarbeitet eine bereits gelöste Aufgabe. \\
+
+\subsubsection*{Create Forum Post}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Treten beim Lösen von Aufgaben Unklarheiten auf, kann ein Schüler diese direkt im aufgabenspezifischen Forum stellen.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Ein Schüler sieht eine Frage im Forum, zu welcher er die Lösung weiss. Er kann auf den Beitrag seines Schulkameraden antworten und ihm so helfen.
+	\end{itemize}
+\end{itemize}
 
 
-\noindent \textbf{UC012: solve quiz}
+\subsubsection*{Send mail}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Lehrer hat die Möglichkeit, gelöste Aufgaben an die Schüler zurück zu weisen. Ist dies der Fall, wird eine E-Mail an den Schüler mit dem Feedback des Lehrers gesendet.
+	\end{itemize}
+\end{itemize}
 
-\noindent Hauptszenario: \\
-Ein Schüler löst ein Quiz. \\
 
-\noindent Alternatives Szenario: \\
-Ein Schüler überarbeitet ein bereits gelöstes Quiz. \\
+\subsubsection*{Solve exercise}
+\begin{itemize}
+	\item Hauptszenario:
+	\begin{itemize}
+		\item Der Schüler kann die Aufgaben von freigegebenen Fächern lösen. Sind alle Fragen beantwortet, kann die Übung abgegeben und vom Lehrer korrigiert werden.
+	\end{itemize}
+	\item Alternatives Szenario:
+	\begin{itemize}
+		\item Falls der Lehrer die Übung eines Schülers zurück weist, kann dieser die Fragen nochmals überarbeiten.
+	\end{itemize}
+\end{itemize}
 
 
 \subsection{Nicht Funktionale Anforderungen}
