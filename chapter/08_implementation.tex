@@ -161,13 +161,32 @@ Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der App
 \end{minipage}
 
 
+
 \subsection{Testing}
 
+Um eine möglichst gute Qualität dieser Arbeit zu gewährleisten, wurde auf folgende Arten von Tests gesetzt:
+
+\begin{itemize}
+	\item Unittests \\
+		Anhand der Unittests werden die definierten Models getestet. Hierbei wird vorallem Wert darauf gelegt, dass die Models so reagieren, wie sie reagieren sollten. Es soll also zum Beispiel sichergestellt werden, dass ein Objekt als String so repräsentiert wird, wie es erwartet wird. Zusätzlich soll getestet werden, dass nicht mehrere gleiche Objekte erstellt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, soll sichergestellt werden, dass kein weiteres erstellt werden kann.
+		
+	\item Integration Tests \\
+		Mit den Integration Tests wird sichergestellt, dass die implementierten Views so arbeiten und reagieren, wie sie sollen. Da die Applikation von drei verschiedenen Benutzergruppen verwendet wird, wurde besonders grossen Wert darauf gelegt zu prüfen, dass jeder Nutzer nur im Rahmen seiner vorbestimmten Rechte agieren kann. Es soll einem Schüler also nicht möglich sein, abgegebene Aufgaben zu bewerten.
+		
+	\item Usability Tests \\
+		Anhand der Usability Tests soll sichergestellt werden, dass das gewählte Design bei den Mockups einfach und selbsterklärend ist. Hierfür wurden den Testusern einige Aufgaben sowie die erstellen Mockups vorgelegt und darauf geachtet, wie sie sich zurecht fanden.
+\end{itemize}
+
+Es gibt verschiedene Möglichkeiten, eine Applikation zu testen. 
+
 \subsubsection*{Allgemein}
-Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
+Um die Applikation auf Herz und Nieren zu prüfen, wurde das Django-Test-Framework \footcite{writing_tests} verwendet. 
+
+
+%Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
 
 \subsubsection*{Datenbank}
-Damit die Tests nicht von bereits vorhanden Daten in der Datenbank beeinflusst werden, wird für jeden Testdurchlauf eine eigene temporäre Datenbank erstellt, die exakt wie die in der Produktion verwendete Datenbank konfiguriert ist. Diese temporäre Datenbank wird nach der Testdurchführung wieder vom System entfernt.
+%Damit die Tests nicht von bereits vorhanden Daten in der Datenbank beeinflusst werden, wird für jeden Testdurchlauf eine eigene temporäre Datenbank erstellt, die exakt wie die in der Produktion verwendete Datenbank konfiguriert ist. Diese temporäre Datenbank wird nach der Testdurchführung wieder vom System entfernt.
 
 \subsubsection*{Test Client}
-Der Test-Client ist eine Pythonklasse, welche als einfacher Webbrowser dient. Mit ihm kann man auf Applikationsebene mit den erstellten Django-Apps agieren. Das heisst, man kann gut und einfach GET und POST Requests simulieren und kann den Inhalt der Webseite überprüfen. 
+%Der Test-Client ist eine Pythonklasse, welche als einfacher Webbrowser dient. Mit ihm kann man auf Applikationsebene mit den erstellten Django-Apps agieren. Das heisst, man kann gut und einfach GET und POST Requests simulieren und kann den Inhalt der Webseite überprüfen. 
