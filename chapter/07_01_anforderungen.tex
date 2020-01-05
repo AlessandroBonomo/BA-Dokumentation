@@ -23,7 +23,7 @@ Im Rahmen des Unterrichts soll es Abirsana möglich sein, die Aufgaben-Coaching 
 Salina ist Schülerin an einer Schule. Seit längerer Zeit hat sie jedoch Mühe mit dem Schulstoff und ihre Noten sind auch nicht mehr so gut.
 
 \subsubsection*{Situation}
-Salina versteht oft nichts, wenn ihr Lehrer ihr etwas erklärt. Zu Hause verbringt sie dann viel Zeit im Internet, um einzelne Themen zu lernen. Sie hat aber weder die Zeit oder die Lust dazu, zu Hause nochmals die gesamte Theorie anschauen zu müssen.
+Salina versteht oft nichts, wenn ihr Lehrer ihr etwas erklärt. Zu Hause verbringt sie dann viel Zeit im Internet, um einzelne Themen zu lernen. Sie hat aber weder die Zeit noch die Lust dazu, zu Hause nochmals die gesamte Theorie anschauen zu müssen und nach guten Videos zu suchen.
 
 \subsubsection*{Szenario}
 Nach kurzer Zeit hat Salina die Lehrer an ihrer Schule dazu überredet, die Aufgaben-Coaching Plattform einzusetzen. Somit ist Salina freier im lernen. In der Schule kann sie sich selbstständig ein Thema beibringen. Falls sie dennoch etwas nicht versteht, kann sie direkt auf eine Lehrperson zugehen, welche ihr dann das Kapitel vielleicht noch etwas genauer erklärt. \\
@@ -57,7 +57,7 @@ In der Abbildung \ref{uc_diagram} befindet sich das Use Case Diagramm. Dieses Di
 
 
 \subsubsection{Aktoren}
-In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung interagieren. 
+In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung interagieren, beschrieben. 
 \begin{table}[H]
 	\centering
 	\begin{tabu} to 0.9\textwidth {l X}
@@ -70,7 +70,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 	\midrule
 	Schüler & Die Schüler haben Zugriff auf freigeschaltete Lerninhalte und können diese anschauen. Falls Fragen auftreten, können diese im aufgaben-spezifischen Forum gestellt werden. Zusätzlich können Aufgaben gelöst werden. \\
 	\midrule
-	Mail Server & Der Mail Server dient zum versenden von Nachrichten, falls zum Beispiel eine Lehrperson ein Feedback an einen Lernenden schicken möchte. \\
+	Mail Server & Der Mail Server dient dem Versenden von Nachrichten, falls zum Beispiel eine Lehrperson ein Feedback an einen Lernenden schicken möchte. \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Aktoren}
@@ -89,7 +89,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 	\item Alternatives Szenario:
 	\begin{itemize}
 		\item Der Administrator entfernt eine Person aus dem System.
-		\item Der ändert die Angaben zu einer bereists existierenden Person. 
+		\item Er ändert die Angaben zu einer bereists existierenden Person. 
 	\end{itemize}
 \end{itemize}
 
@@ -113,7 +113,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Der Lehrer kann neue Aufgaben erstellen und diese einem Thema zuweisen. Pro Aufgabe gibt es mehrere Fragen, welche wiederum mehrere Hifestellungen enthalten können. Für jede Frage kann auch eine Punktzahl angegeben werden. 
+		\item Der Lehrer kann neue Aufgaben erstellen und diese einem Thema zuweisen. Pro Aufgabe gibt es mehrere Fragen, welche wiederum mehrere Hifestellungen enthalten können. Für jede Frage kann auch eine maximale Punktzahl angegeben werden. 
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
@@ -131,7 +131,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
-		\item Der Lehrer kann zugewiesene Aufgaben auch auf andere Tage verschieben.
+		\item Der Lehrer verschiebt den Abgabetermin einer Aufgabe auf einen anderen Tag.
 	\end{itemize}
 \end{itemize}
 
@@ -157,10 +157,6 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 	\begin{itemize}
 		\item Der Lehrer kann die Statistiken einzelner Klassen oder Schüler ansehen. Diese Ansicht zeigt dem Lehrer, auf welchem Wissensstand eine Klasse ist.
 	\end{itemize}
-	\item Alternatives Szenario:
-	\begin{itemize}
-		\item Bemerkgt der Lehrer, dass einzelne Schüler ein Thema noch nicht ganz verstanden hat, kann er die Unklarheiten individueller Schüler klären.
-	\end{itemize}
 \end{itemize}
 
 
@@ -168,7 +164,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Treten beim Lösen von Aufgaben Unklarheiten auf, kann ein Schüler diese direkt im aufgabenspezifischen Forum stellen.
+		\item Treten beim Lösen von Aufgaben Unklarheiten auf, kann ein Schüler eine entsprechende Frage direkt im aufgabenspezifischen Forum stellen.
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
@@ -181,7 +177,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Der Lehrer hat die Möglichkeit, gelöste Aufgaben an die Schüler zurück zu weisen. Ist dies der Fall, wird eine E-Mail an den Schüler mit dem Feedback des Lehrers gesendet.
+		\item Der Lehrer hat die Möglichkeit, gelöste Aufgaben an die Schüler zurückzuweisen. Ist dies der Fall, wird eine E-Mail mit dem Feedback des Lehrers an den Schüler gesendet.
 	\end{itemize}
 \end{itemize}
 
@@ -194,7 +190,7 @@ In der Tabelle \ref{aktoren} befinden sich die Aktoren, welche mit der Anwendung
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
-		\item Falls der Lehrer die Übung eines Schülers zurück weist, kann dieser die Fragen nochmals überarbeiten.
+		\item Falls der Lehrer die Übung eines Schülers zurückweist, kann dieser die Fragen nochmals überarbeiten.
 	\end{itemize}
 \end{itemize}
 
@@ -210,17 +206,17 @@ Bei der Erstellung der einzelnen \gls{nfr} wird auf FURPS zurückgegriffen. FURP
 	\midrule
 	Functionality & User Interface & Das User Interface der Applikation ist über den Webbrowser erreichbar. \\ 
 	& Security & Die einzelnen Benutzer können nur auf die für sie freigegebenen Inhalte zugreifen. \\
-	& HTTPS & Die Kommunikation zum Webserver soll über HTTS laufen. \\
+	& HTTPS & Die Kommunikation zum Webserver soll über HTTPS laufen. \\
 	\midrule
 	Usability & Responsiveness & Für Schüler soll die Applikation sowohl auf Desktop PCs wie auch auf Tablets oder Mobile Phones verfügbar sein. \\
 	\midrule
-	Reliability & Availability & Die Applikation soll 24/7 verfügbar sein. \\
+	Reliability & Availability & Die Applikation soll zu 95\% des Tages verfügbar sein. \\
 	 & Fault Tolerance & Die Applikation soll bei unerlaubten Anfragen weiterhin verfügbar sein. \\
 	\midrule
-	Performance & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen worden sein.\\
+	Performance & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen werden.\\
 	\midrule
-	Supportability & Maintainability & Die Applikation soll gebaut werden, dass sie auch in Zukunft gewartet und ausgebaut werden kann. \\
-	 & Scalability & Die Applikation soll von 300 Benutzern zeitgleich verwendet werden. \\
+	Supportability & Maintainability & Die Applikation soll so gebaut werden, dass sie auch in Zukunft gewartet und ausgebaut werden kann. \\
+	 & Scalability & Die Applikation soll von 300 Benutzern zeitgleich verwendet werden können. \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Non Functional Requirements}
