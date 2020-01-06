@@ -179,11 +179,9 @@ Um eine möglichst gute Qualität dieser Arbeit zu gewährleisten, wurde auf fol
 
 
 \subsubsection*{Usability Tests}
-Die Usability Tests wurden basierend auf den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der Webapplikation Balsamiq erstellt \footcite{balsamiq_mockups}.
+Die Usability Tests wurden mit den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der Webapplikation Balsamiq \footcite{balsamiq_mockups} erstellt. Bereits während des Engineering Projekts und der Studienarbeit konnten damit Erfahrungen gesammelt werden. Zudem ermöglicht es Balsamiq relativ leicht, schöne interaktive Mockups zu erstellen. Durch interaktive Mockups kann die Qualität der Usability Tests verbessert werden, da es sich für die Probanden echter anfühlt und sie dadurch mit grösserer Wahrscheinlichkeit so reagieren, wie sie es dann auf der effektiven Webseite tun werden \footcite{interactive_mockups}. \\
 
-
-
-Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebeten, die Usability Tests dreimal durchzuführen. Bei jeder Durchführung sollen sie eine andere Rolle einnehmen und andere Aufgaben lösen. Um zu verhindern, oder zumindest die Verfälschung der Tests zu minieren, welche durch das gesammelte Wissen vorheriger Durchführungen entstehen kann, wurden die zugwiesenen Rollen pro Proband in einer unterschiedlichen Reihenfolge zugweisen. In der Tabelle \ref{Usability Test Rollen} ist ersichtlich, dass drei Probanden die Tests durchgeführt haben und welche Rolle sie bei welcher Durchführung zugewiesen bekommen haben. \\
+Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebeten, die Usability Tests dreimal durchzuführen. Bei jeder Durchführung sollen sie eine andere Rolle einnehmen und andere Aufgaben lösen. Um zu verhindern, oder zumindest die Verfälschung der Tests zu minieren, welche durch das gesammelte Wissen vorheriger Durchführungen entstehen kann, wurden die Rollen pro Proband in einer unterschiedlichen Reihenfolge zugweisen. In der Tabelle \ref{Usability Test Rollen} ist ersichtlich, dass drei Probanden die Tests durchgeführt haben und welche Rolle sie bei welcher Durchführung zugewiesen bekommen haben. \\
 
 \begin{table}[h]
 	\centering
@@ -193,7 +191,7 @@ Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebet
 	\midrule
 		Proband 1 & Schüler & Lehrer & Administrator \\
 		Proband 2 & Lehrer & Administrator & Schüler \\
-		Proband 3 & Administrator & Schüler & Lehrer \\
+		Proband 3 & Administrator & Lehrer & Schüler \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Usability Test Rollen}
@@ -201,15 +199,59 @@ Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebet
 \end{table}
 
 
+Beim Durchführen der Usability Tests wurden die Probanden gebeten, beim lösen der Aufgaben laut zu denken. Während der Durchführung wurden anhand der Gedanken und Anmerkungen der Probanden Notizen aufgeschrieben. Da die verschiedenen Benutzergruppen die Applikation später auf unterschiedlichen Geräten verwenden werden, wurde dies in die Tests miteinbezogen. Es wird davon ausgegangen, dass die Schüler die Webapplikation später meistens per Smartphone besuchen werden. Bei den Lehrern und den Administratoren wird davon ausgegangen, dass diese die Webapplikation ausschliesslich per Desktop-PC verwenden. \\
 
-
-
+Nachfolgend sind die Aufgaben und Fragen aufgelistet, welche die Probanden pro Rolle lösen/beantworten mussten:
 
 Schüler: \\
 \begin{itemize}
-	\item asdsa
-	\item asd
+	\item Welche Aufgabe/Aufgaben muss/müssen bis am Dienstag erledigt werden?
+	\item Navigiere zum ersten Theorieteil des Themas Brüche.
+	\item Löse die Aufgabe 1 des Themas Brüche.
+	\item Navigiere ins Forum der Aufgabe ''Aufgabe 1'' des Themas Brüche.
+	\item Wie kann eine Hilfestellung bei einer Aufgabe angefordert werden?
+	\item Wo befindet sich das Quiz 1 des Themas Brüche?
 \end{itemize}
+
+
+Lehrer: \\
+\begin{itemize}
+	\item Wie sieht der Wochenplan der Klasse ''S2'' aus?
+	\item Wie kann der Wochenplan angepasst werden?
+	\item Navigiere ins aufgabenspezifische Forum der Aufgabe ''Aufgabe 1'' des Themas Brüche.
+	\item Erfasse eine neue Aufgabe für das Thema Brüche.
+	\item Wie und wo kann eine bereits erstellte Aufgabe für andere Lehrpersonen freigeschalten werden?
+	\item Lösche das Quiz ''Quiz Basics'' des Themas Brüche.
+	\item Erstelle ein neues Quiz für das Thema Brüche mit zwei bereits erstellten Fragen.
+	\item Erfasse eine neue Frage für ein Quiz.
+	\item Schaue dir die Statistiken an.
+	\item Wie gut hat der Schüler ''Philipp Muster'' das Quiz ''Quiz 1'' des Themas Brüche gelöst?
+	\item Bei welcher Frage des Quiz 1 des Themas Brüche hatte der Schüler ''Philipp Muster'' die grössten Probleme?
+\end{itemize}
+
+
+Admin: \\
+\begin{itemize}
+	\item Erstelle eine neue Klasse.
+	\item Erstelle einen neuen Schüler oder Lehrer.
+	\item Lösche einen Schüler, Lehrer oder eine Klasse.
+	\item Wie kann ein Lehrer oder Schüler einer Klasse zugewiesen werden?
+\end{itemize} 
+
+\textbf{Feedback} \\
+Anhand dem Verhalten und dem persönlichen Feedback der Probanden, konnten folgende Problem erkannt werden:
+
+Schüler: \\
+\begin{itemize}
+	\item Es fiel den Probanden schwer, die Quizze zu finden. Es wurde erwartet, dass die Quizze zusammen mit den Theorieteilen und Aufgaben aufgelistet werden.
+\end{itemize}
+
+Lehrer: \\
+\begin{itemize}
+	\item Beim anpassen des Wochenplans einer Klasse, wurde angemerkt, dass nicht sofort klar sei, dass man die Klasse, das Fach und das Thema in einem Drop-Down-Menü auswählen muss, damit die gesuchten Aufgaben dargestellt werden. Es wurde erwartet, dass dies einfacher funktionieren würde.
+	\item Die Funktion eine erstelle Aufgabe mit anderen Lehrern zu teilen sei schwer zu finden.
+\end{itemize}
+
 
 
 
