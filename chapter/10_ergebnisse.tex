@@ -1,24 +1,17 @@
 \newpage
 \subsection{Ergebnisse}
-
+Nach Abschluss der Bachelorarbeit konnte ein Grossteil der gewünschten Funktionalität implementiert werden. Das Hauptziel, welches wir uns gesetzt haben, ist die Entwicklung einer Anwendung, welche die Flipped Classroom Unterrichtsmethode ermöglicht. Aufgaben-Coach erfüllt diesen Punkt und kann so, wie es jetzt existiert verwendet werden. Wird die Idee als Startup weiter verfolgt, gibt es einige Punkte, welche verbessert werden können oder neue Features, die noch implementiert werden können.
 \subsubsection{Resultate}
-Trotz des verkürzten Zeitplans war es dennoch möglich, einen Grossteil der Funtkionen umzusetzen. Nachfolgend sind die Funktionen aufgelistet, welche durch Aufgaben-Coaching ermöglicht werden.
-
-\subsubsection*{Student}
-%Nachfolgend wird die Funktionalität der Schüler aufgelistet:
-
+In den folgenden Abschnitten sind die Funktionalitäten der einzelnen Benutzergruppen aufgelistet.
+\subsubsection*{Schüler}
 \begin{itemize}
 	\item Einzelne Lektionen anschauen
-	\item Aufgaben lösen, falls nötig auch verbessern
-	\begin{itemize}
-		\item Pro Frage können mehrere Hilfestellungen bereit stehen, welche dem Schüler beim Beantworten dieser Frage helfen.
-	\end{itemize}
+	\item Aufgaben lösen
+	\item Gelöste Aufgaben verbessern
 	\item Fragen im Forum stellen
 \end{itemize}
 
-\subsubsection*{Teacher}
-%Lehrer haben folgende Funktionalität:
-
+\subsubsection*{Lehrer}
 \begin{itemize}
 	\item Übungen erfassen und bearbeiten
 	\begin{itemize}
@@ -32,7 +25,7 @@ Trotz des verkürzten Zeitplans war es dennoch möglich, einen Grossteil der Fun
 	\end{itemize}
 	\item Gelöste Aufgaben korrigieren
 	\begin{itemize}
-		\item Filtern von allen gelösten Aufgaben seiner Schüler
+		\item Filtern von allen gelösten Aufgaben seiner Klasse oder einzelner Schüler
 		\item Pagination Ansicht der gefilterten Aufgaben
 		\item Einzelne Aufgaben akzeptieren oder zurückweisen
 		\item Feedback für einzelne Aufgaben erfassen
@@ -56,8 +49,8 @@ Im Prinzip hat der Admin die Rechte, um alles auf der Website zu tun. Nachfolgen
 Die Anwendung war viel komplexer als zu Beginn erwartet. Um im Zeitplan zu bleiben, musste bei gewissen Features  Kompromisse eingegangen werden, um im Zeitplan bleiben zu können. Folgende Punkte müssen noch verbessert werden:
 
 \begin{itemize}
-	\item Im Moment wurde beim Frontend hauptsächlich Bootstrap eingesetzt. Vereinzelt wurde auch AJAX oder jQuery eingesetzt, um die Website dynamischer zu machen. Für die Zukunft muss man schauen, ob man nicht besser ein anderes Frontend Framework verwendet.
-	\item Im Moment kann der Lehrer die Aufgaben einem Wochenplan zuweisen. Dieses Feature wurde aber nur sehr grob implementiert und könnte noch verbessert werden. Der Lehrer sollte den Wochenplan für mehrere Wochen vorgeben können und die Aufgaben sollten eine Deadline bekommen und nach Ablauf nicht mehr von Schülern bearbeitet werden können.
+	\item Im Moment wurde beim Frontend hauptsächlich Bootstrap eingesetzt. Vereinzelt wurde auch AJAX oder jQuery eingesetzt, um die Website dynamischer zu machen. Für die Zukunft muss man schauen, ob man nicht besser ein anderes Frontend Framework, wie zum Beispiel React oder Angular, verwendet.
+	\item Der Lehrer die Aufgaben einem Wochenplan zuweisen. Dieses Feature wurde aber nur sehr grob implementiert und kann noch verbessert werden. Der Lehrer sollte den Wochenplan für mehrere Wochen vorgeben können. Wird eine Aufgabe dem Wochenplan zugewiesen, soll eine Deadline hinterlegt werden. Nach Ablauf dieser Deadline sollen keine weiteren Abgaben gemacht werden können.
 	\item Das Filtering der Aufgaben kann noch verbessert werden. Lehrer sollen auch nach Klassen oder nach archivierten Aufgaben filtern können.
 	\item Im Moment sind alle Aufgaben global. Erstellt ein Lehrer eine Aufgabe, so kann diese von anderen Lehrern auch bearbeitet oder sogar gelöscht werden. In Zukunft soll ein Lehrer nur Zugriff auf seine eigenen Aufgaben haben und auch nur diese bearbeiten können.
 	\item Wir der Klasse ein Fach zugewiesen, haben die Schüler automatisch Zugriff auf alle Themen, Lessons und Aufgaben. Der Lehrer soll jedoch auch einzelne Themen, Lessons oder Aufgaben freischalten können.
@@ -65,14 +58,14 @@ Die Anwendung war viel komplexer als zu Beginn erwartet. Um im Zeitplan zu bleib
 \end{itemize}
 
 
-
 \subsubsection{Weiterentwicklung}
-Es ist geplant, Aufgaben-Coach als Startup weiter zu verfolgen. Dazu sollen die in Abschnitt \ref{verbesserung} genannten Punkte verbessert werden. Zudem gibt es viele interessante Features, welche noch implementiert werden können.
+In einem nächsten Schritt sollten die unter Abschnitt \ref{verbesserung} genannten Punkte verbessert werden. Es gibt jedoch viele interessante Features, welche noch zusätzlich implementiert werden können.
 
 \begin{itemize}
 	\item Ein globales Forum, in welchem die Schüler Fragen stellen können, welche nicht direkt auf eine Aufgabe bezogen sind.
 	\item Quizze, welche die Schüler während des Unterrichts lösen können. So sieht der Lehrer sehr schnell, was die Schüler noch nicht verstanden haben.
 	\item Das Dashboard könnte so erweitert werden, dass auch allgemeine Informationen, wie kommende Events oder Anlässe, dargestellt werden können
 	\item Intelligentes Zuweisen von Aufgaben. Im Moment können die Schüler selber sagen, an welchen Fächern oder Übungen sie arbeiten. Es könnte ein System implementiert werden, welches erkennt, in welchem Themen der Schüler Mühe hat und automatisch solche Übungen zuweisen, dass sich der Schüler verbessern kann.
+	\item In einer Französisch Lektion sprechen deutschsprachige Kinder miteinander auf französisch.	Mit einer solchen Plattform wäre es möglich, dass ein deutsprachiger Lehrer eine Lektion zusammen mit einem Lehrer aus der Westschweiz plant. Während der Lektion wird jedes deutschsprachige Kind einem französisch sprechenden Kind zugewiesen, welche dann untereinander sprechen können. Dies macht vielleicht den Französisch Unterricht noch ein wenig interessanter.
 \end{itemize}
 \newpage
