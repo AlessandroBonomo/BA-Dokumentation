@@ -252,13 +252,27 @@ Lehrer: \\
 	\item Die Funktion eine erstelle Aufgabe mit anderen Lehrern zu teilen sei schwer zu finden.
 \end{itemize}
 
+Beim implementieren der Webapplikation wurden die aus den Usability Tests gewonnenen Kenntnisse miteinbezogen und verbessert. Ausserdem haben sich die Anforderungen an die Arbeit verändert, weshalb die Quizze kein Bestandteil der Applikation mehr sind. Folgende Anpassungen und Entscheidungen wurden gemacht: \\
 
+\begin{itemize}
+	\item Da die Quizze nicht mehr Teil der Arbeit sind, hat sich dieses Problem in Luft aufgelöst.
+	\item Um das Verwalten einer Klasse zu vereinfachen, wurde entschieden, dass im Gegensatz zu der Ursprünglichen Version sich die entsprechende Seite dynamisch erweitert. Zu Beginn sollen nur die dem Lehrer zugewiesenen Klassen aufgelistet werden. \\
+	
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/Webseite/Klassenverwaltung_Desktop.png}
+		\caption{Anpassung Klassenverwaltung}
+	\end{figure}
+\end{minipage}	
 
+Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen geladen und ebenfalls dargestellt. \\
 
-%Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/Webseite/Klassenverwaltung_Klasse_Desktop.png}
+		\caption{Informationen einer Klasse}
+	\end{figure}
+\end{minipage}
 
-\subsubsection*{Datenbank}
-%Damit die Tests nicht von bereits vorhanden Daten in der Datenbank beeinflusst werden, wird für jeden Testdurchlauf eine eigene temporäre Datenbank erstellt, die exakt wie die in der Produktion verwendete Datenbank konfiguriert ist. Diese temporäre Datenbank wird nach der Testdurchführung wieder vom System entfernt.
-
-\subsubsection*{Test Client}
-%Der Test-Client ist eine Pythonklasse, welche als einfacher Webbrowser dient. Mit ihm kann man auf Applikationsebene mit den erstellten Django-Apps agieren. Das heisst, man kann gut und einfach GET und POST Requests simulieren und kann den Inhalt der Webseite überprüfen. 
+	\item Die Funktion um eigene Aufgaben mit anderen Lehrpersonen zu teilen wurde entfernt. Standardmässig sind nun alle erstellen Aufgaben für alle Lehrpersonen ersichtlich.
+\end{itemize}
