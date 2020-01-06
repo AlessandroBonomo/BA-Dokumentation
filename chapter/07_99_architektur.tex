@@ -4,9 +4,9 @@ Für die Umsetzung der Anwendung gibt es zwei Optionen. Man kann zwischen einer 
 
 Native Apps haben zwar einige Vorteile. Die Integration mit anderen Anwendungen ist so zum Beispiel einfacher. Zudem wäre die Monetarisierung auch um einiges einfacher, denn eine Native App kann sehr gut im App Store platziert werden. So steigt auch gleich die Bekanntheit der Applikation\footcite{native_app}. \\
 
-Die Entscheidung bei der Entwicklung von Aufgaben-Coaching fiel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Tablets arbeiten. Mit einer Native App müsste für jedes Betriebssystem ein separates Programm erstellt werden.\\
+Die Entscheidung bei der Entwicklung von Aufgaben-Coach fiel jedoch sehr schnell auf eine Web Anwendung. Viele Schulen haben zwar Apple iPads im Einsatz. Trotzdem kann es Schulen geben, welche mit Android Tablets arbeiten. Mit einer Native App müsste für jedes Betriebssystem ein separates Programm erstellt werden.\\
 
-Hinzu kommt noch die Anforderung der Lehrer. Da diese hauptsächlich auf Notebooks oder Desktop PCs arbeiten, müsste für sie auch eine separate Anwendung entwickelt werden. Mit einer Webanwendung hat man den Vorteil, nur eine Anwendung entwickeln zu müssen, auf welche alle Benutzer Zugriff haben.\\
+Hinzu kommt noch die Anforderung der Lehrer. Da diese hauptsächlich auf Notebooks oder Desktop PCs arbeiten, müsste für sie auch eine separate Anwendung entwickelt werden. Mit einer Web Anwendung hat man den Vorteil, nur eine Anwendung entwickeln zu müssen, auf welche alle Benutzer Zugriff haben.\\
 
 Ein weiterer Vorteil von Web Anwendungen ist, dass im vorhinein kein Programm auf dem Device installiert werden muss. Alles, was ein Benutzer braucht, ist ein Internetzugang und ein Tablet. Dies senkt zugleich die Supportkosten der Schule, da so keine Zeit für die Installation oder das Updaten verbraucht wird.
 
@@ -20,7 +20,7 @@ Ein weiterer Vorteil von Web Anwendungen ist, dass im vorhinein kein Programm au
 
 
 \subsection{Domain Model}
-In der Abbildung \ref{fig:domain_model_full} ist das vollständige Domain Model Model abgebildet. Dem Leser soll so ein Überblick über die einzelnen Teilgebiete der Anwendung gegeben werden.
+In der Abbildung \ref{fig:domain_model_full} ist das vollständige Domain Model abgebildet. Dem Leser soll so ein Überblick über die einzelnen Teilgebiete der Anwendung gegeben werden.
 
 \begin{landscape}
 
@@ -47,7 +47,7 @@ Es stehen drei Möglichkeiten zur Verfügung, wie unterschiedliche User Rollen i
 	\item Erstellung eines Profile Models mit einer 1 zu 1 Beziehung zum User Model
 \end{enumerate}
 
-Die erste Variante hat den Vorteil, dass ein User mehrere Rollen gleichzeitig haben kann. Im Gegensatz zur ersten Variante kann ein User bei der zweiten Variante nur eine Rolle annehmen kann. Diese beiden Varianten haben jedoch den Nachteil, dass jeder User die gleichen Daten hat. Möchte man einem Schüler eine Matrikelnummer zuweisen, existiert dieses Feld implizit auch für alle Lehrer und Admins. \\
+Die erste Variante hat den Vorteil, dass ein User mehrere Rollen gleichzeitig haben kann. Im Gegensatz zur ersten Variante kann ein User bei der zweiten Variante nur eine Rolle annehmen. Diese beiden Varianten haben jedoch den Nachteil, dass jeder User die gleichen Daten hat. Möchte man einem Schüler eine Matrikelnummer zuweisen, existiert dieses Feld implizit auch für alle Lehrer und Admins. \\
 Um diesem Problem aus dem Weg zu gehen, entschied man sich für die dritte Variante. Pro Rolle existiert ein Profile Model. Möchte man nur einer bestimmten Rolle ein Feld zuweisen, so kann dieses Feld im entsprechenden Profile Model hinzugefügt werden\footcite{django:user_types}. \\
 
 \begin{figure}[H]
@@ -76,7 +76,7 @@ Ein zentraler Punkt dieser Anwendung sind die Schulfächer. Pro Subject gibt es 
 \end{figure}
 
 
-Ein Subjects kann einer Klasse zugewiesen werden, welche erst dann Zugriff auf die Topics und Lessons hat. Im Moment ist es nicht möglich, einzelne Topics oder Lessons freizuschalten. Möchte man diese Funktionalität in Zukunft haben, muss eine neue Tabelle, ähnlich wie SubjectEnrollment, erstellt werden.
+Ein Subject kann einer Klasse zugewiesen werden. Erst dann hat die Klasse Zugriff auf Topics und Lessons. Im Moment ist es nicht möglich, einzelne Topics oder Lessons freizuschalten. Möchte man diese Funktionalität in Zukunft jedoch haben, muss eine neue Zwischentabelle in der Datenbank erstellt werden.
 
 \newpage
 \subsubsection*{Exercise}
@@ -125,13 +125,13 @@ Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl st
 
 %TODO Satzstellung anschauen
 
-Gemäss Developer Survey Results\footcite{developer_survey_results} von Stack Overflow ist Python (41.7\%) etwas beliebter als Java (41.1\%). Nur JavaScript (67.8\%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python auch noch weiter gestiegen. \\
+Gemäss Developer Survey Results\footcite{developer_survey_results} von Stack Overflow ist Python (41.7\%) etwas beliebter als Java (41.1\%). Nur JavaScript (67.8\%) ist noch bekannter. In den letzten Jahren ist die Bekanntheit von Python noch weiter gestiegen. \\
 
 Die Wahl der Programmiersprache fiel schnell auf Python, da bereits etwas KnowHow vorhanden ist. Man geht aber davon aus, dass Python in Zukunft noch an Beliebtheit steigt und man weiterhin damit arbeiten kann.
 
 
 \subsubsection*{Web Framework}
-Mit Python hat man die Auswahl von verschiedenen Web Frameworks. Gemäss einer Umfrage von JetBrains wird die Frage ''What web frameworks / libraries do you use in addition to Python?'' mit dem Kommentar ''Django and Flask continue to be by far the most popular Python web frameworks.'' zusammengefasst. \\
+Mit Python hat man die Auswahl von verschiedenen Web Frameworks. Gemäss einer Umfrage von JetBrains\footcite{python_survey_results} wird die Frage ''What web frameworks / libraries do you use in addition to Python?'' mit dem Kommentar ''Django and Flask continue to be by far the most popular Python web frameworks.'' zusammengefasst. \\
 Laut der oben genannten Umfrage verwenden 43\% der Entwickler  Django als Web Framework. Flask folgt dicht darauf mit 41\%. Das nächst bekannteste Framework ist Tornado mit nur noch 6\%. \\
 Bei der Evaluation konzentrierte man sich deshalb hauptsächlich auf Django und Flask. Mit bekannteren Frameworks hat man den Vorteil, dass es einfacher ist, Hilfe und gute Dokumentationen zu finden. Mit weit verbreiteten Technologien kann man auch davon ausgehen, dass diese noch längere Zeit bestehen bleiben.  \\ 
 
@@ -143,12 +143,12 @@ Flask is a lightweight WSGI web application framework. It is designed to make ge
 Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.
 \end{displayquote}
 
-Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Webanwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungsmöglichkeiten bereit stehen. \\
+Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Web Anwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungsmöglichkeiten bereit stehen. \\
 
 Django verfolgt dagegen eher den Ansatz, bereits unterschiedliche Funktionalitäten mitzuliefern, was den Entwicklern Arbeit abnehmen soll. So ist zum Beispiel bereits ein OR-Mapper oder ein Admin Interface integriert\footcite{django:overview}. 
-Django kommt aber auch mit einigen Nachteilen. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden\footcite{django:advantages_disadvantages}.
+Django hat aber auch ein paar Nachteile. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden\footcite{django:advantages_disadvantages}.
 
-In der Studienarbeit konnte man zwar bereits Erfahrung mit Flask sammeln, dennoch entschied man sich für Django. Besonders das Django als ''Fully Loaded Framework'' und mit einem integrierten Admin Interface daher kommt, wurde als sehr positiv erachtet.
+In der Studienarbeit konnte man zwar bereits Erfahrung mit Flask sammeln, dennoch entschied man sich für Django. Besonders dass das Django als ''Fully Loaded Framework'' und mit einem integrierten Admin Interface daher kommt, wurde als sehr positiv erachtet.
 
 
 \subsubsection*{Datenbank}
@@ -180,11 +180,11 @@ Zusätzlich zur System Overview in Abbildung \ref{fig:system_overview}, wird hie
 \end{center}
 \end{figure}
 
-\subsubsection*{Webserver}
-Bei der Evaluation eines Webserver beschränkte man sich auf NGINX und Apache. Wie man auf einer Statistik von w3techs\footcite{webserver_usage} entnehmen kann, wird in 42\% der Webserver Apache eingesetzt. NGINX kommt mit 31.3\% etwas weniger zum Einsatz. \\
+\subsubsection*{Web Server}
+Bei der Evaluation eines Web Servers beschränkte man sich auf NGINX und Apache. Wie man auf einer Statistik von w3techs\footcite{webserver_usage} entnehmen kann, wird in 42\% der Web Server Apache eingesetzt. NGINX kommt mit 31.3\% etwas weniger zum Einsatz. \\
 
-Apache kommt öfters zum Einsatz und ist flexibler als NGINX\footcite{webserver_comparison}. Dennoch entschied man sich für NGINX. Bei dieser Entscheidung achtete man hauptsächlich auf die Performance der beiden Webserver, bei welcher NGINX in den Kategorien ''Requests per second'', ''Time per request'' und ''Transfer rate'' durchschnittlich besser abschnitt\footcite{webserver_performance}.
+Apache kommt öfters zum Einsatz und ist flexibler als NGINX\footcite{webserver_comparison}. Dennoch entschied man sich für NGINX. Bei dieser Entscheidung achtete man hauptsächlich auf die Performance der beiden Web Server, bei welcher NGINX in den Kategorien ''Requests per second'', ''Time per request'' und ''Transfer rate'' durchschnittlich besser abschnitt\footcite{webserver_performance}.
 
 \subsection*{Web Server Gateway Interface}
-Während der Entwicklungsphase wurde der Development Server, welcher direkt mit dem Django Framework mitgeliefert wird, verwendet. In der produktiven Umgebung reicht dies jedoch nicht mehr aus, weshalb ein \gls{wsgi} eingesetzt wird. Dieser beschreibt, wie der Web Server mit einer Web Anwendung kommuniziert. Anfragen an den Webserver werden zur Web Anwendung geleitet. Sobald der Request bearbeitet wurde, wird die Response an den Webserver zurück geschickt\footcite{wsgi_description}.
+Während der Entwicklungsphase wurde der Development Server, welcher direkt mit dem Django Framework mitgeliefert wird, verwendet. In der produktiven Umgebung reicht dies jedoch nicht mehr aus, weshalb ein \gls{wsgi} eingesetzt wird. Dieser beschreibt, wie der Web Server mit einer Web Anwendung kommuniziert. Anfragen an den Web Server werden zur Web Anwendung geleitet. Sobald der Request bearbeitet wurde, wird die Response an den Web Server zurück geschickt\footcite{wsgi_description}.
 
