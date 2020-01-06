@@ -177,10 +177,40 @@ Um eine möglichst gute Qualität dieser Arbeit zu gewährleisten, wurde auf fol
 		Anhand der Usability Tests soll sichergestellt werden, dass das gewählte Design bei den Mockups einfach und selbsterklärend ist. Hierfür wurden den Testusern einige Aufgaben sowie die erstellen Mockups vorgelegt und darauf geachtet, wie sie sich zurecht fanden.
 \end{itemize}
 
-Es gibt verschiedene Möglichkeiten, eine Applikation zu testen. 
 
-\subsubsection*{Allgemein}
-Um die Applikation auf Herz und Nieren zu prüfen, wurde das Django-Test-Framework \footcite{writing_tests} verwendet. 
+\subsubsection*{Usability Tests}
+Die Usability Tests wurden basierend auf den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der Webapplikation Balsamiq erstellt \footcite{balsamiq_mockups}.
+
+
+
+Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebeten, die Usability Tests dreimal durchzuführen. Bei jeder Durchführung sollen sie eine andere Rolle einnehmen und andere Aufgaben lösen. Um zu verhindern, oder zumindest die Verfälschung der Tests zu minieren, welche durch das gesammelte Wissen vorheriger Durchführungen entstehen kann, wurden die zugwiesenen Rollen pro Proband in einer unterschiedlichen Reihenfolge zugweisen. In der Tabelle \ref{Usability Test Rollen} ist ersichtlich, dass drei Probanden die Tests durchgeführt haben und welche Rolle sie bei welcher Durchführung zugewiesen bekommen haben. \\
+
+\begin{table}[h]
+	\centering
+	\begin{tabu} to 0.9\textwidth {l X X X}
+	\toprule
+		Proband & Durchführung 1 & Durchführung 2 & Durchführung 3 \\ 
+	\midrule
+		Proband 1 & Schüler & Lehrer & Administrator \\
+		Proband 2 & Lehrer & Administrator & Schüler \\
+		Proband 3 & Administrator & Schüler & Lehrer \\
+	\bottomrule
+	\end{tabu}
+	\captionof{table}{Usability Test Rollen}
+	\label{Usability Test Rollen}
+\end{table}
+
+
+
+
+
+
+Schüler: \\
+\begin{itemize}
+	\item asdsa
+	\item asd
+\end{itemize}
+
 
 
 %Das Testen einer Webseite ist eine komplexe Aufgabe, da eine Webseite aus mehreren Schichten unterschiedlicher Logik aufgebaut ist. Das geht von HTTP-Requests über die Validierung von Formularen bis hin zum Rendern von Templates. Mit dem Django-Test-Framework ist es möglich, HTTP-Requests zu simulieren, Testdaten einzufügen, den Output der Applikation zu inspizieren und im allgmeinen zu prüfen, dass der geschriebene Code das tut, was er tun soll.
