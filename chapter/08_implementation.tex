@@ -1,4 +1,10 @@
 \section{Implementation und Tests}
+\subsection{Django Architektur}
+Bei der Implementation der Anwendung befolgte man die vom Django Framework vorgegebene Architektur. Für die einzelnen Apps entschied man sich jedoch dafür, diese in einem separaten ''apps'' Verzeichnis zu speichern, damit das Home-Verzeichnis übersichtlicher ist.\\
+
+Django ist nach dem \gls{mtv} Pattern aufgebaut, was eine leichte Variation vom \gls{mvc} Pattern ist. Beim \gls{mvc} Pattern dient das Model als Vermittler zwischen dem Website Interface und der Datenbank. Die View ist das eigentliche User Interface und enthält zum Beispiel das HTML oder CSS der Website. Der Controller ist die Hauptkomponente in diesem Pattern. Er nimmt die korrekte View aus der User Anfrage und weist das korrekte Model zu\footcite{django_mvc}. \\
+
+Django basiert aber auf dem \gls{mtv} Pattern, welches relativ ähnlich zum \gls{mvc} Pattern ist. Das Model enthält immer noch die logische Datenstruktur. Die View hat Zugriff auf das Model und kann so Daten speichern, updaten oder löschen. Erhält die View Daten vom Model, kann diese mit dem Template dargestellt werden. Das Template dient lediglich zur Darstellung der einzelnen Webseiten\footcite{django_mtv}.
 
 %TODO vielleicht
 %\subsection{Apps}
@@ -32,23 +38,19 @@
 \subsection{Testing}
 Es gibt mehrere Arten von Tests, welche durchgeführt wurden, um die Qulität dieser Arbeit zu gewährleisten.
 
-\subsubsection*{Unit Tests}
+\subsubsection{Unit Tests}
 Anhand der Unittests werden die erstellten Models getestet. Mit diesen Tests wird sichergestellt, dass die Models korrekt funktionieren. Es kann zum Beispiel getestet werden, ob die Objekte als String abgespeichert werden oder ob duplizierte Objekte abgelegt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, darf kein weiteres Subject mit dem selben Namen erstellt werden können.
 
 
-\subsubsection*{Integration Tests}
+\subsubsection{Integration Tests}
 Mit Integration Tests kann getestet werden, ob die Applikation korrekt auf eingehende Requests reagiert. Diese Anwendung wird von mehreren Benutzern mit unterschiedlichen Rechten verwendet. Beim Erstellen der Tests wurde besonders viel Wert darauf gelegt, dass geprüft wird, dass jeder Benutzer nur Zugriff auf die erlaubten Webseiten hat. Aus Erfahrung weiss man, dass Schüler sehr experimentierfreudig sind und sicherlich versuchen werden, die \gls{url} des Browsers anzupassen. Es darf jedoch nicht vorkommen, dass ein Schüler Zugriff auf Statistiken hat oder die Punktezahl von Aufgaben anpassen kann.
 
 
-\subsubsection*{Manuelle Tests}
+\subsubsection{Manuelle Tests}
 Manuelle Tests wurden da eingesetzt, wo es sehr schwierig und Zeitaufwändig gewesen wäre, Tests zu schreiben. Vor jedem Merge in den Master wurde geprüft, ob diese Funktionen noch funktionieren. Ein Beispiel für den Fall von manuellen Tests ist zum Beispiel, ob das Filtering und Pagination noch funktioniert. Zu Beginn hatte man da das Problem, dass das Filtern zwar funktionierte, aber das Pagination basierte auf dem gesamten Queryset. Die Anzahl der Seiten änderte sich also nicht, auch wenn der Filter kein einziges Element gefunden hat. Ein weiterer Fall für manuelle Tests sind die Drag\&Drop Seiten. Bei diesen wurde geprüft, ob man das Item einem Feld zuweisen kann und ob es anschliessend richtig in der Datenbank gespeichert wird. \\
 
-\subsubsection*{Usability Tests}
-Anhand der Usability Tests soll sichergestellt werden, dass das gewählte Design bei den Mockups einfach und selbsterklärend ist. Um dies zu testen, wurden mehrere Probanden ausgesucht. Jeder bekam eine Aufgabe, welche
 
-Hierfür wurden den Probanden einige Aufgaben sowie die erstellen Mockups vorgelegt und darauf geachtet, wie sie sich zurecht fanden.
-
-\subsubsection*{Usability Tests}
+\subsubsection{Usability Tests}
 Nachdem man die Mockups erstellt hat, konnten damit die Usability Tests durchgeführt werden. Ziel dieser Tests ist es, zu prüfen, ob Benutzer das Design der Webseite verstehen und wissen, wo man was machen kann. \\
 
 %TODO balsamiq i de mockups beschriibe, ned bim teste
@@ -74,11 +76,11 @@ In der Tabelle \ref{usability_test_rollen} ist ein Beispiel, wie die Durchführu
 \end{table}
 
 
-Beim Durchführen der Usability Tests wurden die Probanden gebeten, beim lösen der Aufgaben laut zu denken. Während der Durchführung wurden anhand der Gedanken und Anmerkungen der Probanden Notizen aufgeschrieben. Da die verschiedenen Benutzergruppen die Applikation später auf unterschiedlichen Geräten verwenden werden, wurde dies in die Tests miteinbezogen. Es wird davon ausgegangen, dass die Schüler die Webapplikation später meistens per Smartphone besuchen werden. Bei den Lehrern und den Administratoren wird davon ausgegangen, dass diese die Webapplikation ausschliesslich per Desktop-PC verwenden. \\
+Beim Durchführen der Usability Tests wurden die Probanden gebeten, beim Lösen der Aufgaben laut zu denken. Während der Durchführung wurden anhand der Gedanken und Anmerkungen der Probanden Notizen gemacht. Da die verschiedenen Benutzergruppen die Applikation später auf unterschiedlichen Geräten verwenden werden, wurde dies in die Tests miteinbezogen. Es wird davon ausgegangen, dass die Schüler die Webapplikation später meistens per Tablet besuchen werden. Bei den Lehrern und den Administratoren wird davon ausgegangen, dass diese die Web Anwendung hauptsächlich per Notebook Desktop-PC verwenden. \\
 
-Nachfolgend sind die Aufgaben und Fragen aufgelistet, welche die Probanden pro Rolle lösen/beantworten mussten:
+Nachfolgend sind die Aufgaben und Fragen aufgelistet, welche die Probanden pro Rolle lösen mussten:
 
-Schüler: \\
+\subsubsection*{Schüler}
 \begin{itemize}
 	\item Welche Aufgabe/Aufgaben muss/müssen bis am Dienstag erledigt werden?
 	\item Navigiere zum ersten Theorieteil des Themas Brüche.
@@ -89,7 +91,7 @@ Schüler: \\
 \end{itemize}
 
 
-Lehrer: \\
+\subsubsection*{Lehrer}
 \begin{itemize}
 	\item Wie sieht der Wochenplan der Klasse ''S2'' aus?
 	\item Wie kann der Wochenplan angepasst werden?
@@ -105,7 +107,7 @@ Lehrer: \\
 \end{itemize}
 
 
-Admin: \\
+\subsubsection*{Admin}
 \begin{itemize}
 	\item Erstelle eine neue Klasse.
 	\item Erstelle einen neuen Schüler oder Lehrer.
@@ -113,15 +115,15 @@ Admin: \\
 	\item Wie kann ein Lehrer oder Schüler einer Klasse zugewiesen werden?
 \end{itemize} 
 
-\textbf{Feedback} \\
-Anhand dem Verhalten und dem persönlichen Feedback der Probanden, konnten folgende Problem erkannt werden:
+\subsection*{Feedback}
+Anhand dem Verhalten und dem persönlichen Feedback der Probanden konnten folgende Problem erkannt werden:
 
-Schüler: \\
+\subsubsection*{Schüler}
 \begin{itemize}
 	\item Es fiel den Probanden schwer, die Quizze zu finden. Es wurde erwartet, dass die Quizze zusammen mit den Theorieteilen und Aufgaben aufgelistet werden.
 \end{itemize}
 
-Lehrer: \\
+\subsubsection*{Lehrer}
 \begin{itemize}
 	\item Beim anpassen des Wochenplans einer Klasse, wurde angemerkt, dass nicht sofort klar sei, dass man die Klasse, das Fach und das Thema in einem Drop-Down-Menü auswählen muss, damit die gesuchten Aufgaben dargestellt werden. Es wurde erwartet, dass dies einfacher funktionieren würde.
 	\item Die Funktion eine erstelle Aufgabe mit anderen Lehrern zu teilen sei schwer zu finden.
@@ -155,8 +157,8 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 
 
 
-\subsubsection{Funktionale Tests}
-Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
+%\subsubsection{Funktionale Tests}
+%Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
 
 
 
