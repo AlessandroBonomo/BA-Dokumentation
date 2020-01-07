@@ -109,7 +109,7 @@ Für jede Frage in einer Übung gibt es ein Forum. Die Schüler haben einen Ort,
 Bei der Wahl von Technologien, Tools und Frameworks achtete man besonders darauf, dass die entsprechenden Tools auch in der Zukunft noch supported werden. Dazu wurde geschaut, ob und wie gross die Community hinter einzelnen Tools ist und wie gut die Tools dokumentiert sind.
 
 \subsubsection*{Programmiersprache}
-Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl standen. Die Wohl bekanntesten darunter sind:
+Für das Web Development gibt es mehrere Programmiersprachen, die zur Auswahl stehen. Die Wohl bekanntesten darunter sind:
 
 %https://en.wikipedia.org/wiki/Web_framework
 
@@ -132,7 +132,7 @@ Die Wahl der Programmiersprache fiel schnell auf Python, da bereits etwas KnowHo
 
 \subsubsection*{Web Framework}
 Mit Python hat man die Auswahl von verschiedenen Web Frameworks. Gemäss einer Umfrage von JetBrains\footcite{python_survey_results} wird die Frage ''What web frameworks / libraries do you use in addition to Python?'' mit dem Kommentar ''Django and Flask continue to be by far the most popular Python web frameworks.'' zusammengefasst. \\
-Laut der oben genannten Umfrage verwenden 43\% der Entwickler  Django als Web Framework. Flask folgt dicht darauf mit 41\%. Das nächst bekannteste Framework ist Tornado mit nur noch 6\%. \\
+Laut dieser Umfrage verwenden 43\% der Entwickler  Django als Web Framework. Flask folgt dicht darauf mit 41\%. Das nächst bekannteste Framework ist Tornado mit nur noch 6\%. \\
 Bei der Evaluation konzentrierte man sich deshalb hauptsächlich auf Django und Flask. Mit bekannteren Frameworks hat man den Vorteil, dass es einfacher ist, Hilfe und gute Dokumentationen zu finden. Mit weit verbreiteten Technologien kann man auch davon ausgehen, dass diese noch längere Zeit bestehen bleiben.  \\ 
 
 %TODO zitat einbauen
@@ -143,23 +143,15 @@ Flask is a lightweight WSGI web application framework. It is designed to make ge
 Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.
 \end{displayquote}
 
-Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Web Anwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungsmöglichkeiten bereit stehen. \\
+Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Web Anwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil dieses Frameworks ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungsmöglichkeiten bereit stehen. \\
 
 Django verfolgt dagegen eher den Ansatz, bereits unterschiedliche Funktionalitäten mitzuliefern, was den Entwicklern Arbeit abnehmen soll. So ist zum Beispiel bereits ein OR-Mapper oder ein Admin Interface integriert\footcite{django:overview}. 
 Django hat aber auch ein paar Nachteile. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden\footcite{django:advantages_disadvantages}.
 
-In der Studienarbeit konnte man zwar bereits Erfahrung mit Flask sammeln, dennoch entschied man sich für Django. Besonders dass das Django als ''Fully Loaded Framework'' und mit einem integrierten Admin Interface daher kommt, wurde als sehr positiv erachtet.
+In der Studienarbeit konnte man zwar bereits Erfahrung mit Flask sammeln, dennoch entschied man sich für Django. Der Hauptgrund dafür ist, dass das Django Framework als ''Fully Loaded Framework'' daher kommt un so zum Beispiel ein integriertes Admin Interface besitzt.
 
 
 \subsubsection*{Datenbank}
-Um ein Datenbanksystem kommt diese Anwendung nicht herum. Folgende Überlegungen wurden sich bei der Evaluation für eine geeignete Datenbank gemacht:
-
-\begin{itemize}
-	\item Die Datenbank muss skalierbar sein, so dass sie auch eine grosse Anzahl Benutzer unterstützt.
-	\item Da ein Grossteil der Benutzer mit Mobile Devices auf die Anwendung zugreift, soll bei Anfragen möglichst wenig Overhead geliefert werden.
-	\item Die Schreib- und Lese-Operationen sind wichtig, jedoch nicht kritisch. 
-\end{itemize}
-
 Aufgrund der ohnehin schon verkürzten Projektlaufzeit entschied man sich, auf die Evaluation eines Datenbanksystems zu verzichten. Während den Modulen Datenbanksysteme 1 \& 2 konnte bereits sehr viel Erfahrungen mit Postgres gesammelt werden. Laut Deployment Statistics\footcite{deploymentstatistics} von Django Sites verwenden 47.7\% aller deployten Sites MySQL als Datenbank. Postgres folgt mit 40.7\%. Das nächst grössere Datenbanksystem ist sqlite mit nur noch 7.6\%.
 MySQL wird zwar etwas öfters verwendet. Aus Erfahrung weiss man aber, dass die Funktionen von Postgres die Bedürfnisse dieser Anwendung voll und ganz abdecken, weshalb man Postgres als Datenbanksystem festlegte. \\
 

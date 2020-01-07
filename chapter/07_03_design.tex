@@ -8,64 +8,58 @@ Bevor mit der Entwicklung des Frontends begonnen werden kann, muss geplant werde
 	\item Was sind die Bedürfnisse der einzelnen Gruppen?
 \end{itemize}
 
-Durch das Beantworten der einzelnen Fragen, kann schnell herausgefunden werden, welche Anforderungen an das Frontend gestellt werden. Da der Aufgaben-Coach von komplett verschiedenen Benutzergruppen verwendet und damit gearbeitet wird, sollte das UI mögichst simpel und effizient gestaltet werden. Folgende Anforderungen konnten herauskristallisiert werden:
+Durch das Beantworten der einzelnen Fragen kann schnell herausgefunden werden, welche Anforderungen an das Frontend gestellt werden. Da der Aufgaben-Coach von mehreren Benutzergruppen mit unterschiedlichen Anforderungen verwendet wird, entschied man sich, das User Interface möglichst simpel und übersichtlich zu halten. Folgende Anforderungen werden an das User Interface gestellt.
 
-\begin{itemize}
-	\item Usability \\
-		Bei einer der Benutzergruppen handelt es sich um Schüler. Die Gruppe Schüler ist die Hauptnutzergruppe der Applikation und soll desshalb besonders gut abgeholt werden. \\
-		
-\begin{minipage}{\textwidth}
-	\begin{figure}[H]
-	\centering
-		\includegraphics[width=8cm, keepaspectratio]{images/HandyNutzung.png}
-		\caption{Handynutzung Primarschüler}
-	\end{figure}
-\end{minipage}
-		
-		Wie der Abbildung oben entnommen werden kann, verwenden etwa 52\% der Primarschüler der Schweiz regelmässig ein Handy \footcite{smartphone_usage}. Bei den Sekundarschülern ist diese Zahl sogar noch höher. Um also möglichst gut auf die Bedürfnisse der Schüler einzugehen, soll der komplette, für sie gedachte, Teil, ebenfalls über Tablets und Mobiles bedienbar sein.
-		
-	\item Struktur \\
-		Internetnutzer haben in der Regel eine relativ kurze Aufmerksamkeitsspanne. In den letzten 15 bis 20 Jahren ist diese um etwa 30\% zurückgegangen. Das bedeutet, dass man als Designer einer Webapplikation immer weniger Zeit hat, beim Benutzer einen positiven ersten Eindruck zu hinterlassen und ihm die Information zu liefern, weswegen er die Webseite besucht \footcite{attention_span}. \\ 
-		Das Wohlbefinden des Benutzers darf auf keinen Fall vernachlässigt werden, denn ein positives Erlebnis wirkt sich direkt auf die Zeit aus, die er auf der Webseite verbringt und ob er sie erneut besucht \footcite{positiv_experience}.
-		Aus diesem Grund soll anhand der Strukur auf den ersten Blick klar sein, was möglich ist und was nicht.
-		
-	\item Navigation \\
-		Die Navigation über die Webseite soll so einfach und simpel wie möglich gehalten werden. Es soll möglich sein von jedem beliebigen Punkt der Webseite in kürzester Zeit zu einem beliebig anderen Punkt navigieren zu können.
-	
-	\item Orientierung \\
-		Die Benutzer der Applikation sollen sich auf der Webseite zurecht finden und zu jedem Zeitpunkt wissen, wo sie sich befinden. Eine einfache Orientierung ist der Grundstein für das Wohlbefinden der Benutzer und soll deshalb berücksichtigt werden.
-		
-	\item Kontrast \\
-		Die dargestellten Elemente sollen gut erkennbar sein und nicht in der Webseite versinken. Natürlich soll damit nicht übertrieben und mit knalligen Farben um sich geworfen werden.
-\end{itemize}
+\subsubsection*{Usability}
+Schüler sind die Hauptnutzer dieser Anwendung. Aus diesem Grund möchte man die Anwendung so gestalten, dass Schüler auch gerne Zeit auf der Webseite verbringen. Laut einer Statistik zur Handynutzung von Primarschülern\footcite{smartphone_usage} nutzen 34\% der 6-/7-Jährigen regelmässig ein Handy. Die Nutzung steigt jedoch mit dem Alter weiter an. Bei den 12-/13-Jährigen nutzen 77\% regelmässig ein Handy. Es kann davon ausgegangen werden, dass die Handynutzung mit vortschreitendem Alter noch weiter ansteigt. \\
 
+Um die Bedürfnisse der Schüler möglichst gut abzudecken, soll der für sie gedachte Teil der Anwendung auch auf Handies erreichbar und bedienbar sein.
+
+
+\subsubsection*{Struktur}
+Kommen neue Benutzer auf die Webseite, bleibt in der Regel wenig Zeit, um einen positiven ersten Eindruck zu hinterlassen. Gemäss der Statistik des Statistic Brain Research Institute\footcite{attention_span_statistic} liegt die Aufmerksamkeitsspanne bei Nutzern bei knapp 8.25 Sekunden. Es bleibt also nicht viel Zeit, um einen positiven Eindruck zu Hinterlassen. \\
+
+Um bei den Benutzern einen positiven Eindruck zu hinterlassen wurde besonders die Struktur der Webseite angepasst. Die Webseite soll klar und übersichtlich dargestellt werden. Es soll genügend Information auf der Startseite vorhanden sein, aber diese soll trotzdem nicht überladen wirken.
+
+\subsubsection*{Navigation}
+Die Navigation der Webseite soll ebenfalls einfach und simpel gehalten werden. Trotzdem müssen die Hauptseiten über die Navigation erreichbar sein.
+		
+\subsubsection*{Orientierung}
+Die Benutzer der Webseite sollen sich gut zurechtfinden und jederzeit wissen, wo sie sich genau befinden. Benutzer sollen sich nie auf einer Seite befinden, bei welcher sie nicht genau wissen, wie sie dahin gelangt sind und wie sie wieder zurück kommen.
+
+\subsubsection*{Kontrast}
+Die einzelnen Elemente sollen gut erkennbar sein, so dass man sie auf Anhieb findet. Zudem sollen die Elemente über die ganze Webseite konstant sein. Buttons sollen alle das gleiche Design und die selbe Farbe haben.
+
+\subsubsection{UI Anforderungen}
 Basierend auf den oben aufgelisteten UI-Design Anforderungen, wurden folgende Entscheidungen getroffen:
 
-\begin{itemize}
-	\item Usability \\
-		Webseiten welche über Tablets und Mobiles verwendet werden, sollten niemals überladen sein. Aus diesem Grund sollen die Teile der Applikation, welche für die Schüler gedacht sind, schlicht und einfach gehalten werden. Wo auch immer möglich soll auf lange Texte verzichtet werden \footcite{usability}. Die einzelnen Seiten der Webapplikation sollen nur die für sie gedachte Aufgabe lösen.
+\subsubsection*{Usability}
+Die Webseite soll niemals mit Informationen überladen sein. Pro Webseite sollen nur diese Informationen angezeigt werden, welche vom Benutzer auch erwartet werden. Zudem soll auf lange Texte verzichtet werden\footcite{usability}. Auf dem Desktop sind diese oft gut lesbar. Wird die Webseite aber über Mobile Phones aufgerufen, geht die Übersicht schnell verloren. \\
+
+Um die Übersicht besser gestalten zu können, sollen die einzelnen Seiten nur die für sie gedachte Aufgabe erledigen.
+
+\subsubsection*{Struktur}
+Um die Struktur benutzerfreundlich zu gestalten, muss ein Kompromiss zwischen Übersicht und Funktionalität gemacht werden. Einzelne Webseiten sollen nur die für sie gedachten Aufaben erledigen. Die Nutzer sollen die Webseite aber dennoch so bedienen, dass nicht ständig zwischen den einzelnen Webseiten gewechselt werden muss.
+
 		
-	\item Struktur \\
-		Um eine möglichst benutzerfreundliche Struktur aufzubauen, soll auf ein Kompromiss zwischen, ''eine Webseite so einfach wie möglich halten und nur eine bestimmte Aufgabe lösen zu lassen'' und ''eine bestimmte Aufgabe mit so wenigen Klicks wie möglich lösen zu können'', gesetzt werden. \\
+\subsubsection*{Navigation}
+Um die Navigation auf der Webseite zu erleichtern, wird die Anwendung in fünf Teilbereiche aufgeteilt. Jeder dieser Teilbereiche ist über die Navigationsleiste erreichbar. 
 		
-	\item Navigation \\
-		Um eine schnelle Navigation zu ermöglichen, soll die Applikation in fünf Bereiche aufgeteilt werden, welche über die Navigationsleite erreichbar sind. Dabei soll es sich um folgende Bereiche handeln: Statistiken, Klassenverwaltung, Adminpanel, Schulstoff und User. 
-		
-	\item Orientierung \\
-		Um den Benutzern eine möglichst gute Orientierung zu gewähren, sollen Breadcrumbs eingebaut werden. Um zusätzlich eine einheitliche Navigation durch die Applikation zu bieten, sollen die Breadcrumbs auch zum Navigieren verwendet werden können.
-		
-	\item Kontrast \\
-		Es soll auf knallige Farben und Eye­cat­cher verzichtet werden. Wichtige Elemente sollen zwar mit Farbe hervorgehoben werden, jedoch nicht dadurch auffallen. Die schlichte Gestaltung der Webseite soll die Aufmerksamkeit auf die entsprechenden Elemente leiten.
-\end{itemize}
+\subsubsection*{Orientierung}
+Auf der Webseite sollen Breadcrumbs verwendet werden, um dem Benutzer eine Orientierungshilfe zu geben. Anhand dieser Breadcrumbs ist auf jeder Webseite ersichtlich, wo man sich genau befindet. Diese dienen auch gleich als Überschrift für die einzelnen Webseiten.
+
+\subsubsection*{Kontrast}
+Knallige Farben sollen so gut wie möglich vermieden werden. Wichtige Elemente sollen aber durch Farben hervor gehoben werden. Es wurde aber darauf geachtet, dass diese Buttons nicht zu fest hervorstechen. 
 
 
 \subsection{Mockup}
-Anhand der getroffenen Entscheidungen wurden Mockups erstellt. Der Entscheid zum Erstellen von Mockups hat mehrere Gründe und bietet auch gleich verschiedene Vorteile. Während dem Erstellen von Mockups kann bereits früh erkannt werden, ob wichtige Punkte vergessen oder vernachlässigt wurden. Sobald die Mockups fertiggestellt sind, können damit bereits erste Tests durchgeführt werden. Zum Beispiel kann geprüft werden, ob alle geforderten funktionalen Anforderungen erfüllt werden und es können erstmals Usability-Tests durchgeführt werden, was viel Zeit und unnötige Arbeit ersparen kann \footcite{mockups}. \\
+Anhand diser Anforderungen wurden Mockups erstellt. Mockups bieten mehrere Vorteile beim Entwerfen einer Webseite. So kann zum Beispiel früh erkannt werden, ob wichtige Punkte vergessen oder vernachlässigt wurden. Mit Mockups können auch gleich die ersten Tests durchgeführt werden. Es kann geprüft werden, ob die geforderten funktionalen Anforderungen erfüllt werden und Usability-Tests können durchgeführt werden\footcite{dist}. \\
 
-Nachfolgend werden einige Beispiele für Ergebnisse der getroffenen Entscheidungen für die Mockups aufgelistet. Im Anhang sind alle gemachten Mockups zu finden. \\ %TODO Link zu Anhang einbauen. und Mockups anhängen
+ %TODO Link zu Anhang einbauen. und Mockups anhängen
+Nachfolgend werden einige Beispiele gemacht, wie die getroffenen Entscheidungen in die Entwicklung der Mockups eingeflossen ist. Die vollständigen Mockups befinden sich im Anhang.
 
-Usability: \\
-Auf dem Dashboard wird der Wochenplan des Schülers, gefolgt von den derzeit besuchten Fächern, klar und ersichtlich aufgelistet. \\
+\subsubsection*{Usability}
+Auf dem Dashboard werden die freigeschaltenen Fächer und der Wochenplan eines Schülers aufgelistet. Da dies erste Seite ist, welche ein neu eingeloggter Benutzer sieht, wurde besonders darauf geachtet, dass die Seite übersichtlich ist. Somit ist die Mobile Version auch ansprechender.
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 	\centering
@@ -75,8 +69,9 @@ Auf dem Dashboard wird der Wochenplan des Schülers, gefolgt von den derzeit bes
 \end{minipage}
 
 
-Struktur: \\
-Die Aufgabe dieser Seite ist es, neue Fragen zu definieren. Mit dem Risiko die Seite ein wenig zu überladen, dem Benutzer jedoch eine bessere Übersicht zu bieten, wurde ein Kompromiss eingegangen und entschieden, dass auch die dazugehörenden Hilfestellungen erfasst werden können. \\
+\subsubsection*{Struktur}
+Die Aufgabe dieser Seite ist es, neue Aufgaben und Fragen zu definieren. Mit dem Risiko die Seite zu überladen, dem Benutzer jedoch eine bessere Übersicht zu bieten, wurde ein Kompromiss eingegangen und entschieden, dass auch die dazugehörenden Hilfestellungen erfasst werden können. \\
+
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 	\centering
@@ -86,8 +81,11 @@ Die Aufgabe dieser Seite ist es, neue Fragen zu definieren. Mit dem Risiko die S
 \end{minipage}
 
 
-Navigation: \\
+\subsubsection*{Navigation}
 In der Navigationsbar sind die fünf definierten Bereiche ersichtlich. Dashboard stellt den Schulstoff Bereich dar, Statistiken die Statistiken, Klassenverwaltung die Klassenverwaltung, Admin das Adminpanel und Logout/Login die User. \\
+
+Damit die Navigationsbar auch in der Mobile Version gut benutzbar ist, wird ein Hamburger Menu erstellt. Klickt ein Benutzer darauf, klappt sich die Navigationsbar auf. \\
+
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 	\centering
@@ -97,8 +95,8 @@ In der Navigationsbar sind die fünf definierten Bereiche ersichtlich. Dashboard
 \end{minipage}
 
 
-Orientierung: \\
-Durch die Breadcrumbs wird hierarchisch dargestellt, wo man sich aktuell in der Webapplikation befindet. Mit einem Klick auf die übergeordneten Bereiche, navigiert man sofort an die gewünschte Stelle. \\
+\subsubsection*{Orientierung} 
+Durch die Breadcrumbs wird hierarchisch dargestellt, wo sich ein Benutzer aktuell auf der Webseite befindet. Mit einem Klick auf die übergeordneten Bereiche navigiert man auch auf die \\
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
 	\centering
@@ -108,7 +106,7 @@ Durch die Breadcrumbs wird hierarchisch dargestellt, wo man sich aktuell in der 
 \end{minipage}
 
 
-Kontrast: \\
+\subsubsection*{Kontrast}
 Da die Mockups in schwarz und weiss erstellt wurden, gibt es hierfür kein Beispiel. Die Entscheidung wurde natürlich dennoch in die Entwicklung miteinbezogen.
 
 
