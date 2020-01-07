@@ -300,3 +300,24 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 
 	\item Die Funktion um eigene Aufgaben mit anderen Lehrpersonen zu teilen wurde entfernt. Standardmässig sind nun alle erstellen Aufgaben für alle Lehrpersonen ersichtlich.
 \end{itemize}
+
+
+
+\subsubsection{Performance Testing}
+Um sicherzustellen, dass nichtfunktionale Anforderungen wie die Response Time und die Scalability erfüllt werden, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation verwendeten. \\
+
+\textbf{Auswertung:} \\
+
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
+		\caption{Performance Test Übersicht}
+	\end{figure}
+	\label{Performance_Tests}
+\end{minipage}
+
+Wie in der Abbildung \ref{Performance_Tests} ersichtlich ist, werden die gestellten Anforderungen nicht ganz erfüllt. Die Applikation kann zwar von 300 Schülern zeitgleich verwendet werden, jedoch wurde die erwünschte Response Time von unter einer Sekunde nicht durchgehend erreicht. Bei etwa 22\% der gesendeten Anfragen, benötigte die Applikation etwas mehr als eine Sekunde. Grund dafür ist das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
+
+
+
+
