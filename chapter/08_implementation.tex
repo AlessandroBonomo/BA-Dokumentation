@@ -2,13 +2,32 @@
 \subsection{Django Architektur}
 Bei der Implementation der Anwendung befolgte man die vom Django Framework vorgegebene Architektur. Für die einzelnen Apps entschied man sich jedoch dafür, diese in einem separaten ''apps'' Verzeichnis zu speichern, damit das Home-Verzeichnis übersichtlicher ist.\\
 
-Django ist nach dem \gls{mtv} Pattern aufgebaut, was eine leichte Variation vom \gls{mvc} Pattern ist. Beim \gls{mvc} Pattern dient das Model als Vermittler zwischen dem Website Interface und der Datenbank. Die View ist das eigentliche User Interface und enthält zum Beispiel das HTML oder CSS der Website. Der Controller ist die Hauptkomponente in diesem Pattern. Er nimmt die korrekte View aus der User Anfrage und weist das korrekte Model zu\footcite{django_mvc}. \\
+Django ist nach dem \gls{mtv} Pattern aufgebaut, was eine leichte Abänderung des \gls{mvc} Pattern ist. Beim \gls{mvc} Pattern dient das Model als Vermittler zwischen dem Website Interface und der Datenbank. Die View ist das eigentliche User Interface und enthält zum Beispiel das HTML oder CSS der Website. Der Controller ist die Hauptkomponente in diesem Pattern. Er nimmt die korrekte View aus der User Anfrage und weist es dem Model zu\footcite{django_mvc}. \\
 
-Django basiert aber auf dem \gls{mtv} Pattern, welches relativ ähnlich zum \gls{mvc} Pattern ist. Wird im Browser eine \gls{url} aufgerufen, entscheidet Django anhand der \gls{url} Patterns, an welche View die Anfrage gesendet wird. Diese View generiert dann schlussendlich die Webseite mit Hilfe des Templates.
+Django basiert aber auf dem \gls{mtv} Pattern. Wird im Browser eine \gls{url} aufgerufen, entscheidet Django anhand der \gls{url} Patterns, an welche View die Anfrage gesendet wird. Diese View generiert dann schlussendlich die Webseite mit Hilfe des Templates. \\
 
-Das Model enthält immer noch die logische Datenstruktur. Die View hat Zugriff auf das Model und kann so Daten speichern, updaten oder löschen. Erhält die View Daten vom Model, kann diese mit dem Template dargestellt werden. Das Template dient lediglich zur Darstellung der einzelnen Webseiten\footcite{django_mtv}. \\
+%Das Model enthält immer noch die logische Datenstruktur. Die View hat Zugriff auf das Model und kann so Daten speichern, updaten oder löschen. Erhält die View Daten vom Model, kann diese mit dem Template dargestellt werden. Das Template dient lediglich zur Darstellung der einzelnen Webseiten\footcite{django_mtv}.
 
-Hinzu kommen jedoch noch die Django Middlewares, welche Requests und Responses anpassen können. Jede dieser Middlewares ist für bestimmte Funktionen verantwortlich. Die ''AuthenticationMiddleware'' wird zum Beispiel verwendet, um die Benutzer einer Session zuordnen zu können.
+\begin{figure}[H]
+	\begin{center}	
+		\includegraphics[width=0.5\textwidth, keepaspectratio]{images/django_mtv.png}
+		\caption{Django Architektur Diagramm\footcite{django_architektur_image}}
+			\label{django_architecture}
+	\end{center}
+\end{figure}
+
+\subsubsection*{Model}
+In den Models wird das Datenbank Model mit den benötigten Feldern erstellt\footcite{django_models}. Django stellt auch gleich einen \gls{orm} bereit, mit welchem die Tabellen in der Datenbank erstellt werden kann. Dies bietet gleich meherere Vorteile. Zum einen nimmt dieser \gls{orm} viel Arbeit ab, da man eigentlich keine Queries schreiben muss. Zum anderen ist es sehr hilfreich, wenn man Migrationen an der Datenstruktur durchführen möchte. Der \gls{orm} erkennt, was an der Datenbank geändert wurde und wie die Daten migriert werden müssen\footcite{django_manage}. Als Entwickler kann man so auch ohne viel Datenbank Kenntnisse einfach Migrationen durchführen.
+
+\subsubsection*{Templates}
+Mit Templates können dynamische HTML Seiten generiert werden. Die Templates bestehen aus dem statischen HTML Code, welcher mit dynamischen Inhalten gefüllt werden kann.  Dazu verwendet Django die \gls{dtl}\footcite{django_templates}.
+
+\subsubsection*{Views}
+Eine View ist nichts anderes als eine Python Funktion, welche einen Request entgegen und eine Response zurück schicken. Die Response kann alles enthalten, von einfachem \gls{html} bis zu 404 Seiten oder Redirects. Die View an sich enthält die Logik, welche nötig ist, um den Request entgegennehmen zu können oder die Response zu senden\footcite{django_views}.
+
+\subsubsection*{Middlewares}
+Hinzu kommen jedoch noch die Django Middlewares, welche Requests und Responses anpassen können. Jede dieser Middlewares ist für bestimmte Funktionen verantwortlich. Die ''AuthenticationMiddleware'' wird zum Beispiel verwendet, um die Benutzer einer Session zuordnen zu können. Es werden auch mehrere Security Middlewares angeboten, welche praktisch ''out-of-the-box'' verwendet werden können. Diese können die Sicherheit der Webseite, zum Beispiel die Integration von \gls{hsts} oder \gls{xss} Schutz, erhöhen\footcite{django_middlewares}.\\
+
 
 %TODO vielleicht
 %\subsection{Apps}
