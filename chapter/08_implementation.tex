@@ -190,8 +190,16 @@ Mithilfe der Unittests werden die Models getestet. Hierbei wird Wert darauf gele
 Da die Applikation von drei verschiedenen Benutzergruppen verwendet wird, wurde besonders grossen Wert darauf gelegt zu prüfen, dass jeder Nutzer nur im Rahmen seiner vorbestimmten Rechte agieren kann. Es soll einem Schüler zum Beispiel nicht möglich sein, abgegebene Aufgaben zu bewerten, oder eine bereits gemachte Bewertung anzupassen. Aus Erfahrung kann gesagt werden, dass es bei Schülern im Alter von sechs bis sechzehn Jahren nicht besonders lange dauert, bis die ersten Versuche unternommen werden. Würde es Schülern gelingen selber Bewertungen vorzunehmen, würde dies die genrierten Statistiken verfälschen, wodurch ein wichtiger Bestandteil der Applikation seinen Sinn verlieren würde, was auf jeden Fall vermieden werden sollte. 
 
 \textbf{Manuelle Tests:} \\
-Es wurde entschieden, dass jedes mal bevor ein Branch mit neuen Funktionen in den Master-Branch gemerget werden soll, zuerst manuelle Tests durchgeführt werden müssen. Alle bis dahin implementierten Funktionen mussten vollständig manuell getestet werden. Dies ist eine wichtige Massnahme, da Funktionen wie zum Beispiel das Filtern der abgegebenen Aufgaben, oder das verschieben von Elementen per Drag\&Drop schwer mit Unittests zu testen sind. Wurde ein Fehler entdeckt, musste dieser sofort behoben und das mergen mit dem Master-Branch solange verschoben werden.
+Es wurde entschieden, dass manuelle Tests \footcite{manuelle_tests} durchgeführt werden sollen und zwar jedes mal bevor ein Branch mit neuen Funktionen in den Master-Branch gemerget werden soll. Durch die manuellen Tests soll sichergestellt werden, dass Funktionen, die mit Unittests nicht zu testen sind, dennoch getestet werden. Von folgenden Funktionen ist hier die Rede: \\
+\begin{itemize}
+	\item Darstellen der Statistiken
+	\item Verschieben von Elementen per Drag\&Drop
+	\item Filtern von abgegebenen Aufgaben
+	\item Dynamisches hinzufügen und entfernen von Fragen pro Aufgabe
+	\item Dynamisches hinzufügen und entfernen von Hilfestellungen pro Frage
+\end{itemize}
 
+Wird ein Fehler entdeckt, muss dieser sofort behoben und das mergen mit dem Master-Branch solange verschoben werden.
 
 
 \subsubsection{Usability Tests}
