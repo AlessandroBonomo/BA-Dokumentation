@@ -190,8 +190,16 @@ Mithilfe der Unittests werden die Models getestet. Hierbei wird Wert darauf gele
 Da die Applikation von drei verschiedenen Benutzergruppen verwendet wird, wurde besonders grossen Wert darauf gelegt zu prüfen, dass jeder Nutzer nur im Rahmen seiner vorbestimmten Rechte agieren kann. Es soll einem Schüler zum Beispiel nicht möglich sein, abgegebene Aufgaben zu bewerten, oder eine bereits gemachte Bewertung anzupassen. Aus Erfahrung kann gesagt werden, dass es bei Schülern im Alter von sechs bis sechzehn Jahren nicht besonders lange dauert, bis die ersten Versuche unternommen werden. Würde es Schülern gelingen selber Bewertungen vorzunehmen, würde dies die genrierten Statistiken verfälschen, wodurch ein wichtiger Bestandteil der Applikation seinen Sinn verlieren würde, was auf jeden Fall vermieden werden sollte. 
 
 \textbf{Manuelle Tests:} \\
-Es wurde entschieden, dass jedes mal bevor ein Branch mit neuen Funktionen in den Master-Branch gemerget werden soll, zuerst manuelle Tests durchgeführt werden müssen. Alle bis dahin implementierten Funktionen mussten vollständig manuell getestet werden. Dies ist eine wichtige Massnahme, da Funktionen wie zum Beispiel das Filtern der abgegebenen Aufgaben, oder das verschieben von Elementen per Drag\&Drop schwer mit Unittests zu testen sind. Wurde ein Fehler entdeckt, musste dieser sofort behoben und das mergen mit dem Master-Branch solange verschoben werden.
+Es wurde entschieden, dass manuelle Tests \footcite{manuelle_tests} durchgeführt werden sollen und zwar jedes mal bevor ein Branch mit neuen Funktionen in den Master-Branch gemerget werden soll. Durch die manuellen Tests soll sichergestellt werden, dass Funktionen, die mit Unittests nicht zu testen sind, dennoch getestet werden. Von folgenden Funktionen ist hier die Rede: \\
+\begin{itemize}
+	\item Darstellen der Statistiken
+	\item Verschieben von Elementen per Drag\&Drop
+	\item Filtern von abgegebenen Aufgaben
+	\item Dynamisches hinzufügen und entfernen von Fragen pro Aufgabe
+	\item Dynamisches hinzufügen und entfernen von Hilfestellungen pro Frage
+\end{itemize}
 
+Wird ein Fehler entdeckt, muss dieser sofort behoben und das mergen mit dem Master-Branch solange verschoben werden.
 
 
 \subsubsection{Usability Tests}
@@ -292,3 +300,34 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 
 	\item Die Funktion um eigene Aufgaben mit anderen Lehrpersonen zu teilen wurde entfernt. Standardmässig sind nun alle erstellen Aufgaben für alle Lehrpersonen ersichtlich.
 \end{itemize}
+
+
+
+\subsubsection{Performance Testing}
+Um sicherzustellen, dass nichtfunktionale Anforderungen wie die Response Time und die Scalability erfüllt werden, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation verwendeten. \\
+
+\textbf{Auswertung:} \\
+Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Requests abgesetzt. In der Abbildung \ref{Requests_Per_Second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt absetzt wurden.
+
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_requests_per_second.png}
+		\caption{Anfragen pro Sekunde}
+	\end{figure}
+	\label{Requests_Per_Second}
+\end{minipage}
+
+Wie in der Abbildung \ref{Performance_Tests} ersichtlich ist, werden die gestellten Anforderungen nicht ganz erfüllt. Die Applikation kann zwar von 300 Schülern zeitgleich verwendet werden, jedoch wurde die erwünschte Response Time von unter einer Sekunde nicht durchgehend erreicht. Bei etwa 6\% der gesendeten Anfragen, benötigte die Applikation etwas mehr als eine Sekunde. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
+
+\begin{minipage}{\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
+		\caption{Performance Test Übersicht}
+	\end{figure}
+	\label{Performance_Tests}
+\end{minipage}
+
+
+
+
+
