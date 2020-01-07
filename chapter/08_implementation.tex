@@ -172,7 +172,7 @@ Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Reque
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_requests_per_second.png}
 		\caption{Anfragen pro Sekunde}
-			\label{request_per_second}
+		\label{request_per_second}
 	\end{figure}
 
 Wie in der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestellten Anforderungen nicht ganz erfüllt. Die Applikation kann zwar von 300 Schülern zeitgleich verwendet werden, jedoch wurde die erwünschte Response Time von unter einer Sekunde nicht durchgehend erreicht. Bei etwa 6\% der gesendeten Anfragen, benötigte die Applikation etwas mehr als eine Sekunde. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
@@ -180,7 +180,7 @@ Wie in der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestell
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
 		\caption{Performance Test Übersicht}
-			\label{performance_tests}
+		\label{performance_tests}
 	\end{figure}
 
 
