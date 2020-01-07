@@ -1,211 +1,67 @@
-\section{Implementation}
+\section{Implementation und Tests}
+\subsection{Django Architektur}
+Bei der Implementation der Anwendung befolgte man die vom Django Framework vorgegebene Architektur. Für die einzelnen Apps entschied man sich jedoch dafür, diese in einem separaten ''apps'' Verzeichnis zu speichern, damit das Home-Verzeichnis übersichtlicher ist.\\
 
-\subsection{Apps}
-Bei Django werden unabhängige Funktionalitäten in unterschiedliche Apps aufgeteilt. Eine App in Django ist eigentlich nichts anderes als ein Python Package, welches eine Reihe von Features zur Verfügung stellt\footcite{django:apps}. Das Ziel dabei ist es, den Code auf die verschiedenen Apps aufzuteilen, so dass diese unabhängig voneinander wiederverwendet werden können.  \\
-In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welche für Aufgaben-Coaching erstellt wurden.
+Django ist nach dem \gls{mtv} Pattern aufgebaut, was eine leichte Variation vom \gls{mvc} Pattern ist. Beim \gls{mvc} Pattern dient das Model als Vermittler zwischen dem Website Interface und der Datenbank. Die View ist das eigentliche User Interface und enthält zum Beispiel das HTML oder CSS der Website. Der Controller ist die Hauptkomponente in diesem Pattern. Er nimmt die korrekte View aus der User Anfrage und weist das korrekte Model zu\footcite{django_mvc}. \\
 
-\begin{table}[h]
-	\centering
-	\begin{tabu} to 0.9\textwidth {l X}
-	\toprule
-	App & Beschreibung \\ 
-	\midrule	
-	user & In der Users App befindet sich die gesamte Logik zum erstellen und verwalten der User. \\
-	\midrule
-		school\_admin & Die school\_admin App ist für die Erstellung von Klassen sowie der Zuweisung von Schülern und Lehrern in Klassen zuständig. \\
-	\midrule
-	school\_teacher & In dieser App können Lehrer die Fächer für ihre Klasse freischalten und Aufgaben dem Wochenplan hinzufügen. \\
-	\midrule
-		exercise & Die exercise App stellt um Aufgaben zu erstellen zur Verfügung. Zudem können gelöste Aufgaben von einem Lehrer bewertet werden. \\
-	\midrule 
-	study\_content & Diese App beinhaltet die Logik zum bereitstellen von Lerninhalten \\
-	\midrule	
-	forum & In der forum App wird die komplette Logik für das Forum implementiert. \\
-	\bottomrule
-	\end{tabu}
-	\captionof{table}{Apps Beschreibung}
-	\label{table:django_apps}
-\end{table}
+Django basiert aber auf dem \gls{mtv} Pattern, welches relativ ähnlich zum \gls{mvc} Pattern ist. Das Model enthält immer noch die logische Datenstruktur. Die View hat Zugriff auf das Model und kann so Daten speichern, updaten oder löschen. Erhält die View Daten vom Model, kann diese mit dem Template dargestellt werden. Das Template dient lediglich zur Darstellung der einzelnen Webseiten\footcite{django_mtv}. \\
 
-%\subsubsection*{Datenbank}
+Wird im Browser eine \gls{url} 
+
+
+%TODO vielleicht
+%\subsection{Apps}
+%Bei Django werden unabhängige Funktionalitäten in unterschiedliche Apps aufgeteilt. Eine App in Django ist eigentlich nichts anderes als ein Python Package, welches eine Reihe von Features zur Verfügung stellt\footcite{django:apps}. Das Ziel dabei ist es, den Code auf die verschiedenen Apps aufzuteilen, so dass diese unabhängig voneinander wiederverwendet werden können.  \\
+%In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welche für Aufgaben-Coaching erstellt wurden.
 %
-%Werden mehrere Apps erstellt, muss darauf geachtet werden, wie das Domain Model aussieht. Bei Django werden die einzelnen Models direkt in der App hinterlegt. Somit gibt es kein zentrales 
-%
-%Die Logik kann ohne Probleme in die verschiedenen Apps aufgeteilt werden. Das Problem dabei ist jedoch die Datenbank. In Django ist es best-practise, die benötigten Models jeweils in der entsprechenden App zu implementieren. Da die einzelnen Tabellen aus der Datenbank eine starke Bindung zu den anderen Tabellen haben, geht diese Bindung somit auch auf die Apps über. Dadurch schwindet der Sinn, die Logik in verschiedene Apps aufzuteilen. Es gibt zwei Möglichkeiten, mit diesem Problem umzugehen. Die erste wäre es, alle Apps zu einer grossen zusammenzulegen und die zweite wäre es bei der zu Beginn gewählten Aufteilung zu bleiben und die starke Koppelung hinzunehmen. 
-
-%TODO Weiterschreiben
-
-
-\subsection{URLs}
-
-\begin{table}[H]
-	\centering
-	\begin{tabu} to 0.9\textwidth {l X}
-	\toprule
-		\textbf{URL} & \textbf{Template} \\
-	\bottomrule
-		/ & subject\_list.html \\
-	\bottomrule
-		\textbf{user/} \\
-		login/ & registration/login.html \\
-		logout/ & registration/logged\_out.html \\ 
-		profile/ & user/profile.html \\
-		<type>/create/ & user/user\_form.html \\ 
-		<pk>/update/ & user/user\_form.html \\
-		<pk>/delete/ & user/user\_confirm\_delete.html \\
-	\midrule
-		\textbf{subject/} \\
-		<subject>/ & study\_content/topic\_list.html \\
-		<subject>/<topic>/ & study\_content/lesson\_list.html \\
-		<subject>/<topic>/<pk>/ & study\_content/lesson\_detail.html \\
-	\midrule
-		\textbf{school\_admin/} \\
-		/ & school\_admin/admin\_overview.html \\
-		class/create/ & school\_admin/class\_create.html \\
-		class/<class\_pk>/update/ & school\_admin/admin\_class\_management.html \\
-		class/<class\_pk>/delete/ & school\_admin/class\_confirm\_delete.html \\
-	\midrule
-		\textbf{exercise/} \\
-		create\_help/<pk>/ & exercise/question\_help\_update.html \\
-		review/ & exercise/exercise\_review\_list.html \\
-		review/<pk>/<user\_pk>/ & exercise/exercise\_review\_detail.html \\
-		review/<pk>/<user\_pk>/archive/ & exercise/exercise\_confirm\_archive.html \\
-		review/<pk>/<user\_pk>/reject/ & exercise/exercise\_confirm\_reject.html \\
-		review/<pk>/<user\_pk>/<answer\_pk>/ & exercise/answer\_review\_form.html \\
-		
-		<topic>/ & exercise/exercise\_list.html \\
-		<topic>/create/ & exercise/exercise\_question\_create.html \\
-		<topic>/<pk>/ & exercise/exercise\_detail.html \\
-		<topic>/<pk>/update/ & exercise/exercise\_question\_create.html \\
-		<topic>/<pk>/delete/ & exercise/exercise\_confirm\_delete.html \\
-		<topic>/<pk>/submit/ & exercise/exercise\_confirm\_submit.html \\
-		
-		<topic>/<pk>/answer/<question\_pk>/ & \\
-		<topic>/<pk>/answer/<question\_pk>/create/ & exercise/answer\_form.html \\
-		<topic>/<pk>/answer/<question\_pk>/update/ & exercise/answer\_form.html \\
-		<topic>/<pk>/answer/<question\_pk>/detail/ & exercise/answer\_detail.html \\ 
-	\midrule
-		\textbf{statistic/} \\
-		/ & statistic/statistic\_subject.html \\
-		exercise/<topic>/<class\_id>/ & statistic/statistic\_exercise.html \\
-		exercise/<topic>/<exercise>/<class\_id>/ & statistic/statistic\_detail.html \\
-		review/<pk>/<user\_pk>/
-		ajax/load\_subjects/ & subject\_dropdown\_list\_options.html \\
-		ajax/load\_data/ & subject\_load\_data.html \\
-	\midrule
-		\textbf{error/} \\
-	\end{tabu}
-	\captionof{table}{URLs}
-\end{table}
-
-
-Django bietet eine simple Möglichkeit an, um zu definieren, welche Seite mit welcher URL aufgerufen werden kann. Wie man im Bild unten sehen kann, wird eine URL in drei, jeweils kommaseparierten, Teilen definiert:
-
-\begin{minipage}{\textwidth}
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLBsp.png}
-		\caption{URL definition}
-	\end{figure}
-\end{minipage}
-
-
-\begin{itemize}
-	\itemsep0em
-	\item Pfad \\
-	Der erste Teil ist der Pfad. Im Beispiel wird der Pfad 'statistic/<str:subject>/' definiert. Das bedeutet, die entsprechende Seite soll über den Pfad ''statistic/'' gefolgt von einem beliebigen Text, in unserem Fall der Titel eines Subjects (zB. Mathematik, Deutsch, etc.), erreichbar sein. 
-	\item View \\
-	Mit dem zweiten Teil wird definiert, welche View angezeigt werden soll. Im Bild ist es zwar nicht ersichtlich, jedoch werden die Views aus der aktuellen App importiert und können über den Namen ''study\_content\_views'' angesprochen werden. Anschliessend kann über diesen Namen die View angespochen werden, die dargestellt werden soll. In unserem Fall ist dies die View ''TopicListView''.
-	\item Name \\
-	Im dritten und letzten Teil wird der Pfaddefinition einen Namen gegeben. Dieser Name muss über die ganze Applikation hinweg eindeutig sein und kann dazu verwendet werden, Verlinkungen zwischen den einzelnen Seiten zu definieren. Der Vorteil dabei ist, dass der Pfad sich ändern kann, ohne dass die gemachten Verlinkungen angepasst werden müssen.
-\end{itemize}
-
-
-Es können beliebig viele solcher URLs definiert werden. Das Framework schreibt keine klare Struktur vor. Aus diesem Grund haben wir uns dazu entschieden, die URL Definitionen auf mehere Dateien aufzuteilen und jeweils direkt in den einzlenen Apps abzulegen. Mit diesem Schritt erreicht man mehrere Vorteile. Zum einen wird das Definieren der URLs einiges übersichtlicher und einfacher anzupassen und zum anderen kann man das Risiko von Konflikten zwischen den URLs reduzieren. Schauen wir uns das ganze anhand eines Beispiels an. \\
-\begin{minipage}{\textwidth}
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLschlecht.png}
-		\caption{URL Beispiel}
-	\end{figure}
-\end{minipage}
-
-Im Bild oben sieht man eine kleine Sammlung verschiedener URLs. Bei genauerer Betrachtung fällt auf, dass die URLs von zwei verschiedenen Apps stammen. Die ersten drei URLs gehören zu den Statistiken und die nachfolgenden zur Benutzerverwaltung. Natürlich kann man Vorkehrungen treffen um das ganze übersichtlicher darzustellen, jedoch wird es schwieriger je mehr Definitionen vorliegen. Zum weiteren ist es sehr aufwendig, wenn die URLs angepasst werden sollen. Sollten zum Beispiel die URLs von ''user/...'' auf ''benutzer/...'' geändert werden, muss dies manuell überall angepasst werden. 
-Mit unserer Lösung wird diese Datei in drei neue Dateien aufgeteilt und ist danach folgendermassen strukturiert: \\
-
-\textbf{user/urls.py} \\
-Diese Datei wird in der App ''user'' abgelegt und kann so zusammen mit der App simpel in eine andere Applikation kopiert und verwendet werden. Im Bild unten werden nun die URLs dargestellt, welche zur Benutzerverwaltung gehören und man kann erkennen, dass die URLs kürzer geworden sind. Das führende ''user/'' wurde entfernt. Wieso das möglich und auch gewünscht ist, wird weiter unten beschrieben. \\
-\begin{minipage}{\textwidth}
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLuser.png}
-		\caption{URL user}
-	\end{figure}
-\end{minipage}
-
-
-\textbf{statistic/urls.py} \\
-Diese Datei wird in der App ''statistic'' abgelegt. Wie oben das führende ''user/'' entfernt wurde, konnte auch hier auf das führende ''statistic/'' verzichtet werden. \\
-\begin{minipage}{\textwidth}
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLstatistic.png}
-		\caption{URL statistic}
-	\end{figure}
-\end{minipage}
-
-
-\textbf{urls.py} \\
-Diese Datei befindet sich in keiner eigenen App, sondern liegt global in der Applikation. Der Inhalt der Datei unterscheidet sich auch gegenüber den andereren Dateien. Hier werden keine URLs definiert, sondern es wird angegeben, wo die definierten URLs abgelegt sind. Oben wurde erwähnt, dass die führenden Pfadelemente (''user/'' und ''statistic/'') weggelassen wurden. Effektiv wurden sie jedoch hierhin verschoben. Sollen nun die URLs der Benutzerverwaltung von ''user/...'' nach ''benutzer/...'' geändert werden, kann dies hier vorgenommen werden und wirkt sich auf alle URLs in der Datei ''user/urls.py'' aus. Nun ist es auch möglich in verschiedenen Apps die selben URLs zu definieren, da sie hier beim einbinden mit dem führenden Pfadelement voneinander unterschieden werden können. Dies kann hilfreich sein, wenn Apps von anderen Entwicklern eingebaut werden würden. \\
-\begin{minipage}{\textwidth}
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/URLglobal.png}
-		\caption{URL}
-	\end{figure}
-\end{minipage}
-
+%\begin{table}[h]
+%	\centering
+%	\begin{tabu} to 0.9\textwidth {l X}
+%	\toprule
+%	App & Beschreibung \\ 
+%	\midrule	
+%	user & In der Users App befindet sich die gesamte Logik zum erstellen und verwalten der User. \\
+%	\midrule
+%		school\_admin & Die school\_admin App ist für die Erstellung von Klassen sowie der Zuweisung von Schülern und Lehrern in Klassen zuständig. \\
+%	\midrule
+%	school\_teacher & In dieser App können Lehrer die Fächer für ihre Klasse freischalten und Aufgaben dem Wochenplan hinzufügen. \\
+%	\midrule
+%		exercise & Die exercise App stellt um Aufgaben zu erstellen zur Verfügung. Zudem können gelöste Aufgaben von einem Lehrer bewertet werden. \\
+%	\midrule 
+%	study\_content & Diese App beinhaltet die Logik zum bereitstellen von Lerninhalten \\
+%	\midrule	
+%	forum & In der forum App wird die komplette Logik für das Forum implementiert. \\
+%	\bottomrule
+%	\end{tabu}
+%	\captionof{table}{Apps Beschreibung}
+%	\label{table:django_apps}
+%\end{table}
 
 
 \subsection{Testing}
+Es gibt mehrere Arten von Tests, welche durchgeführt wurden, um die Qulität dieser Arbeit zu gewährleisten.
 
-Um eine möglichst gute Qualität dieser Arbeit zu gewährleisten, wurde auf folgende Arten von Tests gesetzt:
+\subsubsection{Unit Tests}
+Anhand der Unittests werden die erstellten Models getestet. Mit diesen Tests wird sichergestellt, dass die Models korrekt funktionieren. Es kann zum Beispiel getestet werden, ob die Objekte als String abgespeichert werden oder ob duplizierte Objekte abgelegt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, darf kein weiteres Subject mit dem selben Namen erstellt werden können.
 
-\begin{itemize}
-	\item Unittests \\
-		Anhand der Unittests werden die definierten Models getestet. 
-		
-	\item Integration Tests \\
-		Mit den Integration Tests wird sichergestellt, dass die Applikation so auf eingehende Requests reagiert, wie sie soll.
-		
-	\item Manuelle Tests \\
-		Mit Hilfe von manuellen Tests werden die ansonsten sehr aufwendigen Teile der Applikation getestet.
-		
-	\item Usability Tests \\
-		Anhand der Usability Tests soll sichergestellt werden, dass das gewählte Design bei den Mockups einfach und selbsterklärend ist. Hierfür wurden den Probanden einige Aufgaben sowie die erstellen Mockups vorgelegt und darauf geachtet, wie sie sich zurecht fanden.
-\end{itemize}
 
-\subsubsection{Funktionale Tests}
-Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
+\subsubsection{Integration Tests}
+Mit Integration Tests kann getestet werden, ob die Applikation korrekt auf eingehende Requests reagiert. Diese Anwendung wird von mehreren Benutzern mit unterschiedlichen Rechten verwendet. Beim Erstellen der Tests wurde besonders viel Wert darauf gelegt, dass geprüft wird, dass jeder Benutzer nur Zugriff auf die erlaubten Webseiten hat. Aus Erfahrung weiss man, dass Schüler sehr experimentierfreudig sind und sicherlich versuchen werden, die \gls{url} des Browsers anzupassen. Es darf jedoch nicht vorkommen, dass ein Schüler Zugriff auf Statistiken hat oder die Punktezahl von Aufgaben anpassen kann.
 
-\textbf{Unittests:} \\
-Mithilfe der Unittests werden die Models getestet. Hierbei wird Wert darauf gelegt, dass die Models so reagieren, wie sie reagieren sollen. Es soll also zum Beispiel sichergestellt werden, dass ein Objekt als String so repräsentiert wird, wie es erwartet wird. Zusätzlich soll getestet werden, dass nicht mehrere gleiche Objekte erstellt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, soll sichergestellt werden, dass kein weiteres mit dem selben Titel erstellt werden kann.
 
-\textbf{Integration Tests:} \\
-Da die Applikation von drei verschiedenen Benutzergruppen verwendet wird, wurde besonders grossen Wert darauf gelegt zu prüfen, dass jeder Nutzer nur im Rahmen seiner vorbestimmten Rechte agieren kann. Es soll einem Schüler zum Beispiel nicht möglich sein, abgegebene Aufgaben zu bewerten, oder eine bereits gemachte Bewertung anzupassen. Aus Erfahrung kann gesagt werden, dass es bei Schülern im Alter von sechs bis sechzehn Jahren nicht besonders lange dauert, bis die ersten Versuche unternommen werden. Würde es Schülern gelingen selber Bewertungen vorzunehmen, würde dies die genrierten Statistiken verfälschen, wodurch ein wichtiger Bestandteil der Applikation seinen Sinn verlieren würde, was auf jeden Fall vermieden werden sollte. 
-
-\textbf{Manuelle Tests:} \\
-Es wurde entschieden, dass manuelle Tests \footcite{manuelle_tests} durchgeführt werden sollen und zwar jedes mal bevor ein Branch mit neuen Funktionen in den Master-Branch gemerget werden soll. Durch die manuellen Tests soll sichergestellt werden, dass Funktionen, die mit Unittests nicht zu testen sind, dennoch getestet werden. Von folgenden Funktionen ist hier die Rede: \\
-\begin{itemize}
-	\item Darstellen der Statistiken
-	\item Verschieben von Elementen per Drag\&Drop
-	\item Filtern von abgegebenen Aufgaben
-	\item Dynamisches hinzufügen und entfernen von Fragen pro Aufgabe
-	\item Dynamisches hinzufügen und entfernen von Hilfestellungen pro Frage
-\end{itemize}
-
-Wird ein Fehler entdeckt, muss dieser sofort behoben und das mergen mit dem Master-Branch solange verschoben werden.
+\subsubsection{Manuelle Tests}
+Manuelle Tests wurden da eingesetzt, wo es sehr schwierig und Zeitaufwändig gewesen wäre, Tests zu schreiben. Vor jedem Merge in den Master wurde geprüft, ob diese Funktionen noch funktionieren. Ein Beispiel für den Fall von manuellen Tests ist zum Beispiel, ob das Filtering und Pagination noch funktioniert. Zu Beginn hatte man da das Problem, dass das Filtern zwar funktionierte, aber das Pagination basierte auf dem gesamten Queryset. Die Anzahl der Seiten änderte sich also nicht, auch wenn der Filter kein einziges Element gefunden hat. Ein weiterer Fall für manuelle Tests sind die Drag\&Drop Seiten. Bei diesen wurde geprüft, ob man das Item einem Feld zuweisen kann und ob es anschliessend richtig in der Datenbank gespeichert wird. \\
 
 
 \subsubsection{Usability Tests}
-Die Usability Tests wurden mit den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der Webapplikation Balsamiq \footcite{balsamiq_mockups} erstellt. Bereits während des Engineering Projekts und der Studienarbeit konnten damit Erfahrungen gesammelt werden. Zudem ermöglicht es Balsamiq relativ leicht, schöne interaktive Mockups zu erstellen. Durch interaktive Mockups kann die Qualität der Usability Tests verbessert werden, da es sich für die Probanden echter anfühlt und sie dadurch mit grösserer Wahrscheinlichkeit so reagieren, wie sie es dann auf der effektiven Webseite tun werden \footcite{interactive_mockups}. \\
+Nachdem man die Mockups erstellt hat, konnten damit die Usability Tests durchgeführt werden. Ziel dieser Tests ist es, zu prüfen, ob Benutzer das Design der Webseite verstehen und wissen, wo man was machen kann. \\
 
-Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebeten, die Usability Tests dreimal durchzuführen. Bei jeder Durchführung sollen sie eine andere Rolle einnehmen und andere Aufgaben lösen. Um zu verhindern, oder zumindest die Verfälschung der Tests zu minieren, welche durch das gesammelte Wissen vorheriger Durchführungen entstehen kann, wurden die Rollen pro Proband in einer unterschiedlichen Reihenfolge zugweisen. In der Tabelle \ref{Usability Test Rollen} ist ersichtlich, dass drei Probanden die Tests durchgeführt haben und welche Rolle sie bei welcher Durchführung zugewiesen bekommen haben. \\
+%TODO balsamiq i de mockups beschriibe, ned bim teste
+Jeder der 3 Probanden hat die Tests für alle drei Benutzerrollen durchgeführt. Bei jeder Durchführung sollten sie jedoch eine andere Rolle und andere Aufgaben übernehmen. So konnte verhindert werden, dass die Tests verfälscht werden. Auch wenn einer der Probanden die Webseite gesehen hat, musste er jedes Mal andere Aufgaben lösen. Zudem löste jeder Proband die Tests in einer anderen Reihenfolge. Somit hat man zumindest für den ersten Test eine Person, welcher die Webseite noch nie gesehen hat. \\
+In der Tabelle \ref{usability_test_rollen} ist ein Beispiel, wie die Durchführung der Tests gemacht wurde.
+
+%Die Usability Tests wurden mit den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der  Balsamiq\footcite{balsamiq_mockups} erstellt. Bereits während des Engineering Projekts und der Studienarbeit konnten damit Erfahrungen gesammelt werden. Zudem ermöglicht es Balsamiq relativ leicht, schöne interaktive Mockups zu erstellen. Durch interaktive Mockups kann die Qualität der Usability Tests verbessert werden, da es sich für die Probanden echter anfühlt und sie dadurch mit grösserer Wahrscheinlichkeit so reagieren, wie sie es dann auf der effektiven Webseite tun werden \footcite{interactive_mockups}. \\
+
 
 \begin{table}[h]
 	\centering
@@ -219,15 +75,15 @@ Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebet
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Usability Test Rollen}
-	\label{Usability Test Rollen}
+	\label{usability_test_rollen}
 \end{table}
 
 
-Beim Durchführen der Usability Tests wurden die Probanden gebeten, beim lösen der Aufgaben laut zu denken. Während der Durchführung wurden anhand der Gedanken und Anmerkungen der Probanden Notizen aufgeschrieben. Da die verschiedenen Benutzergruppen die Applikation später auf unterschiedlichen Geräten verwenden werden, wurde dies in die Tests miteinbezogen. Es wird davon ausgegangen, dass die Schüler die Webapplikation später meistens per Smartphone besuchen werden. Bei den Lehrern und den Administratoren wird davon ausgegangen, dass diese die Webapplikation ausschliesslich per Desktop-PC verwenden. \\
+Beim Durchführen der Usability Tests wurden die Probanden gebeten, beim Lösen der Aufgaben laut zu denken. Während der Durchführung wurden anhand der Gedanken und Anmerkungen der Probanden Notizen gemacht. Da die verschiedenen Benutzergruppen die Applikation später auf unterschiedlichen Geräten verwenden werden, wurde dies in die Tests miteinbezogen. Es wird davon ausgegangen, dass die Schüler die Webapplikation später meistens per Tablet besuchen werden. Bei den Lehrern und den Administratoren wird davon ausgegangen, dass diese die Web Anwendung hauptsächlich per Notebook Desktop-PC verwenden. \\
 
-Nachfolgend sind die Aufgaben und Fragen aufgelistet, welche die Probanden pro Rolle lösen/beantworten mussten:
+Nachfolgend sind die Aufgaben und Fragen aufgelistet, welche die Probanden pro Rolle lösen mussten:
 
-Schüler: \\
+\subsubsection*{Schüler}
 \begin{itemize}
 	\item Welche Aufgabe/Aufgaben muss/müssen bis am Dienstag erledigt werden?
 	\item Navigiere zum ersten Theorieteil des Themas Brüche.
@@ -238,7 +94,7 @@ Schüler: \\
 \end{itemize}
 
 
-Lehrer: \\
+\subsubsection*{Lehrer}
 \begin{itemize}
 	\item Wie sieht der Wochenplan der Klasse ''S2'' aus?
 	\item Wie kann der Wochenplan angepasst werden?
@@ -254,7 +110,7 @@ Lehrer: \\
 \end{itemize}
 
 
-Admin: \\
+\subsubsection*{Admin}
 \begin{itemize}
 	\item Erstelle eine neue Klasse.
 	\item Erstelle einen neuen Schüler oder Lehrer.
@@ -262,15 +118,15 @@ Admin: \\
 	\item Wie kann ein Lehrer oder Schüler einer Klasse zugewiesen werden?
 \end{itemize} 
 
-\textbf{Feedback} \\
-Anhand dem Verhalten und dem persönlichen Feedback der Probanden, konnten folgende Problem erkannt werden:
+\subsection*{Feedback}
+Anhand dem Verhalten und dem persönlichen Feedback der Probanden konnten folgende Problem erkannt werden:
 
-Schüler: \\
+\subsubsection*{Schüler}
 \begin{itemize}
 	\item Es fiel den Probanden schwer, die Quizze zu finden. Es wurde erwartet, dass die Quizze zusammen mit den Theorieteilen und Aufgaben aufgelistet werden.
 \end{itemize}
 
-Lehrer: \\
+\subsubsection*{Lehrer}
 \begin{itemize}
 	\item Beim anpassen des Wochenplans einer Klasse, wurde angemerkt, dass nicht sofort klar sei, dass man die Klasse, das Fach und das Thema in einem Drop-Down-Menü auswählen muss, damit die gesuchten Aufgaben dargestellt werden. Es wurde erwartet, dass dies einfacher funktionieren würde.
 	\item Die Funktion eine erstelle Aufgabe mit anderen Lehrern zu teilen sei schwer zu finden.
@@ -303,31 +159,28 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 
 
 
+
+%\subsubsection{Funktionale Tests}
+%Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
+
 \subsubsection{Performance Testing}
 Um sicherzustellen, dass nichtfunktionale Anforderungen wie die Response Time und die Scalability erfüllt werden, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation verwendeten. \\
 
 \textbf{Auswertung:} \\
-Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Requests abgesetzt. In der Abbildung \ref{Requests_Per_Second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt absetzt wurden.
+Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Requests abgesetzt. In der Abbildung \ref{request_per_second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt absetzt wurden.
 
-\begin{minipage}{\textwidth}
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_requests_per_second.png}
 		\caption{Anfragen pro Sekunde}
+			\label{request_per_second}
 	\end{figure}
-	\label{Requests_Per_Second}
-\end{minipage}
 
-Wie in der Abbildung \ref{Performance_Tests} ersichtlich ist, werden die gestellten Anforderungen nicht ganz erfüllt. Die Applikation kann zwar von 300 Schülern zeitgleich verwendet werden, jedoch wurde die erwünschte Response Time von unter einer Sekunde nicht durchgehend erreicht. Bei etwa 6\% der gesendeten Anfragen, benötigte die Applikation etwas mehr als eine Sekunde. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
+Wie in der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestellten Anforderungen nicht ganz erfüllt. Die Applikation kann zwar von 300 Schülern zeitgleich verwendet werden, jedoch wurde die erwünschte Response Time von unter einer Sekunde nicht durchgehend erreicht. Bei etwa 6\% der gesendeten Anfragen, benötigte die Applikation etwas mehr als eine Sekunde. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
 
-\begin{minipage}{\textwidth}
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
 		\caption{Performance Test Übersicht}
+			\label{performance_tests}
 	\end{figure}
-	\label{Performance_Tests}
-\end{minipage}
-
-
-
 
 
