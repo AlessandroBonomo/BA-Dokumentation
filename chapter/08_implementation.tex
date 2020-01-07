@@ -29,42 +29,34 @@
 %\end{table}
 
 
-
-
 \subsection{Testing}
-Folgende Tests wurden durchgeführt, um die Qualität dieser Arbeit zu gewährleisten:
+Es gibt mehrere Arten von Tests, welche durchgeführt wurden, um die Qulität dieser Arbeit zu gewährleisten.
 
 \subsubsection*{Unit Tests}
-Anhand der Unittests werden die erstellten Models getestet.
+Anhand der Unittests werden die erstellten Models getestet. Mit diesen Tests wird sichergestellt, dass die Models korrekt funktionieren. Es kann zum Beispiel getestet werden, ob die Objekte als String abgespeichert werden oder ob duplizierte Objekte abgelegt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, darf kein weiteres Subject mit dem selben Namen erstellt werden können.
+
 
 \subsubsection*{Integration Tests}
-Mit Integration Tests kann getestet werden, ob die Applikation koorekt auf eingehende Requests reagiert.
+Mit Integration Tests kann getestet werden, ob die Applikation korrekt auf eingehende Requests reagiert. Diese Anwendung wird von mehreren Benutzern mit unterschiedlichen Rechten verwendet. Beim Erstellen der Tests wurde besonders viel Wert darauf gelegt, dass geprüft wird, dass jeder Benutzer nur Zugriff auf die erlaubten Webseiten hat. Aus Erfahrung weiss man, dass Schüler sehr experimentierfreudig sind und sicherlich versuchen werden, die \gls{url} des Browsers anzupassen. Es darf jedoch nicht vorkommen, dass ein Schüler Zugriff auf Statistiken hat oder die Punktezahl von Aufgaben anpassen kann.
+
 
 \subsubsection*{Manuelle Tests}
-Diese Tests werden da eingesetzt, wo das erstellen von Tests sehr schwierig oder Zeitaufwändig wäre. So wurde zum Beispiel manuell geprüft, ob das Filtering und Pagination zusammen funktionieren.
+Manuelle Tests wurden da eingesetzt, wo es sehr schwierig und Zeitaufwändig gewesen wäre, Tests zu schreiben. Vor jedem Merge in den Master wurde geprüft, ob diese Funktionen noch funktionieren. Ein Beispiel für den Fall von manuellen Tests ist zum Beispiel, ob das Filtering und Pagination noch funktioniert. Zu Beginn hatte man da das Problem, dass das Filtern zwar funktionierte, aber das Pagination basierte auf dem gesamten Queryset. Die Anzahl der Seiten änderte sich also nicht, auch wenn der Filter kein einziges Element gefunden hat. Ein weiterer Fall für manuelle Tests sind die Drag\&Drop Seiten. Bei diesen wurde geprüft, ob man das Item einem Feld zuweisen kann und ob es anschliessend richtig in der Datenbank gespeichert wird. \\
 
 \subsubsection*{Usability Tests}
-Anhand der Usability Tests soll sichergestellt werden, dass das gewählte Design bei den Mockups einfach und selbsterklärend ist. Hierfür wurden den Probanden einige Aufgaben sowie die erstellen Mockups vorgelegt und darauf geachtet, wie sie sich zurecht fanden.
+Anhand der Usability Tests soll sichergestellt werden, dass das gewählte Design bei den Mockups einfach und selbsterklärend ist. Um dies zu testen, wurden mehrere Probanden ausgesucht. Jeder bekam eine Aufgabe, welche
 
+Hierfür wurden den Probanden einige Aufgaben sowie die erstellen Mockups vorgelegt und darauf geachtet, wie sie sich zurecht fanden.
 
-\subsubsection{Funktionale Tests}
-Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
+\subsubsection*{Usability Tests}
+Nachdem man die Mockups erstellt hat, konnten damit die Usability Tests durchgeführt werden. Ziel dieser Tests ist es, zu prüfen, ob Benutzer das Design der Webseite verstehen und wissen, wo man was machen kann. \\
 
-\textbf{Unittests:} \\
-Mithilfe der Unittests werden die Models getestet. Hierbei wird Wert darauf gelegt, dass die Models so reagieren, wie sie reagieren sollen. Es soll also zum Beispiel sichergestellt werden, dass ein Objekt als String so repräsentiert wird, wie es erwartet wird. Zusätzlich soll getestet werden, dass nicht mehrere gleiche Objekte erstellt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, soll sichergestellt werden, dass kein weiteres mit dem selben Titel erstellt werden kann.
+%TODO balsamiq i de mockups beschriibe, ned bim teste
+Jeder der 3 Probanden hat die Tests für alle drei Benutzerrollen durchgeführt. Bei jeder Durchführung sollten sie jedoch eine andere Rolle und andere Aufgaben übernehmen. So konnte verhindert werden, dass die Tests verfälscht werden. Auch wenn einer der Probanden die Webseite gesehen hat, musste er jedes Mal andere Aufgaben lösen. Zudem löste jeder Proband die Tests in einer anderen Reihenfolge. Somit hat man zumindest für den ersten Test eine Person, welcher die Webseite noch nie gesehen hat. \\
+In der Tabelle \ref{usability_test_rollen} ist ein Beispiel, wie die Durchführung der Tests gemacht wurde.
 
-\textbf{Integration Tests:} \\
-Da die Applikation von drei verschiedenen Benutzergruppen verwendet wird, wurde besonders grossen Wert darauf gelegt zu prüfen, dass jeder Nutzer nur im Rahmen seiner vorbestimmten Rechte agieren kann. Es soll einem Schüler zum Beispiel nicht möglich sein, abgegebene Aufgaben zu bewerten, oder eine bereits gemachte Bewertung anzupassen. Aus Erfahrung kann gesagt werden, dass es bei Schülern im Alter von sechs bis sechzehn Jahren nicht besonders lange dauert, bis die ersten Versuche unternommen werden. Würde es Schülern gelingen selber Bewertungen vorzunehmen, würde dies die genrierten Statistiken verfälschen, wodurch ein wichtiger Bestandteil der Applikation seinen Sinn verlieren würde, was auf jeden Fall vermieden werden sollte. 
+%Die Usability Tests wurden mit den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der  Balsamiq\footcite{balsamiq_mockups} erstellt. Bereits während des Engineering Projekts und der Studienarbeit konnten damit Erfahrungen gesammelt werden. Zudem ermöglicht es Balsamiq relativ leicht, schöne interaktive Mockups zu erstellen. Durch interaktive Mockups kann die Qualität der Usability Tests verbessert werden, da es sich für die Probanden echter anfühlt und sie dadurch mit grösserer Wahrscheinlichkeit so reagieren, wie sie es dann auf der effektiven Webseite tun werden \footcite{interactive_mockups}. \\
 
-\textbf{Manuelle Tests:} \\
-Es wurde entschieden, dass jedes mal bevor ein Branch mit neuen Funktionen in den Master-Branch gemerget werden soll, zuerst manuelle Tests durchgeführt werden müssen. Alle bis dahin implementierten Funktionen mussten vollständig manuell getestet werden. Dies ist eine wichtige Massnahme, da Funktionen wie zum Beispiel das Filtern der abgegebenen Aufgaben, oder das verschieben von Elementen per Drag\&Drop schwer mit Unittests zu testen sind. Wurde ein Fehler entdeckt, musste dieser sofort behoben und das mergen mit dem Master-Branch solange verschoben werden.
-
-
-
-\subsubsection{Usability Tests}
-Die Usability Tests wurden mit den in der Planung erstellen Mockups durchgeführt. Die Mockups wurden mit der Webapplikation Balsamiq \footcite{balsamiq_mockups} erstellt. Bereits während des Engineering Projekts und der Studienarbeit konnten damit Erfahrungen gesammelt werden. Zudem ermöglicht es Balsamiq relativ leicht, schöne interaktive Mockups zu erstellen. Durch interaktive Mockups kann die Qualität der Usability Tests verbessert werden, da es sich für die Probanden echter anfühlt und sie dadurch mit grösserer Wahrscheinlichkeit so reagieren, wie sie es dann auf der effektiven Webseite tun werden \footcite{interactive_mockups}. \\
-
-Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebeten, die Usability Tests dreimal durchzuführen. Bei jeder Durchführung sollen sie eine andere Rolle einnehmen und andere Aufgaben lösen. Um zu verhindern, oder zumindest die Verfälschung der Tests zu minieren, welche durch das gesammelte Wissen vorheriger Durchführungen entstehen kann, wurden die Rollen pro Proband in einer unterschiedlichen Reihenfolge zugweisen. In der Tabelle \ref{Usability Test Rollen} ist ersichtlich, dass drei Probanden die Tests durchgeführt haben und welche Rolle sie bei welcher Durchführung zugewiesen bekommen haben. \\
 
 \begin{table}[h]
 	\centering
@@ -78,7 +70,7 @@ Um möglichst realitätsgetreue Tests durchzuführen, wurden die Probanden gebet
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Usability Test Rollen}
-	\label{Usability Test Rollen}
+	\label{usability_test_rollen}
 \end{table}
 
 
@@ -159,3 +151,12 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 
 	\item Die Funktion um eigene Aufgaben mit anderen Lehrpersonen zu teilen wurde entfernt. Standardmässig sind nun alle erstellen Aufgaben für alle Lehrpersonen ersichtlich.
 \end{itemize}
+
+
+
+
+\subsubsection{Funktionale Tests}
+Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
+
+
+
