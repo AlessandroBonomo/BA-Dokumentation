@@ -61,6 +61,9 @@ Hinzu kommen jedoch noch die Django Middlewares, welche Requests und Responses a
 \subsection{Testing}
 Es gibt mehrere Arten von Tests, welche durchgeführt wurden, um die Qulität dieser Arbeit zu gewährleisten.
 
+\subsubsection*{Test Framework}
+In der Django Dokumentation wird erwähnt, dass das Framework ''unittest'' das beliebteste Test Framework für Django Applikationen ist \ref{writing_tests}. Dies wiederspiegelt auch die Dokumentation von Django. Unzählige Beispiele zu allen möglichen Arten von Tests sind dokumentiert und erklärt. Um also davon zu profitieren, wurde entschieden das Framework ''unittest'' zu verwenden.
+
 \subsubsection{Unit Tests}
 Anhand der Unittests werden die erstellten Models getestet. Mit diesen Tests wird sichergestellt, dass die Models korrekt funktionieren. Es kann zum Beispiel getestet werden, ob die Objekte als String abgespeichert werden oder ob duplizierte Objekte abgelegt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, darf kein weiteres Subject mit dem selben Namen erstellt werden können.
 
