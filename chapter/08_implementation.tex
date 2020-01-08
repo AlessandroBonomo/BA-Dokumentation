@@ -4,11 +4,7 @@ Bei der Implementation der Anwendung befolgte man die vom Django Framework vorge
 
 Django ist nach dem \gls{mtv} Pattern aufgebaut, was eine leichte Abänderung des \gls{mvc} Pattern ist. Beim \gls{mvc} Pattern dient das Model als Vermittler zwischen dem Website Interface und der Datenbank. Die View ist das eigentliche User Interface und enthält zum Beispiel das HTML oder CSS der Website. Der Controller ist die Hauptkomponente dieses Patterns und mappt anhand der vom Benutzer gestellten Anfrage das entrechende Model mit der entsprechenden View \footcite{django_mvc}. \\
 
-<<<<<<< HEAD
-Django basiert aber auf dem \gls{mtv} Pattern. Es kann etwas verwirrend sein, denn die einzelnen Rollen in \gls{mtv} wurden umbenannt. Der Controller wurde in View umbenannt und die View ist nun eigentlich die Templating-Engine\footcite{django_architektur}. Wird im Browser eine \gls{url} aufgerufen, entscheidet Django anhand der \gls{url} Patterns, an welche View die Anfrage gesendet wird. Diese View generiert dann schlussendlich die Webseite mit Hilfe des Templates. \\
-=======
 Django jedoch basiert auf dem \gls{mtv} Pattern. Es kann ein wenig verwirrend sein, denn die einzelnen Rollen im \gls{mtv} Pattern haben eine andere Bezeichnung als die im \gls{mvc} Pattern. Der Controller zum Beispiel wird als View bezeichnet und ist nun eigentlich die Templating-Engine\footcite{django_architektur}. Wird im Browser eine \gls{url} aufgerufen, entscheidet Django anhand des \gls{url} Patterns, an welche View die Anfrage gesendet wird. Diese View generiert dann schlussendlich die Webseite mit Hilfe des Templates. \\
->>>>>>> master
 
 %Das Model enthält immer noch die logische Datenstruktur. Die View hat Zugriff auf das Model und kann so Daten speichern, updaten oder löschen. Erhält die View Daten vom Model, kann diese mit dem Template dargestellt werden. Das Template dient lediglich zur Darstellung der einzelnen Webseiten\footcite{django_mtv}.
 
