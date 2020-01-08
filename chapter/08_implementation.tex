@@ -61,6 +61,9 @@ Hinzu kommen jedoch noch die Django Middlewares, welche Requests und Responses a
 \subsection{Testing}
 Es gibt mehrere Arten von Tests, welche durchgeführt wurden, um die Qulität dieser Arbeit zu gewährleisten.
 
+\subsubsection*{Test Framework}
+In der Django Dokumentation wird erwähnt, dass das Framework ''unittest'' das beliebteste Test Framework für Django Applikationen ist \ref{writing_tests}. Dies wiederspiegelt auch die Dokumentation von Django. Unzählige Beispiele zu allen möglichen Arten von Tests sind dokumentiert und erklärt. Um also davon zu profitieren, wurde entschieden das Framework ''unittest'' zu verwenden.
+
 \subsubsection{Unit Tests}
 Anhand der Unittests werden die erstellten Models getestet. Mit diesen Tests wird sichergestellt, dass die Models korrekt funktionieren. Es kann zum Beispiel getestet werden, ob die Objekte als String abgespeichert werden oder ob duplizierte Objekte abgelegt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, darf kein weiteres Subject mit dem selben Namen erstellt werden können.
 
@@ -185,10 +188,24 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 
 \subsubsection{Performance Testing}
 \label{chapter_performance_tests}
-Um sicherzustellen, dass nichtfunktionale Anforderungen wie die Response Time und die Scalability erfüllt werden, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation verwendeten. \\
+Um sicherzustellen, dass die nichtfunktionale Anforderung Response Time erfüllt wird, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation zeitgleich verwendeten. \\
 
 \textbf{Auswertung:} \\
-Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Requests abgesetzt. In der Abbildung \ref{request_per_second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt absetzt wurden.
+Erste Durchführung: \\
+Bei einer ersten Durchführung wurde festgestellt, dass noch einige Probleme vorliegen. Wie in der Abbildung \ref{performance_tests_vorher} zu sehen ist, benötigte die Applikation bei mehr als einem Drittel der eingegangen Anfragen mehr als eine Sekunde um darauf zu antworten. Bei beinahe einem Drittel wurde sogar gar keine Antwort gesendet. Das Problem konnte darauf zurück geführt werden, dass bei jeder Anfrage ebenfalls eine Anfrage an Bootstrap, etc. gesendet wurde.
+
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht_vorher.png}
+		\caption{Performance Test Übersicht vorher}
+			\label{performance_tests_vorher}
+	\end{figure}
+
+Massnahmen: \\
+Anhand der Erkentnisse der ersten Durchführung, wurden Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seiten benötigt werden, statisch in die Applikation eingebunden.
+
+
+Zweite Durchführung: \\
+Insgesamt wurden über einen Zeitraum von 1 Minute und 51 Sekunden 38'909 Requests abgesetzt. In der Abbildung \ref{request_per_second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt absetzt wurden.
 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_requests_per_second.png}
@@ -196,11 +213,11 @@ Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Reque
 			\label{request_per_second}
 	\end{figure}
 
-Wie in der Abbildung \ref{performance_tests} ersichtlich ist, benötigte die Applikation bei etwa 6\% der eingegangenen Anfragen etwas länger als eine Sekunde für die Antwort. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
+Wie in der Abbildung \ref{performance_tests} ersichtlich ist, benötigte die Applikation bei etwa 5\% der eingegangenen Anfragen etwas länger als eine Sekunde für die Antwort. Im Vergleich zur ersten Durchführung ist dies eine enorme Verbesserung.
 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
-		\caption{Performance Test Übersicht}
+		\caption{Performance Test Übersicht nachher}
 			\label{performance_tests}
 	\end{figure}
 
