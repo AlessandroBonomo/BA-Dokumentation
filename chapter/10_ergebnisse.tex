@@ -68,4 +68,41 @@ In einem nächsten Schritt sollten die unter Abschnitt \ref{verbesserung} genann
 	\item Intelligentes Zuweisen von Aufgaben. Im Moment können die Schüler selber sagen, an welchen Fächern oder Übungen sie arbeiten. Es könnte ein System implementiert werden, welches erkennt, in welchem Themen der Schüler Mühe hat und automatisch solche Übungen zuweisen, dass sich der Schüler verbessern kann.
 	\item In einer Französisch Lektion sprechen deutschsprachige Kinder miteinander auf französisch.	Mit einer solchen Plattform wäre es möglich, dass ein deutsprachiger Lehrer eine Lektion zusammen mit einem Lehrer aus der Westschweiz plant. Während der Lektion wird jedes deutschsprachige Kind einem französisch sprechenden Kind zugewiesen, welche dann untereinander sprechen können. Dies macht vielleicht den Französisch Unterricht noch ein wenig interessanter.
 \end{itemize}
+
+
+\subsubsection{Nicht Funktionale Anforderungen}
+
+\subsubsection*{Functionality}
+%TODO User Interface
+%TODO Security
+%TODO HTTPS
+
+\subsubsection*{Usability}
+%TODO Responsiveness
+
+\subsubsection*{Reliability}
+Die von uns gestellten Anforderungen im Kapitel \ref{chapter_nfr} an die Verlässlichkeit der Applikation wurden erfüllt. Um dies sicherzustellen, wurde die Applikation auf dem von der HSR zur Verfügung gestellten Server deployed und während dreier Tage wurden Stichproben durchgeführt. Ausserdem wurden während dieser Zeit die Performance Tests durchgeführt, was beweist, dass die Applikation auch bei einer Überlastung stabil läuft.
+
+%TODO Fautl Tolerance
+
+\subsubsection*{Performance}
+Wie im Kapitel \ref{chapter_performance_tests} und der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestellten Anforderungen an die Response Time nicht ganz erfüllt. Nicht alle eingegangenen Requests konnten in weniger als einer Sekunde abgearbeitet werden.
+
+\subsubsection*{Supportability}
+%TODO Maintainability
+
+Die Applikation kann von 300 Benutzern zeitgleich verwendet werden. Wie jedoch bei den Performance Tests zu sehen ist, kann es teilweise zu längeren Wartezeiten beim Laden einer Seite kommen.
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
