@@ -17,52 +17,22 @@ Django jedoch basiert auf dem \gls{mtv} Pattern. Es kann ein wenig verwirrend se
 \end{figure}
 
 \subsubsection*{Model}
-In den Models wird das Datenbankmodel mit den benötigten Attributen definiert\footcite{django_models}. Django stellt auch gleich einen \gls{orm} bereit, mit welchem die Tabellen in der Datenbank erstellt werden können. Dies bietet gleich meherere Vorteile. Zum einen nimmt der \gls{orm} viel Arbeit ab, da man keine eigenen Queries schreiben muss. Zum anderen ist er sehr hilfreich, wenn man Migrationen an der Datenstruktur durchführen möchte. Der \gls{orm} erkennt, was an der Datenbank geändert wurde und wie die Daten migriert werden muss\footcite{django_manage}. Als Entwickler können so auch ohne ausgeprägte Datenbank Kenntnisse Migrationen durchgeführt werden.
+In den Models wird das Datenbankmodel mit den benötigten Attributen definiert\footcite{django_models}. Django stellt auch gleich einen \gls{orm} bereit, mit welchem die Tabellen in der Datenbank erstellt werden können. Dies bietet gleich meherere Vorteile. Zum einen nimmt der \gls{orm} viel Arbeit ab, da man keine eigenen Queries schreiben muss. Zum anderen ist er sehr hilfreich, wenn man Migrationen an der Datenstruktur durchführen möchte. Der \gls{orm} erkennt, was an der Datenbank geändert wurde und wie die Daten migriert werden müssen\footcite{django_manage}. Als Entwickler können so auch ohne ausgeprägte Datenbank Kenntnisse Migrationen durchgeführt werden.
 
 \subsubsection*{Templates}
 Mit Templates können dynamische HTML Seiten generiert werden. Die Templates bestehen aus dem statischen HTML Code, welcher mit dynamischen Inhalten ergänzt werden kann.  Dazu verwendet Django die \gls{dtl}\footcite{django_templates}.
 
 \subsubsection*{Views}
-Eine View ist nichts anderes als eine Python Funktion, welche einen Request entgegen nimmt und eine Response zurück schicken. Die Response kann alles mögliche enthalten, von einfachem \gls{html} über 404 Fehlerseiten bis hin zu Redirects. Die View an sich enthält die Logik, welche nötig ist, um den Request entgegennehmen zu können und eine Response zu senden\footcite{django_views}.
+Eine View ist nichts anderes als eine Python Funktion, welche einen Request entgegen nimmt und eine Response zurück schickt. Die Response kann alles mögliche enthalten, von einfachem \gls{html} über 404 Fehlerseiten bis hin zu Redirects. Die View an sich enthält die Logik, welche nötig ist, um den Request entgegennehmen zu können und eine Response zu senden\footcite{django_views}.
 
 \subsubsection*{Middlewares}
 Hinzu kommen jedoch noch die Django Middlewares, welche Requests und Responses anpassen können. Jede dieser Middlewares ist für bestimmte Funktionen verantwortlich. Die ''AuthenticationMiddleware'' wird zum Beispiel verwendet, um die Benutzer einer Session zuordnen zu können. Es werden auch mehrere Security Middlewares angeboten, welche praktisch ''out-of-the-box'' verwendet werden können. Diese können die Sicherheit der Webseite, zum Beispiel die Integration von \gls{hsts} oder \gls{xss} Schutz, erhöhen\footcite{django_middlewares}.\\
-
-
-%TODO vielleicht
-%\subsection{Apps}
-%Bei Django werden unabhängige Funktionalitäten in unterschiedliche Apps aufgeteilt. Eine App in Django ist eigentlich nichts anderes als ein Python Package, welches eine Reihe von Features zur Verfügung stellt\footcite{django:apps}. Das Ziel dabei ist es, den Code auf die verschiedenen Apps aufzuteilen, so dass diese unabhängig voneinander wiederverwendet werden können.  \\
-%In der Tabelle \ref{table:django_apps} sind die einzelnen Apps aufgelistet, welche für Aufgaben-Coaching erstellt wurden.
-%
-%\begin{table}[h]
-%	\centering
-%	\begin{tabu} to 0.9\textwidth {l X}
-%	\toprule
-%	App & Beschreibung \\ 
-%	\midrule	
-%	user & In der Users App befindet sich die gesamte Logik zum erstellen und verwalten der User. \\
-%	\midrule
-%		school\_admin & Die school\_admin App ist für die Erstellung von Klassen sowie der Zuweisung von Schülern und Lehrern in Klassen zuständig. \\
-%	\midrule
-%	school\_teacher & In dieser App können Lehrer die Fächer für ihre Klasse freischalten und Aufgaben dem Wochenplan hinzufügen. \\
-%	\midrule
-%		exercise & Die exercise App stellt um Aufgaben zu erstellen zur Verfügung. Zudem können gelöste Aufgaben von einem Lehrer bewertet werden. \\
-%	\midrule 
-%	study\_content & Diese App beinhaltet die Logik zum bereitstellen von Lerninhalten \\
-%	\midrule	
-%	forum & In der forum App wird die komplette Logik für das Forum implementiert. \\
-%	\bottomrule
-%	\end{tabu}
-%	\captionof{table}{Apps Beschreibung}
-%	\label{table:django_apps}
-%\end{table}
-
 
 \subsection{Testing}
 Es gibt mehrere Arten von Tests, welche durchgeführt wurden, um die Qulität dieser Arbeit zu gewährleisten.
 
 \subsubsection*{Test Framework}
-In der Django Dokumentation wird erwähnt, dass das Framework ''unittest'' das beliebteste Test Framework für Django Applikationen ist \ref{writing_tests}. Dies wiederspiegelt auch die Dokumentation von Django. Unzählige Beispiele zu allen möglichen Arten von Tests sind dokumentiert und erklärt. Um also davon zu profitieren, wurde entschieden das Framework ''unittest'' zu verwenden.
+In der Django Dokumentation wird erwähnt, dass das Framework ''unittest'' das beliebteste Test Framework für Django Applikationen ist \footcite{writing_tests}. Dies wiederspiegelt auch die Dokumentation von Django. Unzählige Beispiele zu allen möglichen Arten von Tests sind dokumentiert und erklärt. Um also davon zu profitieren, wurde entschieden das Framework ''unittest'' zu verwenden.
 
 \subsubsection{Unit Tests}
 Anhand der Unittests werden die erstellten Models getestet. Mit diesen Tests wird sichergestellt, dass die Models korrekt funktionieren. Es kann zum Beispiel getestet werden, ob die Objekte als String abgespeichert werden oder ob duplizierte Objekte abgelegt werden können. Wenn in der Datenbank bereits ein Subject mit dem Titel ''Mathematik'' existiert, darf kein weiteres Subject mit dem selben Namen erstellt werden können.
@@ -73,7 +43,7 @@ Mit Integration Tests kann getestet werden, ob die Applikation korrekt auf einge
 
 
 \subsubsection{Manuelle Tests}
-Manuelle Tests wurden da eingesetzt, wo es sehr schwierig und Zeitaufwändig gewesen wäre, Tests zu schreiben. Vor jedem Merge in den Master wurde geprüft, ob diese Funktionen noch funktionieren. Ein Beispiel für den Fall von manuellen Tests ist zum Beispiel, ob das Filtering und Pagination noch funktioniert. Zu Beginn hatte man da das Problem, dass das Filtern zwar funktionierte, aber das Pagination basierte auf dem gesamten Queryset. Die Anzahl der Seiten änderte sich also nicht, auch wenn der Filter kein einziges Element gefunden hat. Ein weiterer Fall für manuelle Tests sind die Drag\&Drop Seiten. Bei diesen wurde geprüft, ob man das Item einem Feld zuweisen kann und ob es anschliessend richtig in der Datenbank gespeichert wird. \\
+Manuelle Tests wurden da eingesetzt, wo es sehr schwierig und zeitaufwändig gewesen wäre, Tests zu schreiben. Vor jedem Merge in den Master wurde geprüft, ob diese Funktionen noch funktionieren. Ein Beispiel für den Fall von manuellen Tests ist, ob das Filtering und Pagination richtig funktioniert. Zu Beginn hatte man da das Problem, dass das Filtern zwar funktionierte, aber das Pagination basierte auf dem gesamten Queryset. Die Anzahl der Seiten änderte sich also nicht, auch wenn der Filter kein einziges Element gefunden hat. Ein weiterer Fall für manuelle Tests sind die Drag\&Drop Seiten. Bei diesen wurde geprüft, ob man das Item einem Feld zuweisen kann und ob es anschliessend richtig in der Datenbank gespeichert wird. \\
 
 
 \subsubsection{Usability Tests}
@@ -142,7 +112,7 @@ Nachfolgend sind die Aufgaben und Fragen aufgelistet, welche die Probanden pro R
 \end{itemize} 
 
 \subsection*{Feedback}
-Anhand dem Verhalten und dem persönlichen Feedback der Probanden konnten folgende Problem erkannt werden:
+Anhand dem Verhalten und dem persönlichen Feedback der Probanden konnten folgende Probleme erkannt werden:
 
 \subsubsection*{Schüler}
 \begin{itemize}
@@ -151,15 +121,15 @@ Anhand dem Verhalten und dem persönlichen Feedback der Probanden konnten folgen
 
 \subsubsection*{Lehrer}
 \begin{itemize}
-	\item Beim anpassen des Wochenplans einer Klasse, wurde angemerkt, dass nicht sofort klar sei, dass man die Klasse, das Fach und das Thema in einem Drop-Down-Menü auswählen muss, damit die gesuchten Aufgaben dargestellt werden. Es wurde erwartet, dass dies einfacher funktionieren würde.
+	\item Beim Anpassen des Wochenplans einer Klasse, wurde angemerkt, dass nicht sofort klar sei, dass man die Klasse, das Fach und das Thema in einem Drop-Down-Menü auswählen muss, damit die gesuchten Aufgaben dargestellt werden. Es wurde erwartet, dass dies einfacher funktionieren würde.
 	\item Die Funktion eine erstelle Aufgabe mit anderen Lehrern zu teilen sei schwer zu finden.
 \end{itemize}
 
-Beim implementieren der Webapplikation wurden die aus den Usability Tests gewonnenen Kenntnisse miteinbezogen und verbessert. Ausserdem haben sich die Anforderungen an die Arbeit verändert, weshalb die Quizze kein Bestandteil der Applikation mehr sind. Folgende Anpassungen und Entscheidungen wurden gemacht: \\
+Beim Implementieren der Webapplikation wurden die aus den Usability Tests gewonnenen Kenntnisse miteinbezogen und verbessert. Ausserdem haben sich die Anforderungen an die Arbeit verändert, weshalb die Quizze kein Bestandteil der Applikation mehr sind. Folgende Anpassungen und Entscheidungen wurden gemacht: \\
 
 \begin{itemize}
 	\item Da die Quizze nicht mehr Teil der Arbeit sind, hat sich dieses Problem in Luft aufgelöst.
-	\item Um das Verwalten einer Klasse zu vereinfachen, wurde entschieden, dass im Gegensatz zu der Ursprünglichen Version sich die entsprechende Seite dynamisch erweitert. Zu Beginn sollen nur die dem Lehrer zugewiesenen Klassen aufgelistet werden. \\
+	\item Um das Verwalten einer Klasse zu vereinfachen, wurde entschieden, dass im Gegensatz zu der ursprünglichen Version sich die entsprechende Seite dynamisch erweitert. Zu Beginn sollen nur die dem Lehrer zugewiesenen Klassen aufgelistet werden. \\
 	
 \begin{minipage}{\textwidth}
 	\begin{figure}[H]
@@ -177,7 +147,7 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 	\end{figure}
 \end{minipage}
 
-	\item Die Funktion um eigene Aufgaben mit anderen Lehrpersonen zu teilen wurde entfernt. Standardmässig sind nun alle erstellen Aufgaben für alle Lehrpersonen ersichtlich.
+	\item Die Funktion um eigene Aufgaben mit anderen Lehrpersonen zu teilen wurde entfernt. Standardmässig sind nun alle erstellten Aufgaben für alle Lehrpersonen ersichtlich.
 \end{itemize}
 
 
@@ -190,22 +160,21 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 \label{chapter_performance_tests}
 Um sicherzustellen, dass die nichtfunktionale Anforderung Response Time erfüllt wird, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation zeitgleich verwendeten. \\
 
-\textbf{Auswertung:} \\
+\subsubsection*{Auswertung}
 Erste Durchführung: \\
-Bei einer ersten Durchführung wurde festgestellt, dass noch einige Probleme vorliegen. Wie in der Abbildung \ref{performance_tests_vorher} zu sehen ist, benötigte die Applikation bei mehr als einem Drittel der eingegangen Anfragen mehr als eine Sekunde um darauf zu antworten. Bei beinahe einem Drittel wurde sogar gar keine Antwort gesendet. Das Problem konnte darauf zurück geführt werden, dass bei jeder Anfrage ebenfalls eine Anfrage an Bootstrap, etc. gesendet wurde.
+Bei der ersten Durchführung wurde festgestellt, dass noch einige Probleme vorliegen. Wie in der Abbildung \ref{performance_tests_vorher} zu sehen ist, benötigte die Applikation bei mehr als einem Drittel der eingegangen Requests mehr als eine Sekunde um eine Response zu schicken. Bei knapp einem Drittel konnte sogar gar keine Response zurückgesendet werden.
 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht_vorher.png}
 		\caption{Performance Test Übersicht vorher}
 			\label{performance_tests_vorher}
 	\end{figure}
+	
+Bei der Analyse der gefailten Requests konnte festgestellt werden, dass bei jedem Request die Bootstrap Files geladen wurden. Diese Files befinden sich jedoch nicht in den statischen Files des Web Servers, sondern wurden jedes Mal direkt von Bootstrap geladen. \\
 
-Massnahmen: \\
-Anhand der Erkentnisse der ersten Durchführung, wurden Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seiten benötigt werden, statisch in die Applikation eingebunden.
+Als Massnahme wurden die Bootstrap Files heruntergeladen und in den statischen Files des Web Servers gespeichert. Somit können diese Files direkt vom Web Server bereitgestellt werden. \\
 
-
-Zweite Durchführung: \\
-Insgesamt wurden über einen Zeitraum von 1 Minute und 51 Sekunden 38'909 Requests abgesetzt. In der Abbildung \ref{request_per_second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt absetzt wurden.
+Bei der zweiten Durchführung wurden über einen Zeitraum von 1 Minute und 51 Sekunden insgesamt 38'909 Requests abgesetzt. In der Abbildung \ref{request_per_second} ist ersichtlich, wie die Requests über den erwähnten Zeitverlauf verteilt gesendet wurden.
 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_requests_per_second.png}
@@ -213,7 +182,7 @@ Insgesamt wurden über einen Zeitraum von 1 Minute und 51 Sekunden 38'909 Reques
 			\label{request_per_second}
 	\end{figure}
 
-Wie in der Abbildung \ref{performance_tests} ersichtlich ist, benötigte die Applikation bei etwa 5\% der eingegangenen Anfragen etwas länger als eine Sekunde für die Antwort. Im Vergleich zur ersten Durchführung ist dies eine enorme Verbesserung.
+Wie in der Abbildung \ref{performance_tests} ersichtlich ist, benötigte die Applikation bei etwa 5\% der eingegangenen Anfragen etwas länger als eine Sekunde, um die Response zu schicken. Im Vergleich zur ersten Durchführung ist dies eine enorme Verbesserung.
 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
