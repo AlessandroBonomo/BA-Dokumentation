@@ -4,7 +4,7 @@ Bei der Implementation der Anwendung befolgte man die vom Django Framework vorge
 
 Django ist nach dem \gls{mtv} Pattern aufgebaut, was eine leichte Abänderung des \gls{mvc} Pattern ist. Beim \gls{mvc} Pattern dient das Model als Vermittler zwischen dem Website Interface und der Datenbank. Die View ist das eigentliche User Interface und enthält zum Beispiel das HTML oder CSS der Website. Der Controller ist die Hauptkomponente in diesem Pattern. Er nimmt die korrekte View aus der User Anfrage und weist es dem Model zu\footcite{django_mvc}. \\
 
-Django basiert aber auf dem \gls{mtv} Pattern. Es kann etwas verwirrend sein, denn die einzelnen Rollen in \gls{mvt} wurden umbenannt. Der Controller wurde in View umbenannt und die View ist nun eigentlich die Templating-Engine\footcite{django_architektur}. Wird im Browser eine \gls{url} aufgerufen, entscheidet Django anhand der \gls{url} Patterns, an welche View die Anfrage gesendet wird. Diese View generiert dann schlussendlich die Webseite mit Hilfe des Templates. \\
+Django basiert aber auf dem \gls{mtv} Pattern. Es kann etwas verwirrend sein, denn die einzelnen Rollen in \gls{mtv} wurden umbenannt. Der Controller wurde in View umbenannt und die View ist nun eigentlich die Templating-Engine\footcite{django_architektur}. Wird im Browser eine \gls{url} aufgerufen, entscheidet Django anhand der \gls{url} Patterns, an welche View die Anfrage gesendet wird. Diese View generiert dann schlussendlich die Webseite mit Hilfe des Templates. \\
 
 %Das Model enthält immer noch die logische Datenstruktur. Die View hat Zugriff auf das Model und kann so Daten speichern, updaten oder löschen. Erhält die View Daten vom Model, kann diese mit dem Template dargestellt werden. Das Template dient lediglich zur Darstellung der einzelnen Webseiten\footcite{django_mtv}.
 
@@ -204,3 +204,23 @@ Wie in der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestell
 	\end{figure}
 
 
+\subsection{Continuous Integration}
+\gls{ci} beschreibt das Prinzip, wenn mehrere Entwickler an einem Projekt arbeiten und ihre Änderungen am Code regelmässig in den Master Branch mergen. Dies bietet gleich mehrere Vorteile für die Entwickler. Zum einen werden kleinere Änderungen gemerged. Kleine Änderungen sind einfacher zu handhaben, als wenn grosse Änderungen im Code vorkommen. Bei jedem Merge mit dem master werden die Tests automatisch gestartet. Somit erhalten die Entwickler sehr schnell Feedback, falls Tests fehlgeschlagen sind. Da vorallem kleinere Änderungen gemerged werden, sind die Ursachen der fehlgeschlagenen Tests meist schnell gefunden. Somit lässt sich auch die \gls{mttr} verkürzen.
+
+\subsubsection*{Anbieter}
+Bei dieser arbeit wurde Travis als \gls{ci} Anbieter ausgewählt. Bei jeder Änderung am Code auf Github wird Travis mittels Web-Hook benachrichtigt. Der Code wird dann heruntergeladen und gestartet. Die genaue Anweisung, was gestartet und geprüft werden soll, befindet sich im ''.travis.yml'' File. In diesem Fall werden zuerst die drei Docker Container gestartet,  dann wird die Code Qualität geprüft und zum Schluss werden die Tests durchgeführt. Somit sehen die Entwickler schnell, ob die Tests erfolgreich durchgelaufen sind oder nicht. \\
+
+Zusätzlich wurde das Git Repository so konfiguriert, dass ein Pull Request nur in den Master Branch gemerged werden kann, wenn alle Tests erfolgreich durchgelaufen sind und wenn ein Code Review durchgeführt wurde. Somit kann das Risiko vermindert werden, dass nicht lauffähiger Code in den Master gemerged wird. \\
+
+	\begin{figure}[H]
+	\begin{center}
+			\includegraphics[width=0.8\textwidth, keepaspectratio]{images/travis_build.png}
+		\caption{Failed Travis Build}
+			\label{fig:trvis_build}
+	\end{center}
+
+	\end{figure}
+
+In der Abbildung \ref{fig:trvis_build} kann man ein Beispiel eines fehlgeschlagenen Builds erkennen. Grund dafür war ein fehlende leere Zeile an Ende eines Python Files. Nach dem Einfügen einer leeren Zeile konnte Travis erfolgreich ausgeführt werden. \\
+
+Zu Beginn überlegte man sich, ob man Travis oder Jenkins als \gls{ci} Tool auswählt. Jenkins ist mit über 600 Plugins zwar sehr flexibel und weiter verbreitet als Travis\footcite{travis_jenkins}. Da man aber nur die Basics braucht, ist man nicht auf diese Features angewiesen. Der Hauptgrund, warum man sich für Travis entschied, ist, weil es für öffentliche Git Repositories gratis verwendet werden kann. Jenkins ist zwar auch frei erhältlich, doch man hätte einen eigenen Build Server konfigurieren müssen. 
