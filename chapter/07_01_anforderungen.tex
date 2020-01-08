@@ -205,19 +205,20 @@ Bei der Erstellung der einzelnen \gls{nfr} wird auf FURPS zurückgegriffen. FURP
 	\toprule
 	FURPS & Titel & Beschreibung \\ 
 	\midrule
-	Functionality & User Interface & Das User Interface der Applikation ist über den Webbrowser erreichbar. \\ 
-	& Security & Die einzelnen Benutzer können nur auf die für sie freigegebenen Inhalte zugreifen. \\
-	& HTTPS & Die Kommunikation zum Webserver soll über HTTPS laufen. \\
+	Functionality & Reusability & Die Anwendung soll so entwickelt werden, dass sie an mehreren Schulen eingesetzt werden kann. \\
+	& 	Security & Die Rechte der einzelnen Benutzer sind eingeschränkt. Niemand hat per Default Zugriff auf alles. \\
+	&  & Die Webseite ist nur über HTTPS erreichbar. \\
 	\midrule
-	Usability & Responsiveness & Für Schüler soll die Applikation sowohl auf Desktop PCs wie auch auf Tablets oder Mobile Phones verfügbar sein. \\
+	Usability & Responsiveness & Für Schüler soll die Applikation sowohl auf Tablets wie auch auf Mobile Phones verfügbar sein. \\
 	\midrule
-	Reliability & Availability & Die Applikation soll zu 95\% des Tages verfügbar sein. \\
-	 & Fault Tolerance & Die Applikation soll bei unerlaubten Anfragen weiterhin verfügbar sein. \\
+	Reliability & Availability & Die Anwendung ist stabil und stürzt nicht ab. \\
+	& Fault Tolerance & Die Anwendung soll auch bei unerlaubten Anfragen weiterhin verfügbar sein und die korrekten Ergebnisse liefern. \\
 	\midrule
-	Performance & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen werden.\\
+	Performance & Availability & Die Anwendung soll ohne abzustürzen von 300 Benutzern zeitgleich verwendet werden können. \\
+	 & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen werden.\\
 	\midrule
 	Supportability & Maintainability & Die Applikation soll so gebaut werden, dass sie auch in Zukunft gewartet und ausgebaut werden kann. \\
-	 & Scalability & Die Applikation soll von 300 Benutzern zeitgleich verwendet werden können. \\
+	 & Installability & Die Applikation wird so gebaut, dass sie innerhalb einer Stunde auf einem neuen System installiert werden kann. \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Non Functional Requirements}
