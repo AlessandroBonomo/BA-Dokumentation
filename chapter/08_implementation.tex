@@ -184,6 +184,7 @@ Nachdem eine Klasse gewählt wurde, werden die klassenspezifischen Informationen
 %Mit den geschriebenen Tests wurde eine Testcoverage von 97\% erreicht. Bei so hohen Zahlen muss man vorsichtig sein. Nur weil die Testcoverage so hoch ist, heisst es noch lange nicht, dass die Software keine Fehler aufweisst \footcite{test_coverage}. Nur weil eine Zeile Code bei einem Test durchlaufen wird, bedeutet das nicht, dass die Zeile auch getestet wurde. Grundsätzlich gibt es zwei grosse Fehler, die man beim Testen machen kann. Der erste Fehler ist es eine Testcoverage von 100\% anzustreben und sich einZUreden, dass der Code einwandfrei getestet wird. Der zweite Fehler ist es, keinen Wert auf die Testcoverage zu legen. Erreicht man Werte im Bereich von 30\% bis 40\%, ist sofort klar, dass das Testen vernachlässigt wurde. Im allgemeinen gilt, die Qualität der Tests ist ausschlaggebend. Eine hohe Testcoverage erreicht durch sinnvolle Tests ist daher ein anzustrebendes Ziel. 
 
 \subsubsection{Performance Testing}
+\label{chapter_performance_tests}
 Um sicherzustellen, dass nichtfunktionale Anforderungen wie die Response Time und die Scalability erfüllt werden, wurden Performance Tests durchgeführt. Dafür wurde das Tool Gatling \footcite{performance_tests} verwendet. Um so realitätsgetreu und dementsprechend auch sinnvoll wie möglich zu testen, wurden 300 Schüler, 20 Lehrer und 1 Administrator simuliert, welche die Applikation verwendeten. \\
 
 \textbf{Auswertung:} \\
@@ -195,7 +196,7 @@ Insgesamt wurden über einen Zeitraum von 2 Minuten und 15 Sekunden 28'183 Reque
 		\label{request_per_second}
 	\end{figure}
 
-Wie in der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestellten Anforderungen nicht ganz erfüllt. Die Applikation kann zwar von 300 Schülern zeitgleich verwendet werden, jedoch wurde die erwünschte Response Time von unter einer Sekunde nicht durchgehend erreicht. Bei etwa 6\% der gesendeten Anfragen, benötigte die Applikation etwas mehr als eine Sekunde. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
+Wie in der Abbildung \ref{performance_tests} ersichtlich ist, benötigte die Applikation bei etwa 6\% der eingegangenen Anfragen etwas länger als eine Sekunde für die Antwort. Grund dafür ist unter anderem das Laden von Bibliotheken, wie zum Beispiel 'jquery-3.1.1.min.js' und 'bootstrap.min.css', welche für die Darstellung der Seite benötigt werden. Diese Bibliotheken wurden zwar statisch in die Applikation eingebunden, was die Performance bereits stark verbesserte, jedoch noch nicht ausreicht. 
 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{images/performance_uebersicht.png}
