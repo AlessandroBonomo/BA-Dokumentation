@@ -22,18 +22,16 @@ Ein weiterer Vorteil von Web Anwendungen ist, dass im vorhinein kein Programm au
 \subsection{Domain Model}
 In der Abbildung \ref{fig:domain_model_full} ist das vollständige Domain Model abgebildet. Dem Leser soll so ein Überblick über die einzelnen Teilgebiete der Anwendung gegeben werden.
 
-\begin{landscape}
-
-\begin{minipage}{\textwidth}
 	\begin{figure}[H]
-		\includegraphics[width=1.4\textwidth, keepaspectratio]{images/domain_model_full.png}
+	\begin{center}
+	
+		\includegraphics[width=1.4\textwidth, keepaspectratio, angle=90]{images/domain_model_full.png}
   		\caption{Vollständiges Domain Model}
 		\label{fig:domain_model_full}
-	\end{figure}
-\end{minipage}
+		\end{center}
+\end{figure}
 
-\end{landscape}
-
+\newpage
 %TODO SchoolClass im Domain Model zeigen
 \subsubsection*{School}
 Ein zentraler Punkt der Anwendung ist die Schule und das User Management. Die User sind einer der drei Rollen Student, Teacher oder Admin zugeteilt. Da jede Rolle unterschiedliche Rechte hat, konnte nicht das Standard User Model von Django selbst verwendet werden. \\
@@ -141,23 +139,21 @@ Flask is a lightweight WSGI web application framework. It is designed to make ge
 Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.
 \end{displayquote}
 
-Bei der Studienarbeit verwendete man bereits Flask zum Erstellen einer Web Anwendung. Flask ist sicherlich ein gutes Framework, sonst würde es nicht von 41\% der Entwickler genutzt. Der grosse Vorteil dieses Frameworks ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools, da bereits Libraries existieren, welche dies erledigen\footcite{flask:design}. Gerade am Anfang kann dies jedoch eher Verwirrung stiften, weil für das selbe Problem mehrere Lösungsmöglichkeiten bereit stehen. \\
+Der grosse Vorteil von Flask ist, dass man als Entwickler relativ frei ist, wie man etwas umsetzen möchte. So kommt Flask standardmässig ohne Database Abstraction Layer, Form Validation oder anderen Tools\footcite{flask:design}. Da bereits Libraries existieren, welche dies erledigen, werden diese nicht nochmals in Flask umgesetz. Flask folgt dabei der UNIX Philosophie ''Do one thing, and do it well''. Gerade bei Entwicklern, welche noch nicht so viel Erfahrung mit diesem Framework haben, kann dies aber schnell Verwirrung stiften. Oftmals stehen für ein Problem mehrere Lösungsmöglichkeiten zur Verfügung. Ohne Erfahrung ist es jedoch schwierig, die Beste Lösungsmöglichkeit zu erkennen.\\
 
-Django verfolgt dagegen eher den Ansatz, bereits unterschiedliche Funktionalitäten mitzuliefern, was den Entwicklern Arbeit abnehmen soll. So ist zum Beispiel bereits ein OR-Mapper oder ein Admin Interface integriert\footcite{django:overview}. 
-Django hat aber auch ein paar Nachteile. Da einige Entscheidungen bereits vom Framework selber getroffen wurden, ist man als Entwickler nicht mehr ganz so flexibel. Zudem ist Django sehr monolithisch. Bei bestimmten Aufgaben ist vorgegeben, wie diese in Django umgesetzt werden müssen. Hält man sich nicht an den ''Django Way'', kann unter Umständen die gesamte Anwendung nicht deployed werden\footcite{django:advantages_disadvantages}.
+Im Gegensatz zu Flask verfolgt Django den Ansatz eines ''batteries included'' Framework. Das bedeutet, dass viele Funktionalitäten vom Framework bereits mitgeliefert werden. So ist zum Beispiel ein \gls{orm}, Middlewares, Authentication, ein Admin Interface und eine Templating Engine in Django integriert und kann out of the box verwendet werden\footcite{django:overview}.
 
-In der Studienarbeit konnte man zwar bereits Erfahrung mit Flask sammeln, dennoch entschied man sich für Django. Der Hauptgrund dafür ist, dass das Django Framework als ''Fully Loaded Framework'' daher kommt un so zum Beispiel ein integriertes Admin Interface besitzt.
+Dies kann jedoch auch als Nachteil angesehen werden. Da Django vielfach vorgibt, wie etwas umgesetzt werden muss, ist es sehr monolithisch. Die Entwickler sind nicht nicht mehr ganz so flexibel und müssen sich an Django anpassen\footcite{django:advantages_disadvantages}. \\
+
+Bei der Bachelorarbeit entschied man sich für Django als Web Framework. Besonders die Features, welche von Django angeboten werden, konnten überzeugen. Zudem ist Django das am weitesten verbreitete Framework. Die Dokumentation ist dementsprechend gut und konnte ebenfalls überzeugen.
 
 
 \subsubsection*{Datenbank}
-Aufgrund der ohnehin schon verkürzten Projektlaufzeit entschied man sich, auf die Evaluation eines Datenbanksystems zu verzichten. Während den Modulen Datenbanksysteme 1 \& 2 konnte bereits sehr viel Erfahrungen mit Postgres gesammelt werden. Laut Deployment Statistics\footcite{deploymentstatistics} von Django Sites verwenden 47.7\% aller deployten Sites MySQL als Datenbank. Postgres folgt mit 40.7\%. Das nächst grössere Datenbanksystem ist sqlite mit nur noch 7.6\%.
-MySQL wird zwar etwas öfters verwendet. Aus Erfahrung weiss man aber, dass die Funktionen von Postgres die Bedürfnisse dieser Anwendung voll und ganz abdecken, weshalb man Postgres als Datenbanksystem festlegte. \\
+Laut Deployment Statistics\footcite{deploymentstatistics} von Django Sites verwenden 47.7\% aller deployten Sites MySQL als Datenbank. Postgres folgt mit 40.7\%. Das nächst grössere Datenbanksystem ist sqlite mit nur noch 7.6\%.\\
+
+MySQL wird zwar etwas öfters verwendet als Postgres. Die Hauptoperationen der Anwendung sind jedoch einfache Schreib- und Lese-Operationen. Da man während den Modulen Datenbanksysteme 1 \& 2 Erfahrungen mit Postgres sammeln konnte, weiss man, dass dieses Datenbanksystem die Anforderungen erfüllt, weshalb man sich für Postgres entschied.\\
 
 Sollte man in Zukunft jedoch ein anderes Datenbanksystem bevorzugen, kann die Migration mit dem Django Management Tool durchgeführt werden \footcite{dbmigration}. 
-
-\subsubsection*{Python Libraries}
-Libraries beschreiben
-
 
 \subsection{Deployment}
 Zusätzlich zur System Overview in Abbildung \ref{fig:system_overview}, wird hier das Deployment Diagramm gezeigt. Dieses soll die einzelnen Komponenten aufzeigen.
@@ -175,6 +171,14 @@ Bei der Evaluation eines Web Servers beschränkte man sich auf NGINX und Apache.
 
 Apache kommt öfters zum Einsatz und ist flexibler als NGINX\footcite{webserver_comparison}. Dennoch entschied man sich für NGINX. Bei dieser Entscheidung achtete man hauptsächlich auf die Performance der beiden Web Server, bei welcher NGINX in den Kategorien ''Requests per second'', ''Time per request'' und ''Transfer rate'' durchschnittlich besser abschnitt\footcite{webserver_performance}.
 
-\subsection*{Web Server Gateway Interface}
+\subsection*{\gls{wsgi}}
 Während der Entwicklungsphase wurde der Development Server, welcher direkt mit dem Django Framework mitgeliefert wird, verwendet. In der produktiven Umgebung reicht dies jedoch nicht mehr aus, weshalb ein \gls{wsgi} eingesetzt wird. Dieser beschreibt, wie der Web Server mit einer Web Anwendung kommuniziert. Anfragen an den Web Server werden zur Web Anwendung geleitet. Sobald der Request bearbeitet wurde, wird die Response an den Web Server zurück geschickt\footcite{wsgi_description}.
 
+\subsubsection{Docker}
+Bei der Entwicklung hat man sich dafür entschieden, dass jeder Service in einem eigenen Docker Container läuft. Jeder dieser Container hat dabei seine eigene virtuelle Umgebung. Somit laufen die Container immer gleich, egal auf welchem System sie deployed werden. \\
+
+Containerisierung bietet mehrere Vorteile gegenüber der Hardware Virtualisierun. Bei der Hardware Virtualisierung wird ein komplett neues Guest OS auf dem laufenden Host hochgefahren. Damit der Guest mit dem Host kommunizieren kann, wird ein Hypervisor dazwischen geschaltet. Die Container können jedoch direkt auf den vom Host-System verwendeten Kernel zugreifen. Somit wird kein Guest OS und Hypervisor mehr benötigt, was viel Ressourcen spart. \\
+
+Für die Entwickler hat es den Vorteil, dass praktisch gleich auf der Entwicklungsumgebung programmiert werden kann. Dabei muss auch nicht jeder Entwickler zuerst die gesamte Umgebung bei sich aufbauen, sondern kann mit einem einfachen Befehl die ganze Umgebung hoch- oder herunterfahren. \\
+
+Für jeden der einzelnen Services in Abbildung \ref{fig:deployment_diagram} wird ein eigener Docker Container erstellt. Requests werden vom NGINX-Service, auf welchem der Web Server läuft, entgegen genommen und an den web-Service weitergeleitet, auf welchem der Aufgaben-Coach läuft. Dieser hat wiederum eine Verbindung zum db-Service, falls Daten aus der Datenbank geladen werden müssen. Somit ist es einem Benutzer auch nicht möglich, direkt mit der Datenbank eine Verbindung aufzubauen. 
