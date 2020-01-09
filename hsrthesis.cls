@@ -44,7 +44,7 @@
 \newcommand\blankpage{%
     \null
     \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
+%    \addtocounter{page}{-1}%
     \newpage}
 
 \usepackage{parskip}
