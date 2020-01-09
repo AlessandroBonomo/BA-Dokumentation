@@ -16,7 +16,7 @@ Abirsana ist Lehrerin an der Schule Gossau und unterrichtet die Fächer Mathemat
 Um den Unterricht interessanter zu gestalten, greift Abirsana oft auf digitale Medien, wie zum Beispiel YouTube Videos, zurück. Oftmals ist jedoch das Material nicht genau auf den Schulstoff angepasst oder die Qualität lässt zu wünschen übrig. Zudem braucht sie sehr lange, um passende Videos zu finden.
 
 \subsubsection*{Szenario}
-Im Rahmen des Unterrichts soll es Abirsana möglich sein, die Aufgaben-Coach Webanwendung zu verwenden. Sie soll in der Lage sein, einzelne Fächer und Theorieinhalte ihrer Klasse zur Verfügung zu stellen. Zudem kann sie eigene Übungen erfassen, welche die Schüler auch gleich über die Webanwendung lösen. Sind die Aufgaben abgegeben, kann sie die einzelnen Aufgaben anschauen und bewerten. Falls ihr auffällt, dass ein gewisser Schüler oder die ganze Klasse etwas nicht versteht, kann sie so direkt die Wissenslücke schliessen.
+Im Rahmen des Unterrichts soll es Abirsana möglich sein, die Aufgaben-Coach Webanwendung zu verwenden. Sie soll in der Lage sein, einzelne Fächer und Theorieinhalte ihrer Klasse zur Verfügung zu stellen. Zudem kann sie eigene Übungen erfassen, welche die Schüler direkt über die Webanwendung lösen können. Sind die Aufgaben abgegeben, kann sie die einzelnen Aufgaben anschauen und bewerten. Falls ihr auffällt, dass ein gewisser Schüler oder die ganze Klasse etwas nicht versteht, kann sie eingreifen und Wissenslücken schliessen.
 
 \subsubsection{Persona 2}
 \subsubsection*{Persönliches Profil}
@@ -27,23 +27,23 @@ Salina versteht oft nichts, wenn ihr Lehrer ihr etwas erklärt. Zu Hause verbrin
 
 \subsubsection*{Szenario}
 Nach kurzer Zeit hat Salina die Lehrer an ihrer Schule dazu überredet, die Aufgaben-Coach Plattform einzusetzen. Somit ist Salina freier im Lernen. In der Schule kann sie sich selbstständig ein Thema beibringen. Falls sie dennoch etwas nicht versteht, kann sie direkt auf eine Lehrperson zugehen, welche ihr dann das Kapitel vielleicht noch etwas genauer erklärt. \\
-Zudem wird sie nicht von anderen Schülern aufgehalten, weil diese länger brauchen, um ein Thema zu lernen. Zu Hause verbringt sie auch nicht mehr so viel Zeit mit dem Suchen von Videos. Alle benötigten Theorieinhalte sind auf Aufgaben-Coach vorhanden.
+Zudem fällt es Salina einfacher Fragen zu stellen. Zuvor hatte sie immer das Gefühl, die ganze Klasse aufzuhalten. Nun kann sie in Ruhe ihre Fragn stellen, während die anderen Schüler selbstständig weiter lernen können. Des Weiteren verbringt sie zu Hause auch nicht mehr so viel Zeit mit dem Suchen von Videos, da sich alle benötigten Theorieinhalte auf Aufgaben-Coach befinden.
 
 \subsubsection{Persona 3}
 \subsubsection*{Persönliches Profil}
-Liam ist der Informatik Verantwortliche an einer Schule. Er ist sehr Technik affin und sucht immer nach neuen Tools oder Programmen, welche in der Schule eingesetzt werden können.
+Liam ist ebenfalls Lehrer an einer Schule. Er mag es am liebsten, wenn er genau weiss, was vor sich geht. Überraschungen kann er gar nicht leiden und besonders dann nicht, wenn es sich dabei um schlechte Resultate seiner Schüler bei einer Prüfung handelt.
 
 \subsubsection*{Situation}
-Es ist schon mehrmals vorgekommen, dass sich die Lehrer bei ihm und der Schulleitung beschweren. Oftmals unterrichten sie die selben Fächer Jahr für Jahr und haben nicht wirklich Abwechslung im Berufsleben. 
+Immer wieder kommt es vor, dass seine Schüler eine Prüfung schlechter abschneiden, als er sich das erhofft. Dem will er nun ein Ende setzten und sucht nach einer Lösung.
 
 \subsubsection*{Szenario}
-Mit Aufgaben-Coach hat Liam eine Webanwendung gefunden, mit welcher die Schüler sich die Theorie selber beibringen können. Während der Unterrichtszeit kann sich eine Lerhperson dann um die Bedürfnisse der einzelnen Schüler kümmern. \\
-Lehrpersonen sparen auch viel Zeit bei der Vorbereitung, da bereits ein roter Faden durch den gesamten Stoff besteht.
+Um in Zukunft unangenehme Überraschungen wie diese zu vermeiden, will er eine Möglichkeit haben, genauere Details über den aktuellen Wissensstand seiner Schüler zu sammeln. Um dieses Ziel zu erreichen, möchte er keinen grossen Mehraufwand auf sich nehmen und will den Unterricht so wie bisher weiterführen.
+
 
 \subsection{Funktionale Anforderungen}
 
 \subsubsection{Use Case Diagramm}
-In der Abbildung \ref{uc_diagram} befindet sich das Use Case Diagramm. Dieses Diagramm soll die Abhängigkeiten zwischen Aktoren, den einzelnen Use Cases und externen Systemen visualisieren.
+In der Abbildung \ref{uc_diagram} ist das Use Case Diagramm abgebildet. Dieses Diagramm soll die Abhängigkeiten zwischen Aktoren, den einzelnen Use Cases und externen Systemen visualisieren.
 
 \begin{minipage}{\textwidth}
 
@@ -55,9 +55,11 @@ In der Abbildung \ref{uc_diagram} befindet sich das Use Case Diagramm. Dieses Di
 
 \end{minipage}
 
+\newpage
 
 \subsubsection{Aktoren}
-In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung interagieren, beschrieben. 
+Die Aktoren, welche mit der Anwendung interagieren, sind in der Tabelle \ref{aktoren} beschrieben. \\
+
 \begin{table}[H]
 	\centering
 	\begin{tabu} to 0.9\textwidth {l X}
@@ -78,21 +80,23 @@ In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung intera
 \end{table}
 
 
-\subsubsection{Beschreibung der Use Cases}
+\subsubsection{Use Case Beschreibung}
+Nachfolgend werden die einzelnen Use Cases stichwortartig beschrieben. 
 \subsubsection*{CRUD person}
 
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Der Administrator kann einen neuen Benutzer erstellen. Neue Benutzer können entweder die Rolle ''Schüler'' oder ''Lehrer'' haben.
+		\item Der Administrator kann neue Benutzer erstellen. Diese können entweder die Rolle ''Schüler'' oder ''Lehrer'' haben.
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
-		\item Der Administrator entfernt eine Person aus dem System.
-		\item Der Administrator ändert Angaben zu einer bereists existierenden Person. 
+		\item Der Administrator entfernt einen Benutzer aus dem System.
+		\item Der Administrator ändert Angaben eines Benutzers.
 	\end{itemize}
 \end{itemize}
 
+\newpage
 
 \subsubsection*{CRUD school class}
 
@@ -113,7 +117,7 @@ In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung intera
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Der Lehrer kann neue Aufgaben erstellen und diese einem Thema zuweisen. Pro Aufgabe gibt es mehrere Fragen, welche wiederum mehrere Hifestellungen enthalten können. Für jede Frage kann auch eine maximale Punktzahl angegeben werden. 
+		\item Der Lehrer kann neue Aufgaben erstellen und diese einem Thema zuweisen. Pro Aufgabe gibt es mehrere Fragen, welche wiederum mehrere Hilfestellungen enthalten können. Für jede Frage kann auch eine maximale Punktzahl angegeben werden. 
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
@@ -141,7 +145,7 @@ In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung intera
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Der Lehrer kann für einzelne Klassen die Fächer freischalten.
+		\item Der Lehrer kann Fächer für einzelne Klassen freischalten.
 	\end{itemize}
 	\item Alternatives Szenario:
 	\begin{itemize}
@@ -155,7 +159,7 @@ In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung intera
 \begin{itemize}
 	\item Hauptszenario:
 	\begin{itemize}
-		\item Der Lehrer kann die Statistiken einzelner Klassen oder Schüler ansehen. Diese Ansicht zeigt dem Lehrer, auf welchem Wissensstand eine Klasse oder einzelne Schüler sind.
+		\item Der Lehrer hat Einsicht in die Statistiken einzelner Klassen oder Schüler.
 	\end{itemize}
 \end{itemize}
 
@@ -194,10 +198,11 @@ In der Tabelle \ref{aktoren} werden die Aktoren, welche mit der Anwendung intera
 	\end{itemize}
 \end{itemize}
 
+\newpage
 
 \subsection{Nicht Funktionale Anforderungen}
 \label{chapter_nfr}
-Bei der Erstellung der einzelnen \gls{nfr} wird auf FURPS zurückgegriffen. FURPS ist ein Akronym für Functionality, Usability, Reliability, Performance und Supportability. Dieses Modell wurde im Jahre 1992 von HP entwickelt und dient zur Priorisierung der Software Requirements.\footcite{furps_description}
+Bei der Erstellung der einzelnen \gls{nfr} wird auf FURPS zurückgegriffen. FURPS ist ein Akronym für Functionality, Usability, Reliability, Performance und Supportability. Dieses Modell wurde im Jahre 1992 von HP entwickelt und dient zur Priorisierung der Software Requirements\footcite{furps_description}. \\
 
 \begin{table}[h]
 	\centering
@@ -205,47 +210,25 @@ Bei der Erstellung der einzelnen \gls{nfr} wird auf FURPS zurückgegriffen. FURP
 	\toprule
 	FURPS & Titel & Beschreibung \\ 
 	\midrule
-	Functionality & User Interface & Das User Interface der Applikation ist über den Webbrowser erreichbar. \\ 
-	& Security & Die einzelnen Benutzer können nur auf die für sie freigegebenen Inhalte zugreifen. \\
-	& HTTPS & Die Kommunikation zum Webserver soll über HTTPS laufen. \\
+	Functionality & Reusability & Die Anwendung soll so entwickelt werden, dass sie an mehreren Schulen eingesetzt werden kann. \\
+	& 	Security & Die Rechte der einzelnen Benutzer sind eingeschränkt. Niemand hat per Default Zugriff auf alles. \\
+	&  & Die Webseite ist nur über HTTPS erreichbar. \\
 	\midrule
-	Usability & Responsiveness & Für Schüler soll die Applikation sowohl auf Desktop PCs wie auch auf Tablets oder Mobile Phones verfügbar sein. \\
+	Usability & Responsiveness & Für Schüler soll die Applikation sowohl auf Tablets wie auch auf Mobile Phones verfügbar sein. \\
 	\midrule
-	Reliability & Availability & Die Applikation soll zu 95\% des Tages verfügbar sein. \\
-	 & Fault Tolerance & Die Applikation soll bei unerlaubten Anfragen weiterhin verfügbar sein. \\
+	Reliability & Availability & Die Anwendung ist stabil und stürzt nicht ab. \\
+	& Fault Tolerance & Die Anwendung soll auch bei unerlaubten Anfragen weiterhin verfügbar sein und die korrekten Ergebnisse liefern. \\
 	\midrule
-	Performance & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen werden.\\
+	Performance & Availability & Die Anwendung soll ohne abzustürzen von 300 Benutzern zeitgleich verwendet werden können. \\
+	 & Response Time & Wechselt der Benutzer zwischen einzelnen Seiten, soll die neue Seite in maximal einer Sekunde geladen werden.\\
 	\midrule
 	Supportability & Maintainability & Die Applikation soll so gebaut werden, dass sie auch in Zukunft gewartet und ausgebaut werden kann. \\
-	 & Scalability & Die Applikation soll von 300 Benutzern zeitgleich verwendet werden können. \\
+	 & Installability & Die Applikation wird so gebaut, dass sie innerhalb einer Stunde auf einem neuen System installiert werden kann. \\
 	\bottomrule
 	\end{tabu}
 	\captionof{table}{Non Functional Requirements}
 	\label{nfr}
 \end{table}
-
-%\subsubsection{Functionality}
-%\subsubsection*{}
-%
-%\subsubsection{Qualität}
-%Um die Qualität des Codes möglichst hoch zu halten und sicherzustellen, dass alle Teammitglieder immer auf dem aktuellsten Stand sind, werden auf Git Pull-Requests verwendet. Dadurch kann sichergestellt werden, dass ein anderes Teammitglied den geschriebenen Code ebenfalls angesehen und durchdacht hat.
-%
-%\subsubsection*{Maintainability}
-%Die Software könnte unter Umständen in einem Start-Up verwendet werden. Da in Zukunft noch beinahe beliebig viele neue Anforderungen hinzustossen können, soll die Applikation so gebaut werden, dass sie einfach modifiziert werden kann. 
-%
-%\subsubsection*{Reliability}
-%Die Applikation soll robust und reibungslos laufen, auch wenn mehere Schüler zeitgleich mit der Plattform verbunden sind.
-%
-%\subsubsection*{Scalability}
-%Das System soll problemlos von bis zu 300 Benutzern gleichzeitig verwendet werden können. 
-%
-%\subsubsection*{Usability}
-%Bei der Applikation soll es sich um eine Mobile First Applikation handeln. Die Plattform soll sowohl auf Desktop PCs, Tablets und Smartphones bedienbar sein. Der Lehrer- und Administator-spezifische Teil der Applikation ist davon erstmals ausgenommen, da davon ausgegangen wird, dass diese beiden Aktoren hauptsächlich auf Desktop PCs arbeiten. 
-%Die Applikation soll ein intuitives User Interface besitzen, damit sich die Benutzer auf Anhieb zurechtfinden. 
-%
-%\subsubsection*{Security}
-%Der Zugriff auf das System ist passwortgeschützt. Benutzer können sich nicht selbstständig registrieren. Nur Administratoren können neue Benutzer erfassen.
-%Jede Person sieht nur die Informationen, die für sie selbst von Bedeutung sind. Ein Schüler hat zum Beispiel keinen Zugriff auf die Statistiken anderer Schüler.
 
 
 \newpage

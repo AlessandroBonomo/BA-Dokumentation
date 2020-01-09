@@ -1,6 +1,7 @@
 \newpage
 \subsection{Ergebnisse}
-Nach Abschluss der Bachelorarbeit konnte ein Grossteil der gewünschten Funktionalität implementiert werden. Das Hauptziel, welches wir uns gesetzt haben, ist die Entwicklung einer Anwendung, welche die Flipped Classroom Unterrichtsmethode ermöglicht. Aufgaben-Coach erfüllt diesen Punkt und kann so, wie es jetzt existiert verwendet werden. Wird die Idee als Startup weiter verfolgt, gibt es einige Punkte, welche verbessert werden können oder neue Features, die noch implementiert werden können.
+Nach Abschluss der Bachelorarbeit konnte ein Grossteil der gewünschten Funktionalität implementiert werden. Das Hauptziel, welches wir uns gesetzt haben, ist die Entwicklung einer Anwendung, welche die Flipped Classroom Unterrichtsmethode ermöglicht. Aufgaben-Coach erfüllt diesen Punkt und kann so, wie es jetzt existiert verwendet werden. Wird die Idee als Startup weiter verfolgt, gibt es einige Punkte, welche verbessert oder neue Features, welche noch implementiert werden können.
+
 \subsubsection{Resultate}
 In den folgenden Abschnitten sind die Funktionalitäten der einzelnen Benutzergruppen aufgelistet.
 \subsubsection*{Schüler}
@@ -46,17 +47,18 @@ Im Prinzip hat der Admin die Rechte, um alles auf der Website zu tun. Nachfolgen
 
 \subsubsection{Verbesserung}
 \label{verbesserung}
-Die Anwendung war viel komplexer als zu Beginn erwartet. Um im Zeitplan zu bleiben, musste bei gewissen Features  Kompromisse eingegangen werden, um im Zeitplan bleiben zu können. Folgende Punkte müssen noch verbessert werden:
+Die Anwendung war viel komplexer als zu Beginn erwartet wurde. Bei gewissen Features mussten Kompromisse eingegangen werden um im Zeitplan bleiben zu können. Folgende Punkte müssen noch verbessert werden:
 
 \begin{itemize}
-	\item Im Moment wurde beim Frontend hauptsächlich Bootstrap eingesetzt. Vereinzelt wurde auch AJAX oder jQuery eingesetzt, um die Website dynamischer zu machen. Für die Zukunft muss man evaluieren, ob man nicht besser ein anderes Frontend Framework, wie zum Beispiel React oder Angular, verwendet.
-	\item Der Lehrer die Aufgaben einem Wochenplan zuweisen. Dieses Feature wurde aber nur sehr grob implementiert und kann noch verbessert werden. Der Lehrer sollte den Wochenplan für mehrere Wochen vorgeben können. Wird eine Aufgabe dem Wochenplan zugewiesen, soll eine Deadline hinterlegt werden. Nach Ablauf dieser Deadline sollen keine weiteren Abgaben gemacht werden können.
+	\item Im Moment wurde beim Frontend hauptsächlich Bootstrap eingesetzt. Vereinzelt wurde auch AJAX oder jQuery eingesetzt, um die Website dynamischer zu gestalten. Für die Zukunft muss man evaluieren, ob man nicht besser ein anderes Frontend Framework, wie zum Beispiel React oder Angular, verwendet.
+	\item Lehrpersonen können Aufgaben einem Wochenplan zuweisen. Dieses Feature wurde aber nur sehr grob implementiert und kann noch verbessert werden. Der Lehrer sollte den Wochenplan für mehrere Wochen vorgeben können. Wird eine Aufgabe dem Wochenplan zugewiesen, soll eine Deadline hinterlegt werden. Nach Ablauf dieser Deadline sollen keine weiteren Abgaben gemacht werden können.
 	\item Das Filtern der Aufgaben kann noch verbessert werden. Lehrer sollen auch nach Klassen oder nach archivierten Aufgaben filtern können.
 	\item Im Moment sind alle Aufgaben global. Erstellt ein Lehrer eine Aufgabe, so kann diese von anderen Lehrern auch bearbeitet oder sogar gelöscht werden. In Zukunft soll ein Lehrer nur Zugriff auf seine eigenen Aufgaben haben und auch nur diese bearbeiten können.
 	\item Wird der Klasse ein Fach zugewiesen, haben die Schüler automatisch Zugriff auf alle Themen, Lessons und Aufgaben. Der Lehrer soll jedoch auch einzelne Themen, Lessons oder Aufgaben freischalten können.
 	\item Erstellen die Schüler einen Forumsbeitrag, erhält der Lehrer keine Benachrichtigung. Er soll jedoch eine Nachricht erhalten, so dass er auf unbeantwortete Fragen von Schülern eingehen kann.
 \end{itemize}
 
+\newpage
 
 \subsubsection{Weiterentwicklung}
 In einem nächsten Schritt sollten die unter Abschnitt \ref{verbesserung} genannten Punkte verbessert werden. Es gibt jedoch viele interessante Features, welche noch zusätzlich implementiert werden können.
@@ -73,26 +75,22 @@ In einem nächsten Schritt sollten die unter Abschnitt \ref{verbesserung} genann
 \subsubsection{Nicht Funktionale Anforderungen}
 
 \subsubsection*{Functionality}
-%TODO User Interface
-%TODO Security
-%TODO HTTPS
+Die Funktionalität der Anwendung ist gegeben. Man kann die Anwendung an mehereren Schulen deployen, ohne dabei Änderungen am Backend vornehmen zu müssen. Die Security Aspekte konnten auch umgesetzt werden. Die Benutzergruppen haben unterschiedliche Rechte und es kann nicht auf Inhalte zugegriffen werden, wenn man die Rechte dazu nicht hat. Zudem kann man sich nur per HTTPS mit dem Server verbinden.
 
 \subsubsection*{Usability}
-%TODO Responsiveness
+Die Responsiveness der Anwendung ist leider nicht gegeben. Zu Beginn wollte man Schüler die Anwendung auch auf Mobile Phones oder Tablets verwenden können. Man merkte jedoch schnell, dass man zu wenig Zeit hat, um die geforderte Funktionalität zu implementieren und gleichzeitig gutes User Interface zu erstellen. Daher entschied man sich, dass man sich auf das Backend konzentriert. Natürlich wurde darauf geachtet, dass die Anwendung gut bedienbar und ansprechend ist. Auf kleineren Displays kann es aber vorkommen, dass die Buttons am falschen Ort sind oder nicht korrekt formattiert sind.
 
 \subsubsection*{Reliability}
-Die von uns gestellten Anforderungen im Kapitel \ref{chapter_nfr} an die Verlässlichkeit der Applikation wurden erfüllt. Um dies sicherzustellen, wurde die Applikation auf dem von der HSR zur Verfügung gestellten Server deployed und während dreier Tage wurden Stichproben durchgeführt. Ausserdem wurden während dieser Zeit die Performance Tests durchgeführt, was beweist, dass die Applikation auch bei einer Überlastung stabil läuft.
+Die gestellten Anforderungen an die Availability der Anwendung wurden erfüllt. Die Applikation war während mehrerer Wochen auf dem Web Server deployed und war ununterbrochen verfügbar. Die Fault Tolerance ist auch gegeben. Bei jedem Request wird geprüft, ob diese Person zu dieser Aktion berechtigt ist. So wird sicher gestellt, dass die \gls{url} im Browser nicht angepasst werden kann. Auch während solcher Abfragen blieb der Web Server ständig erreichbar.
 
-%TODO Fautl Tolerance
 
 \subsubsection*{Performance}
-Wie im Kapitel \ref{chapter_performance_tests} und der Abbildung \ref{performance_tests} ersichtlich ist, werden die gestellten Anforderungen an die Response Time nicht ganz erfüllt. Nicht alle eingegangenen Requests konnten in weniger als einer Sekunde abgearbeitet werden.
+Dieser Punkt wurde bereits im Kapitel \ref{chapter_performance_tests} angesprochen. Ca. 6\% der 38'000 Requests lagen über dem gesetzten Grenzwert von einer Sekuden. Man geht aber davon aus, dass sich dieses Problem mit einem Server mit mehr Performance löst.
 
 \subsubsection*{Supportability}
-%TODO Maintainability
+Bei der Implementation wurde darauf geachtet, dass die Anwendung modular aufgebaut ist. So ist es ohne Probleme möglich, weitere Apps hinzuzufügen und so die Funktionalität zu erweitern.\\
 
-Die Applikation kann von 300 Benutzern zeitgleich verwendet werden. Wie jedoch bei den Performance Tests zu sehen ist, kann es teilweise zu längeren Wartezeiten beim Laden einer Seite kommen.
-
+Zudem befindet siche die gesamte Anwendung in einem Docker Container. So kann die Anwendung ohne Probleme auf einem neuen Server installiert werden. Dieser Punkt konnte also auch erreicht werden.
 
 
 
