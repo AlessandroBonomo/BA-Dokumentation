@@ -225,7 +225,14 @@ Bei jedem Pull Request wird auch gleich ein Code Review durchgeführt. Dies hat 
 Für die Infrastruktur werden lediglich 2 Notebooks und ein Server benötigt. Die Notebooks stammen von den Diplomanden und der Server wird durch die \gls{hsr} zur Verfügung gestellt. \\
 Als IDE wurde entschieden, sich auf PyCharm von JetBrains zu beschränken. Dies hat den Vorteil, dass man sich beim Pair-Programming schnell zurecht findet. \\
 Als Projektmanagement Tool wird Jira eingesetzt. \\
-Die Dokumentation und der Projektplan werden mit \LaTeX erstellt. Kleinere Dokumente oder das Sitzungsprotokoll werden mit Word erfasst. 
+Die Dokumentation und der Projektplan werden mit \LaTeX erstellt. Kleinere Dokumente oder das Sitzungsprotokoll werden mit Word erfasst. \\
+Travis wurde verwendet um die Applikation automatisch zu builden und zu testen.
+
+\subsubsection*{Code Qualität}
+Black \footcite{black} ist ein ''code formatter'', welcher es ermöglicht, den kompletten Code einer Anwendung in kürzester Zeit einheitlich und übersichtlich zu formatieren. Dies ist besonders nützlich, wenn in einem Team gearbeitet wird. Sobald mehrere Personen an der selben Applikation arbeiten, entstehen über die Applikation hinweg unterschiedliche Styles, was es den Entwicklern erschwert sich auf das wesentliche, also den Inhalt, zu konzentrieren. Um dies zu verhindern, wurde entschieden black zu verwenden. \\
+
+Es wurde entschieden, flake8 \footcite{flake8} als statisches Codeanalyse-Tool zu verwenden um ''einfach'' erkennbare Bugs frühzeitig zu finden. Eine der Hauptaufgaben von flake8 ist es, Syntax Errors, Rechtschreibfehler, sowie schlechte Formatierungen zu erkennen.
+
 
 \newpage
 
