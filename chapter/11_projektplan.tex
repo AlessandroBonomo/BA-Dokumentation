@@ -221,17 +221,19 @@ Zudem wird Travis CI verwendet, welches nach jedem Push die selbst geschriebenen
 \subsubsection*{Code Reviews}
 Bei jedem Pull Request wird auch gleich ein Code Review durchgeführt. Dies hat den Vorteil, dass der Code, welcher in den Master Branch gemerged wird, auch den Anforderungen beider Teammitglieder entspricht.
 
+\subsubsection*{Code Qualität}
+Black \footcite{black} ist ein ''Code Formatter'', welcher es ermöglicht, den kompletten Code einer Anwendung automatisch zu formatieren. Dies ist besonders nützlich, wenn in einem Team gearbeitet wird. Auch wenn man sich auf einen Code Style geeinigt hat, kann es trotzdem zu Unterschieden kommen.
+Black formatiert den Code automatisch. Die Entwickler haben über die ganze Anwendung hinweg den gleichen Code Style und können sich besser auf den Inhalt des Codes, anstatt auf die Formatierung, konzentrieren.\\
+
+Unter dem Begriff Linting\footcite{linting} versteht man, wenn der Code auf Fehler untersucht wird. Solche Tools zeigen auch gleich an, wie man den Code verbessern kann. Dies hilft dem Entwickler, besseren Code zu schreiben. So wird der Code zum Beispiel nach Missachtung von Code Standards, Syntax Fehlern oder schlchter Formatierung untersucht. Flake8\footcite{flake8} wird als Linting Tool eingesetzt, um die Entwickler beim Schreiben von Code zu unterstützen.
+
 \subsubsection*{Tools und Infrastruktur}
 Für die Infrastruktur werden lediglich 2 Notebooks und ein Server benötigt. Die Notebooks stammen von den Diplomanden und der Server wird durch die \gls{hsr} zur Verfügung gestellt. \\
 Als IDE wurde entschieden, sich auf PyCharm von JetBrains zu beschränken. Dies hat den Vorteil, dass man sich beim Pair-Programming schnell zurecht findet. \\
 Als Projektmanagement Tool wird Jira eingesetzt. \\
 Die Dokumentation und der Projektplan werden mit \LaTeX erstellt. Kleinere Dokumente oder das Sitzungsprotokoll werden mit Word erfasst. \\
-Travis wurde verwendet um die Applikation automatisch zu builden und zu testen.
+Travis wird als \gls{ci} Tool eingesetzt. Dabei werden auch gleich die Tests durchgeführt und die Code Qualität überprüft.
 
-\subsubsection*{Code Qualität}
-Black \footcite{black} ist ein ''code formatter'', welcher es ermöglicht, den kompletten Code einer Anwendung in kürzester Zeit einheitlich und übersichtlich zu formatieren. Dies ist besonders nützlich, wenn in einem Team gearbeitet wird. Sobald mehrere Personen an der selben Applikation arbeiten, entstehen über die Applikation hinweg unterschiedliche Styles, was es den Entwicklern erschwert sich auf das wesentliche, also den Inhalt, zu konzentrieren. Um dies zu verhindern, wurde entschieden black zu verwenden. \\
-
-Es wurde entschieden, flake8 \footcite{flake8} als statisches Codeanalyse-Tool zu verwenden um ''einfach'' erkennbare Bugs frühzeitig zu finden. Eine der Hauptaufgaben von flake8 ist es, Syntax Errors, Rechtschreibfehler, sowie schlechte Formatierungen zu erkennen.
 
 
 \newpage
